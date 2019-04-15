@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Azure DevOps Server 2019 RC2 Installation | tediorelee&#39;s 漫游之歌～</title>
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1555315167605">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tediorelee.github.io">
+  <img class="avatar" src="https://tediorelee.github.io/images/avatar.png?v=1555315167605" alt="">
+  </a>
+  <h1 class="site-title">
+    tediorelee&#39;s 漫游之歌～
+  </h1>
+  <p class="site-description">
+    未来没有人能够预测
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Azure DevOps Server 2019 RC2 Installation
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-15 ·
+              </time>
+              
+                <a href="https://tediorelee.github.io/tag/x6J1TFbCJ" class="post-tags">
+                  # Azure
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.loli.net/2019/04/15/5cb438805f179.png')">
+              </div>
+            
+            <div class="post-content">
+              <h1 id="azure-devops-server-2019-rc2-installation">Azure DevOps Server 2019 RC2 Installation</h1>
+<h2 id="前言"><strong>前言</strong></h2>
+<blockquote>
+<p>公司需要对学员提交的代码和任务进行统一的处理</p>
+<p>微软的DevOps平台无疑是最好的解决方案</p>
+<p>正好18年底微软发布了最新的2019版本</p>
+<p>并且从TeamFoundationServer更名为DevOps Server</p>
+</blockquote>
+<!--more-->
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/TIM%E5%9B%BE%E7%89%8720190228104711.png" alt=""></p>
+<h2 id="环境准备"><strong>环境准备</strong></h2>
+<ul>
+<li>Azure VM with Windows Server 2019 Datacenter</li>
+<li>DevOps Server <a href="https://go.microsoft.com/fwlink/?LinkId=2041267&amp;clcid=0x804">Installation package</a></li>
+<li>SSL Certificate</li>
+<li>SQL database</li>
+</ul>
+<h2 id="安装sql-server">安装SQL Server</h2>
+<p>DevOps Server根据不同的应用场景，提供不同的部署方案，本次部署因为规模小而且主要作为测试用，所以采用SQL+DevOps单机安装的方案。具体需求参考<a href="https://www.cnblogs.com/danzhang/p/10080190.html">文章</a></p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-09-28.png" alt=""></p>
+<p>SQL安装简单，基本可以省略，<a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">下载地址</a></p>
+<p><strong>ps：记得开放SQL的通信端口</strong></p>
+<h2 id="安装devops-server-2019-rc2">安装DevOps Server 2019 RC2</h2>
+<p>直接双击安装包，等待下载完成即可(磁盘空间≥4GB)</p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-15-02.png" alt=""></p>
+<p>下载安装完成之后，即可开始配置</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015714895-849311433.png" alt=""></p>
+<p>选择<strong>启动向导</strong></p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015716556-2143893301.png" alt=""></p>
+<p>点击<strong>这是新的Azure DevOps Server部署</strong></p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015718609-1142263672.png" alt=""></p>
+<p>选择高级部署，语言默认，中文就好</p>
+<p>数据库设置这里，SQL Server实例写上你的<code>服务器名\数据库实例名</code></p>
+<p>eg:<code>devops-server\tfs</code></p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015722429-59791777.png" alt=""></p>
+<p>账户这里我使用的默认服务账户即可</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015724022-1898568025.png" alt=""></p>
+<p>应用层选项这里，选为默认组，启用默认22端口勾选即可</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015726495-1441172326.png" alt=""></p>
+<p>搜索服务这里，默认选择即可，服务用户账户写你的管理员账号和密码即可</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015731223-1081140712.png" alt=""></p>
+<p>因为是单机部署，所以报表功能可以省去</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015734318-1185368988.png" alt=""></p>
+<p>创建一个你的团队项目集合,这里可默认，后期可以修改</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015736829-1728455002.png" alt=""></p>
+<p>检查无误后即可开始安装</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015744415-64413204.png" alt=""></p>
+<p>这里会检查到java没有安装，因为搜索服务需要用到JRE，勾选安装即可</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015748560-1084712222.png" alt=""></p>
+<p>开始配置，等待10分钟左右</p>
+<p><img src="https://img2018.cnblogs.com/blog/608205/201812/608205-20181207015753853-1293866089.png" alt=""></p>
+<p>完成安装之后，即可使用浏览器访问<code>http://devops-server</code>访问</p>
+<h2 id="配置external-access-ssl">配置External Access &amp; SSL</h2>
+<p>在上一步中，我们可以使用<code>http://devops-server</code>访问了</p>
+<p>但是在前言中提到了，我们需要给学生使用，只能内网访问是不可能的，我们需要给它配置外网访问权限。</p>
+<p>在所有程序中定位到Azure DevOps Server管理控制台</p>
+<p>点击左侧应用层</p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-29-52.png" alt=""></p>
+<p>找到右侧的<code>更改公共URL</code></p>
+<p>用你最后想用的公网域名替换掉原来的<code>http://devops-server</code></p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-30-05.png" alt=""></p>
+<p>再定位到IIS管理器，点开我们的网站，找到右侧的<code>绑定</code></p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-33.png" alt=""></p>
+<p>点击新建，协议选择<code>https</code>,端口号默认443，主机名写上你刚才的域名，指定给该域名的证书即可</p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-54.png" alt=""></p>
+<p>最后打开你的域名解析，新建一个A记录，比如我这里子域名为devops，指向地址为服务器的ip</p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-38-54.png" alt=""></p>
+<p>浏览器打开网址<code>https://devops.yourdomain.com</code>，已经可以访问</p>
+<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-40-43.png" alt=""></p>
+<h2 id="参考文档">参考文档</h2>
+<blockquote>
+<p><strong>https://azure.microsoft.com/zh-cn/services/devops/server/</strong></p>
+<p><strong>https://www.cnblogs.com/danzhang/p/10080190.html</strong></p>
+<p><strong>https://www.cnblogs.com/ksguai/p/5869558.html</strong></p>
+</blockquote>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tediorelee.github.io/post/bigdata-platform">
+              <h3 class="post-title">
+                大数据平台全生态搭建
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

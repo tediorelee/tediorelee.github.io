@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create a S2S VPN with Azure virtual Network | tediorelee&#39;s 漫游之歌～</title>
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1555315167605">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tediorelee.github.io">
+  <img class="avatar" src="https://tediorelee.github.io/images/avatar.png?v=1555315167605" alt="">
+  </a>
+  <h1 class="site-title">
+    tediorelee&#39;s 漫游之歌～
+  </h1>
+  <p class="site-description">
+    未来没有人能够预测
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Create a S2S VPN with Azure virtual Network
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-15 ·
+              </time>
+              
+                <a href="https://tediorelee.github.io/tag/x6J1TFbCJ" class="post-tags">
+                  # Azure
+                </a>
+              
+                <a href="https://tediorelee.github.io/tag/aXetfket7" class="post-tags">
+                  # Windows
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.loli.net/2019/04/15/5cb438e55a60b.png')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="前言">前言</h2>
+<blockquote>
+<p>公司在Azure上有许多云端资源
+每次访问的时候都需要P2S客户端来访问这些云端资源
+S2S VPN是一种连接更加稳定的持久VPN协议
+这样以后每次访问云端资源的时候就不用再去单独连接P2S了</p>
+</blockquote>
+<!--more-->
+<h2 id="准备">准备</h2>
+<ul>
+<li>Azure上有订阅并且能够创建连接需要的虚拟网络资源</li>
+<li>本地需要一台服务器作为路由设备</li>
+</ul>
+<h2 id="create-a-virtual-network">Create a virtual network</h2>
+<p><img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-create-virtual-network-portal-include/create-virtual-network.png" alt=""></p>
+<h2 id="create-the-gateway-subnet">Create the gateway subnet</h2>
+<p>在刚才第一步创建的virtual network那里，找到gateway subnet
+<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-gateway-subnet-portal-include/gateway-subnet.png" alt=""></p>
+<p>根据提示创建你的gateway subnet
+<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-gateway-subnet-portal-include/add-gateway-subnet.png" alt=""></p>
+<h2 id="create-the-vpn-gateway">Create the VPN gateway</h2>
+<p>在Azure portal中搜索 <strong>Virtual network gateway</strong>
+创建一个新的<code>Virtual network gateway</code>
+<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-gateway-portal-include/create-gateway.png" alt=""></p>
+<p>注意：这里的public ip要记好，后面会用到.</p>
+<h2 id="create-the-local-network-gateway">Create the local network gateway</h2>
+<p>创建一个新的<code>local network gatewa</code>
+<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-local-network-gateway-portal-include/create-local-network-gateway.png" alt=""></p>
+<p><strong>图中的IP Address注意填写你的VPN设备的公网IP</strong></p>
+<h2 id="prepare-rras-server">Prepare RRAS server</h2>
+<p>在你本地作为VPN设备的服务器上，定位到<code>网络适配器</code>设置
+PS：VPN设备有两个网卡，一个对外一个对内。名称可以修改为<code>Internal</code>和<code>External</code>
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-13-34.png" alt=""></p>
+<p>右键Internal-属性,去掉ipv6的复选框
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-15-51.png" alt=""></p>
+<p>双击ipv4配置，删除默认网关的字段，DNS服务器指向你的DC
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-16-34.png" alt=""></p>
+<p>右键External-属性，去掉除开ipv4的其他所有复选框
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-19-24.png" alt=""></p>
+<p>双击ipv4配置,填写你的配置。
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-19-35.png" alt=""></p>
+<h2 id="add-rras-server-role">Add RRAS server role</h2>
+<p>在服务器管理面板-添加角色和功能
+找到远程访问功能，并勾选路由和DirecAccess&amp;VPN
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-22-03.png" alt=""></p>
+<p>等待安装完成之后,打开安装向导,选择仅部署VPN
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-28-52.png" alt=""></p>
+<p>在路由和远程访问页面，右键RRAS，选择<code>配置并启用路由和远程访问</code>
+选择自定义配置
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-29-21.png" alt=""></p>
+<p>勾选LAN路由和VPN访问
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-31-18.png" alt=""></p>
+<p>完成后点击启动服务即可
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-32-02.png" alt=""></p>
+<h2 id="configure-rras">Configure RRAS</h2>
+<p>在网络接口右键-新建请求拨号接口
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-33-45.png" alt=""></p>
+<p>名称随便写比如Azure，接口类型选择VPN，类型选择IKEv2
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-34-51.png" alt="">
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-35-37.png" alt=""></p>
+<p>目标地址请填写你Azure虚拟网关的public IP
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-36-51.png" alt=""></p>
+<p>在静态路由这里点击新建,目标地址依据个人Azure资源的而定
+<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-39-25.png" alt=""></p>
+<p>用户凭据这里只需填写一个用户名即可，因为认证是用的PSK</p>
+<p>最后，在你创建的<code>Azure</code>上右键属性
+在安全中选择使用PSK认证并填入你的psk即可
+右键Azure，选择连接，等待连接成功即可。</p>
+<h2 id="参考文档">参考文档</h2>
+<blockquote>
+<p><strong>https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal</strong>
+<strong>https://www.youtube.com/watch?v=bUeDVrVAiZ4</strong>
+<strong>https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal</strong></p>
+</blockquote>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tediorelee.github.io/post/tfs2019">
+              <h3 class="post-title">
+                Azure DevOps Server 2019 RC2 Installation
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

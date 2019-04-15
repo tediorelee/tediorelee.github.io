@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AD FS Customize UI SetUp | tediorelee&#39;s 漫游之歌～</title>
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1555315167605">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tediorelee.github.io">
+  <img class="avatar" src="https://tediorelee.github.io/images/avatar.png?v=1555315167605" alt="">
+  </a>
+  <h1 class="site-title">
+    tediorelee&#39;s 漫游之歌～
+  </h1>
+  <p class="site-description">
+    未来没有人能够预测
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              AD FS Customize UI SetUp
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-15 ·
+              </time>
+              
+                <a href="https://tediorelee.github.io/tag/e0FqaAlmZ" class="post-tags">
+                  # AD FS
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-23-48.png')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="前言">前言</h2>
+<blockquote>
+<p>微软自带的adfs主题ui说实话比较难看
+加上公司一般都有自己的设计要求
+所以大致总结一下adfs的ui设置</p>
+</blockquote>
+<!--more-->
+<h2 id="参考资料">参考资料</h2>
+<blockquote>
+<p><strong>http://blog.51cto.com/scnbwy/2174017</strong>
+<strong>http://blog.51cto.com/scnbwy/2174003</strong>
+<strong>https://blog.csdn.net/blackwolves/article/details/50995689</strong></p>
+</blockquote>
+<h2 id="更换login界面的渲染图和logo">更换login界面的渲染图和Logo</h2>
+<p><strong>图片尺寸要求如下:</strong></p>
+<p>左侧图片要求：1420X1080 ，最大200KB</p>
+<p>右侧logo要求：260X35，最大10KB</p>
+<p><code>powershell</code>命令如下：</p>
+<pre><code>Set-AdfsWebTheme -TargetName micromooc_custom -Illustration @{path=&quot;C:\micromooc_theme\illustration\left.png&quot;}
+Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_theme\illustration\logo.png&quot;}
+</code></pre>
+<p>效果如下：
+<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-23-48.png" alt=""></p>
+<h2 id="添加自助密码修改页面">添加自助密码修改页面</h2>
+<p>在服务器管理工具中找到ADFS管理-服务-终结点
+<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-11-49.png" alt=""></p>
+<p>在右侧窗口中最下方找到其他，可以看到有一个名字叫做<code>updatepasswd</code>的<code>endpoint</code>
+<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-12-06.png" alt=""></p>
+<p>右键它并选择启用即可
+管理员运行<code>powershell</code>
+我们通过在ADFS登录页面创建一个新的描述并设置一个超链接跳转到重置密码的页面即可
+在<code>powershell</code>中输入：</p>
+<p><code>Set-AdfsGlobalWebContent -SignInPageDescriptionText &quot;&lt;p&gt;提醒：为保障帐户安全，请确保您的密码符合复杂性要求，并定期更改您的密码。点击 &lt;A href='https://your_url/adfs/portal/updatepassword/'&gt;更改密码&lt;/A&gt;&lt;/p &gt;&quot;</code></p>
+<p>打开ADFS登录页面即可看到效果
+<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-18-43.png" alt=""></p>
+<h2 id="登录页面不用输入域名的实现方法">登录页面不用输入域名的实现方法</h2>
+<p>导出当前主题</p>
+<pre><code>Export-AdfsWebTheme -DirectoryPath C:\Theme -Name default
+</code></pre>
+<p>修改主题里的<code>onload.js</code>文件
+添加如下字段：</p>
+<pre><code>if (typeof Login != 'undefined') {
+    Login.submitLoginRequest = function () {
+        var u = new InputUtil();
+        var e = new LoginErrors();
+        var userName = document.getElementById(Login.userNameInput);
+        var password = document.getElementById(Login.passwordInput);
+        if (userName.value &amp;&amp; !userName.value.match('[@\\\\]')) {
+            var userNameValue = 'yourdomain.com\\' + userName.value;
+            document.forms['loginForm'].UserName.value = userNameValue;
+        }
+ 
+        if (!userName.value) {
+            u.setError(userName, e.userNameFormatError);
+            return false;
+        }
+ 
+ 
+        if (!password.value) {
+            u.setError(password, e.passwordEmpty);
+            return false;
+        }
+        document.forms['loginForm'].submit();
+        return false;
+    };
+}
+</code></pre>
+<p>PS:记得修改里面的<code>yourdomain.com</code>字段为你自己的</p>
+<p>更新修改到主题中</p>
+<pre><code>Set-AdfsWebTheme -TargetName default -AdditionalFileResource @{Uri=’/adfs/portal/script/onload.js’;path=&quot;C:\xxx\script\onload.js&quot;}
+</code></pre>
+<p>打开登录页
+只需要输入用户名就可以了，不用加上域名了
+<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-29-49.png" alt=""></p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tediorelee.github.io/post/s2s-vpn">
+              <h3 class="post-title">
+                Create a S2S VPN with Azure virtual Network
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
