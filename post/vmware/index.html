@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VMware与 Device&amp;Credential Guard不兼容的solution | tediorelee&#39;s 漫游之歌～</title>
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1555315859828">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tediorelee.github.io">
+  <img class="avatar" src="https://tediorelee.github.io/images/avatar.png?v=1555315859828" alt="">
+  </a>
+  <h1 class="site-title">
+    tediorelee&#39;s 漫游之歌～
+  </h1>
+  <p class="site-description">
+    未来没有人能够预测
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              VMware与 Device&amp;Credential Guard不兼容的solution
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-15 ·
+              </time>
+              
+                <a href="https://tediorelee.github.io/tag/2ec75jeIG" class="post-tags">
+                  # Other
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.loli.net/2019/04/15/5cb43bf3847b6.png')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="前言">前言</h2>
+<blockquote>
+<p>上学期间用的都是vmware
+上周想试试用一下HyperV
+结果发现不熟悉的东西确实不好
+结果在换回Vmware的时候，提示我无法启动了
+特此记录一下解决办法</p>
+</blockquote>
+<!--more-->
+<h2 id="参考文档">参考文档</h2>
+<blockquote>
+<p><strong>https://jingyan.baidu.com/article/da1091fb780e48027949d610.html</strong></p>
+<p><strong>https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage#turn-off-with-hardware-readiness-tool</strong></p>
+<p><strong>https://www.microsoft.com/download/details.aspx?id=53337</strong></p>
+</blockquote>
+<h2 id="报错信息">报错信息</h2>
+<p><img src="https://blog2019.pek3b.qingstor.com/vmware/2018-05-24-00_10_28-Windows-Server-2016_VM1-VMware-Workstation.png" alt=""></p>
+<h2 id="解决方案总结">解决方案总结</h2>
+<ul>
+<li><strong>关闭Win10的Hyper-V功能</strong></li>
+</ul>
+<p>在<strong>控制面板</strong>-<strong>卸载软件</strong>-<strong>开启/关闭windows功能</strong>处，找到HyperV功能，取消选中，保存并重启
+<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-41-00.png" alt=""></p>
+<ul>
+<li><strong>使用Windows官方docs里的Uninstall Tool</strong>
+<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-45-17.png" alt="">
+下载解压后
+用powershell定位到目录（ps：必须是管理员身份不然会报错）
+<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-45-35.png" alt=""></li>
+</ul>
+<p>运行*.ps1文件
+<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-46-02.png" alt=""></p>
+<p>完成之后重启一遍
+最后为了保险起见，手动关闭hyper服务的启动
+<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-46-19.png" alt=""></p>
+<p>大功告成，进入Vmware，是不是可以启动虚拟机了？
+<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-51-08.png" alt=""></p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tediorelee.github.io/post/deploy-skype-for-business-server-2019">
+              <h3 class="post-title">
+                Deploy Skype For Business Server 2019
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
