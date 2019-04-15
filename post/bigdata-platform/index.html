@@ -1,0 +1,753 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>大数据平台全生态搭建 | tediorelee&#39;s 漫游之歌～</title>
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1555314520629">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tediorelee.github.io">
+  <img class="avatar" src="https://tediorelee.github.io/images/avatar.png?v=1555314520629" alt="">
+  </a>
+  <h1 class="site-title">
+    tediorelee&#39;s 漫游之歌～
+  </h1>
+  <p class="site-description">
+    未来没有人能够预测
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              大数据平台全生态搭建
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-15 ·
+              </time>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.loli.net/2019/04/15/5cb4374756b9a.png')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="主要内容">主要内容</h2>
+<ol>
+<li>完成Hadoop/Hbase/Spark/kafka/flume/Mysql等工具的搭建工作</li>
+<li>并利用测试数据，测试相关内容</li>
+</ol>
+<!--more-->
+<h2 id="安装虚拟机">安装虚拟机</h2>
+<p>VMWARE安装ubuntu-server16.04，步骤略过</p>
+<h3 id="修改ubuntu的root用户名">修改Ubuntu的root用户名</h3>
+<p>输入<code>sudo passwd root</code>，键入你的本地用户密码，随后更新你的root用户密码</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac09d65105c.png" alt=""></p>
+<p>使用<code>su root</code>即可切换到root用户下</p>
+<h3 id="配置静态ip">配置静态IP</h3>
+<p>使用root身份编辑<code>/etc/network/interface</code>下的<code>eth0</code>网卡</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac09fa5c64a.png" alt=""></p>
+<p>以我本地网关为<code>192.168.6.1</code>为例，将虚拟机IP定为<code>192.168.6.22</code>，DNS填上本地电信的DNS</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0a317d82e.png" alt=""></p>
+<p>保存退出，使用命令<code>ifdown eth0</code>卸载网卡，再使用命令<code>ifup eth0</code>重新启用网卡即可使修改生效。</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0a50a0bda.png" alt=""></p>
+<p>这时候再用<code>ifconfig</code>查看网卡配置即可看到修改成功。</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0a6827f6d.png" alt=""></p>
+<h3 id="配置ssh登录">配置SSH登录</h3>
+<p>root用户下，使用命令<code>apt-get install ssh</code></p>
+<p>等待安装完成即可</p>
+<p>vim编辑<code>etc/ssh/sshd_config</code></p>
+<p>找到<code>PermitRootLogin</code>字段,修改为<code>yes</code></p>
+<p>保存退出</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0a84c7cb6.png" alt=""></p>
+<p><code>service ssh restart</code>重启ssh服务</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0adf0c397.png" alt=""></p>
+<p>使用ssh工具即可连接</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0af8412f6.png" alt=""></p>
+<h3 id="修改软件源">修改软件源</h3>
+<p>找到<a href="https://opsx.alibaba.com/mirror">阿里巴巴开源镜像站</a>里面的Ubuntu，点击后面的帮助</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0b1822858.png" alt=""></p>
+<p>选择你对应的Ubuntu版本，复制软件源信息，粘贴到<code>/etc/apt/sources.list</code>里</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0b334dfb8.png" alt=""></p>
+<p>保存退出即可，之后我们可以<code>apt-get update</code>一下，重新更新一下软件源</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0b4e08e03.png" alt=""></p>
+<h2 id="安装jdk">安装JDK</h2>
+<p>新建<code>mkdir /usr/local/jdk</code>文件夹</p>
+<p>使用Winscp工具上传jdk包到<code>/usr/local</code>文件夹里</p>
+<p><code>tar -zxvf jdkxxx.tar.gz</code>解压缩</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0b81b3c31.png" alt=""></p>
+<p>添加jdk的环境变量</p>
+<p>打开文件<code>vim /etc/profile</code>在末尾加上</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0b9bda116.png" alt=""></p>
+<pre><code>export JAVA_HOME=/usr/local/jdk/jdk1.8.0_201
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.ja$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin
+</code></pre>
+<p>保存并退出，<code>source /etc/profile</code>使其生效
+这时输入<code>java -version</code>即可查看到版本信息表示jdk安装成功</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0bb5f34c7.png" alt=""></p>
+<h2 id="配置ssh免密登录">配置SSH免密登录</h2>
+<p>这里的主机名我定义为<strong>master</strong></p>
+<p>修改<code>/etc/hosts</code>，把<strong>master</strong>的ip地址修改为<code>127.0.0.1</code>，保存退出</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0bfa8d0b9.png" alt=""></p>
+<p>进入<code>.ssh</code>文件夹，删除原有多余的公钥和私钥</p>
+<p><code>ssh-keygen</code>生成新的ssh密钥，一路回车确定</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0c19d61be.png" alt=""></p>
+<p>将公钥复制到<strong>authorized_keys</strong>里面</p>
+<pre><code>cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac0c30f1d03.png" alt=""></p>
+<p>测试登录，<code>ssh master</code></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0c4669e8c.png" alt=""></p>
+<p>成功实现ssh免密登录</p>
+<h2 id="安装hadoop">安装Hadoop</h2>
+<h3 id="介绍">介绍</h3>
+<blockquote>
+<p>Hadoop是一个由Apache基金会所开发的分布式系统基础架构。Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，而MapReduce则为海量的数据提供了计算。</p>
+<p>HDFS，Hadoop Distributed File System，是一个分布式文件系统，用来存储 Hadoop 集群中所有存储节点上的文件，包含一个 NameNode 和大量 DataNode。NameNode，它在 HDFS 内部提供元数据服务，负责管理文件系统名称空间和控制外部客户机的访问，决定是否将文件映射到 DataNode 上。DataNode，它为 HDFS 提供存储块，响应来自 HDFS 客户机的读写请求。</p>
+<p>MapReduce是一种编程模型，用于大规模数据集的并行运算。概念&quot;Map（映射）“和&quot;Reduce（归约）”，是它们的主要思想，即指定一个Map（映射）函数，用来把一组键值对映射成一组新的键值对，指定并发的Reduce（归约）函数，用来保证所有映射的键值对中的每一个共享相同的键组。</p>
+</blockquote>
+<p>在<code>/usr/local</code>中新建<code>hadoop</code>文件夹，使用winscp上传hadoop安装包</p>
+<p>解压缩hadoop<code>tar -zxvf hadoop-2.6.4.tar.gz</code></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac0c7feff1e.png" alt=""></p>
+<h3 id="配置环境变量">配置环境变量</h3>
+<p><code>vim /etc/profile</code>，后面加上</p>
+<pre><code>export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export
+CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac0c9793d5c.png" alt=""></p>
+<p><code>source /etc/profile</code>使其生效</p>
+<p>编辑<code>hadoop-env.sh、mapred-env.sh、yarn-env.sh</code>文件，修改<code>JAVA_HOME</code>参数为</p>
+<pre><code>export JAVA_HOME=&quot;/usr/local/jdk&quot;
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac0cae3f607.png" alt=""></p>
+<h3 id="配置core-sitexml">配置core-site.xml</h3>
+<p><code>vim {HADOOP_HOME}/etc/hadoop/core-site.xml</code></p>
+<p>修改为：</p>
+<pre><code>&lt;configuration&gt;
+	&lt;property&gt;
+&lt;name&gt;fs.defaultFS&lt;/name&gt;
+&lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+	&lt;/property&gt;
+	&lt;property&gt;
+   &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/usr/local/data&lt;/value&gt;
+	&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac0cc6079e4.png" alt=""></p>
+<p><strong>注意</strong>：这里的<code>hadoop.tmp.dir</code>修改为自己创建的临时文件存放目录</p>
+<h3 id="配置hdfs-sitexml">配置hdfs-site.xml</h3>
+<p><code>vim ${HADOOP_HOME}/etc/hadoop/hdfs-site.xml</code></p>
+<p>修改为：</p>
+<pre><code>&lt;configuration&gt;
+&lt;property&gt;
+  &lt;name&gt;dfs.name.dir&lt;/name&gt;
+  &lt;value&gt;/usr/local/data/namenode&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dfs.data.dir&lt;/name&gt;
+  &lt;value&gt;/usr/local/data/datanode&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;dfs.replication&lt;/name&gt;
+  &lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac0d1732149.png" alt=""></p>
+<p><strong>注意</strong>：因为这里是伪分布式环境只有一个节点，所以这里设置为1</p>
+<h3 id="配置mapred-sitexml">配置mapred-site.xml</h3>
+<p>修改文件名</p>
+<p><code>cp mapred-site.xml.template mapred-site.xml</code></p>
+<p><code>vim ${HADOOP_HOME}/etc/hadoop/mapred-site.xml</code></p>
+<pre><code>&lt;configuration&gt;
+&lt;property&gt;
+  &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+  &lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac0d8a7317a.png" alt=""></p>
+<h3 id="配置yarn-sitexml">配置yarn-site.xml</h3>
+<p><code>vim ${HADOOP_HOME}/etc/hadoop/yarn-site.xml</code></p>
+<pre><code>&lt;configuration&gt;
+&lt;!-- Site specific YARN configuration properties --&gt;
+&lt;property&gt;
+  &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+  &lt;value&gt;master&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;              
+  &lt;value&gt;mapreduce_shuffle&lt;/value&gt;     
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac136863441.png" alt=""></p>
+<h3 id="测试">测试</h3>
+<ul>
+<li>格式化hdfs</li>
+</ul>
+<p><code>hdfs namenode –format</code></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac137f2dba0.png" alt=""></p>
+<ul>
+<li>启动hdfs</li>
+</ul>
+<pre><code>root@bigdata-platform:/usr/local# cd /usr/local/hadoop/hadoop-2.7.7/
+root@bigdata-platform:/usr/local/hadoop/hadoop-2.7.7# sbin/start-dfs.sh
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac158d47114.png" alt=""></p>
+<ul>
+<li>启动yarn</li>
+</ul>
+<pre><code>root@bigdata-platform:/usr/local/hadoop/hadoop-2.7.7# sbin/start-yarn.sh
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac15b8ab4c8.png" alt=""></p>
+<ul>
+<li>jps查看</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/09/5cac15cbbd1d1.png" alt=""></p>
+<p>可以看到所有节点都启动成功，打开<code>http://192.168.6.22:50070</code>可以查看可视化页面。</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac15f1f0b6a.png" alt=""></p>
+<p>到此为止，HADOOP的安装就完成了。</p>
+<h2 id="安装hive">安装Hive</h2>
+<h3 id="介绍-2">介绍</h3>
+<blockquote>
+<p>Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的sql查询功能，可以将sql语句转换为MapReduce任务进行运行。 其优点是学习成本低，可以通过和SQL类似的HiveQL语言快速实现简单的MapReduce统计,不必开发专门的MapReduce应用，十分适合数据仓库的统计分析。同时，这个语言也允许熟悉 MapReduce 开发者的开发自定义的 mapper 和 reducer 来处理内建的 mapper 和 reducer 无法完成的复杂的分析工作。</p>
+<p>Hive 没有专门的数据格式。所有Hive 的数据都存储在Hadoop兼容的文件系统（例如HDFS）中。Hive 在加载数据过程中不会对数据进行任何的修改，只是将数据移动到HDFS中Hive 设定的目录下，因此，Hive 不支持对数据的改写和添加，所有的数据都是在加载的时候确定的。</p>
+</blockquote>
+<h3 id="环境配置">环境配置</h3>
+<p><strong>注意</strong>：Hive只需要在master节点上安装配置</p>
+<p>在<code>usr/local</code>下新建hive文件夹，使用winscp上传hive安装包</p>
+<p><code>cd /usr/local/hive</code>进入hive文件夹，使用<code>tar -zxvf apache-hive-2.3.4-bin.tar.gz</code>解压</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac1627b07ab.png" alt=""></p>
+<p><strong>添加Hive环境变量</strong></p>
+<p>在<code>etc/profile</code>中，添加</p>
+<pre><code>export JAVA_HOME=/usr/local/java/jdk1.8.0_191
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin
+
+</code></pre>
+<p>和原有的变量整合一下，如图</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac163e4b5d2.png" alt=""></p>
+<p><code>source /etc/profile</code>保存一下即可</p>
+<h3 id="配置hive-sitexml">配置hive-site.xml</h3>
+<p>进入hive文件夹，复制一份<strong>hive-site.xml</strong></p>
+<pre><code>cp hive-default.xml.template   hive-site.xml
+
+</code></pre>
+<p>由于<strong>hive-site.xml</strong>文件过长，最好复制到虚拟机外修改之后再拷贝回来</p>
+<pre><code> &lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;
+    &lt;value&gt;jdbc:mysql://master:3306/hive_metadata?createDatabaseIfNotExist=true&lt;/value&gt;
+    &lt;description&gt;
+      JDBC connect string for a JDBC metastore.
+      To use SSL to encrypt/authenticate the connection, provide database-specific SSL flag in the connection URL.
+      For example, jdbc:postgresql://myhost/db?ssl=true for postgres database.
+    &lt;/description&gt;
+ &lt;/property&gt;
+ 
+ &lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;
+    &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
+    &lt;description&gt;Driver class name for a JDBC metastore&lt;/description&gt;
+ &lt;/property&gt;
+  
+ &lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;
+    &lt;value&gt;hive&lt;/value&gt;
+    &lt;description&gt;Username to use against metastore database&lt;/description&gt;
+ &lt;/property&gt;
+    
+ &lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;
+    &lt;value&gt;hive&lt;/value&gt;
+    &lt;description&gt;password to use against metastore database&lt;/description&gt;
+ &lt;/property&gt;
+
+ &lt;property&gt;
+    &lt;name&gt;hive.querylog.location&lt;/name&gt;
+    &lt;value&gt;/usr/local/hive/hive-2.3.4/tmp/hadoop&lt;/value&gt;
+    &lt;description&gt;Location of Hive run time structured log file&lt;/description&gt;
+  &lt;/property&gt;
+ 
+  &lt;property&gt;
+    &lt;name&gt;hive.server2.logging.operation.log.location&lt;/name&gt;
+    &lt;value&gt;/usr/local/hive/hive-2.3.4/tmp/hadoop/operation_logs&lt;/value&gt;
+    &lt;description&gt;Top level directory where operation logs are stored if logging functionality is enabled&lt;/description&gt;
+  &lt;/property&gt;
+  
+  &lt;property&gt;
+    &lt;name&gt;hive.exec.local.scratchdir&lt;/name&gt;
+    &lt;value&gt;/usr/local/hive/hive-2.3.4/tmp/hadoop&lt;/value&gt;
+    &lt;description&gt;Local scratch space for Hive jobs&lt;/description&gt;
+  &lt;/property&gt;
+  
+  &lt;property&gt;
+    &lt;name&gt;hive.downloaded.resources.dir&lt;/name&gt;
+    &lt;value&gt;/usr/local/hive/hive-2.3.4/tmp/${hive.session.id}_resources&lt;/value&gt;
+    &lt;description&gt;Temporary local directory for added resources in the remote file system.&lt;/description&gt;
+  &lt;/property&gt;
+  
+  &lt;property&gt;
+    &lt;name&gt;hive.metastore.schema.verification&lt;/name&gt;
+    &lt;value&gt;false&lt;/value&gt;
+    &lt;description&gt;
+      Enforce metastore schema version consistency.
+      True: Verify that version information stored in is compatible with one from Hive jars.  Also disable automatic
+            schema migration attempt. Users are required to manually migrate schema after Hive upgrade which ensures
+            proper metastore schema migration. (Default)
+      False: Warn if the version information stored in metastore doesn't match with one from in Hive jars.
+    &lt;/description&gt;
+  &lt;/property&gt;
+
+</code></pre>
+<h3 id="配置hive-envsh文件">配置hive-env.sh文件</h3>
+<p>复制一份配置文件</p>
+<pre><code>cp hive-env.sh.template hive-env.sh
+
+</code></pre>
+<p>找到如下位置，做对应修改</p>
+<pre><code># Set HADOOP_HOME to point to a specific hadoop install directory
+HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+
+# Hive Configuration Directory can be controlled by:
+export HIVE_CONF_DIR=/usr/local/hive/hive-2.3.4/conf
+
+# Folder containing extra libraries required for hive compilation/execution can be controlled by:
+# export HIVE_AUX_JARS_PATH=
+export JAVA_HOME=/usr/local/java/jdk1.8.0_201
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+</code></pre>
+<p>如图所示：</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac16eb109b4.png" alt=""></p>
+<h3 id="下载mysql-connector-javajar">下载mysql-connector-java.jar</h3>
+<p>将该jar包放进<code>/usr/local/hive/hive-2.3.4/lib/</code>中即可</p>
+<h3 id="安装并配置mysql">安装并配置mysql</h3>
+<p>安装mysql-server</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac1704194cb.png" alt=""></p>
+<p>完成之后，<code>systemctl status mysql.service</code>可以查看当前状态</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac172ee68ce.png" alt=""></p>
+<h3 id="mysql上创建hive元数据库创建hive账号并进行授权">Mysql上创建hive元数据库，创建hive账号，并进行授权</h3>
+<h2 id="安装zookeeper">安装Zookeeper</h2>
+<h3 id="介绍-3">介绍</h3>
+<blockquote>
+<p>ZooKeeper是一个分布式的应用程序协调服务，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。其目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
+<p>ZooKeeper是一个分布式的应用程序协调服务，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。其目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
+<p>那么Zookeeper能做什么事情呢？举个简单的例子：假设我们有20个搜索引擎的服务器(每个负责总索引中的一部分的搜索任务)和一个总服务器(负责向这20个搜索引擎的服务器发出搜索请求并合并结果集)，一个备用的总服务器(负责当总服务器宕机时替换总服务器)，一个web的cgi(向总服务器发出搜索请求)。搜索引擎的服务器中的15个服务器提供搜索服务，5个服务器正在生成索引。这20个搜索引擎的服务器经常要让正在提供搜索服务的服务器停止提供服务开始生成索引，或生成索引的服务器已经把索引生成完成可以提供搜索服务了。使用Zookeeper可以保证总服务器自动感知有多少提供搜索引擎的服务器并向这些服务器发出搜索请求，当总服务器宕机时自动启用备用的总服务器。</p>
+</blockquote>
+<h3 id="环境配置-2">环境配置</h3>
+<p>使用winscp上传zookeeper安装包</p>
+<p>新建文件夹<code>mkdir zookeeper</code></p>
+<p>解压缩<code>tar -zxvf zookeeper-3.4.10.tar.gz</code></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2be852fc3.png" alt=""></p>
+<p>编辑<code>vim /etc/profile</code>，对比添加和修改：</p>
+<pre><code>export JAVA_HOME=/usr/local/java/jdk1.8.0_191
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$ZOOKEEPER_HOME/bin
+
+</code></pre>
+<p>如图所示：</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2c2ce9312.png" alt=""></p>
+<p>保存退出并<code>source /etc/profile</code>使其生效</p>
+<h3 id="配置zoocfg文件">配置zoo.cfg文件</h3>
+<pre><code>cd /usr/local/zookeeper/zookeeper-3.4.10/conf
+cp zoo_sample.cfg zoo.cfg
+
+</code></pre>
+<p>将datadir修改为自己的地址，并在文件末尾加上如图所示字段</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2cf42fc03.png" alt=""></p>
+<h3 id="配置myid文件">配置myid文件</h3>
+<pre><code>cd ..
+mkdir data 
+cd data
+vim myid
+
+</code></pre>
+<p>在myid文件中输入<code>0</code>即可</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2d8bdf835.png" alt=""></p>
+<h3 id="测试-2">测试</h3>
+<p>在<code>usr/local/zookeeper/zookeeper-3.4.10</code>目录中</p>
+<p>输入<code>bin/zkServer.sh start</code>即可启动zookeeper服务</p>
+<p>jps查看，有QuromPeerMain进程表示启动成功。</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2e3a5b712.png" alt=""></p>
+<h2 id="安装kafka">安装Kafka</h2>
+<h3 id="介绍-4">介绍</h3>
+<blockquote>
+<p>Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者规模的网站中的所有动作流数据。Producer即生产者，向Kafka集群发送消息，在发送消息之前，会对消息进行分类，即主题（Topic），通过对消息指定主题可以将消息分类，消费者可以只关注自己需要的Topic中的消息。Consumer，即消费者，消费者通过与kafka集群建立长连接的方式，不断地从集群中拉取消息，然后可以对这些消息进行处理。</p>
+</blockquote>
+<h3 id="安装scala">安装Scala</h3>
+<p>Kafka由Java和Scala编写，所以我们先要安装配置Scala</p>
+<pre><code>cd /usr/local
+mkdir scala
+cd scala/
+#用winscp把scala安装包上传到该文件夹并解压
+tar -zxvf scala-2.11.8.tgz
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac2f658ca90.png" alt=""></p>
+<h3 id="配置环境变量-2">配置环境变量</h3>
+<p>进入<code>vim /etc/profile</code>，对比修改：</p>
+<pre><code>export JAVA_HOME=/usr/local/java/jdk1.8.0_191
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10
+export SCALA_HOME=/usr/local/scala/scala-2.11.8
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$ZOOKEEPER_HOME/bin:$SCALA_HOME/bin
+
+</code></pre>
+<p>如图所示：</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2f847e2cc.png" alt=""></p>
+<p>保存退出并<code>source /etc/profile</code>使其生效</p>
+<p>验证是否安装成功，输入<code>scala -version</code>即可查看版本信息</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2f9c8b962.png" alt=""></p>
+<h3 id="配置kafka">配置Kafka</h3>
+<p>创建目录，把压缩包用winscp上传</p>
+<pre><code>mkdir kafka
+cd kafka
+tar -zxvf kafka_2.11-2.1.0.tgz
+mv kafka_2.11-2.1.0 kafka-2.1.0
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac2fc48d4f5.png" alt=""></p>
+<h3 id="修改serverproperties文件">修改server.properties文件</h3>
+<p><code>vim kafka-2.1.0/config/server.properties</code></p>
+<p>找到如下字段并对应修改</p>
+<pre><code>broker.id=0
+listeners=PLAINTEXT://192.168.6.22:9092
+advertised.listeners=PLAINTEXT://192.168.6.22:9092
+zookeeper.connect=192.168.6.22:2181
+
+</code></pre>
+<p>如图</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac2fe843ebb.png" alt=""></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac3006eb331.png" alt=""></p>
+<h3 id="测试-3">测试</h3>
+<p>启动kafka</p>
+<pre><code>cd kafka/kafka-2.1.0/
+bin/kafka-server-start.sh config/server.properties &amp;
+
+</code></pre>
+<p>jps查看进程</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac301f3c759.png" alt=""></p>
+<h2 id="安装flume">安装Flume</h2>
+<h3 id="介绍-5">介绍</h3>
+<blockquote>
+<p>Flume是Cloudera提供的一个高可用的，高可靠的，分布式的海量日志采集、聚合和传输的系统，Flume支持在日志系统中定制各类数据发送方，用于收集数据；同时，Flume提供对数据进行简单处理，并写到各种数据接受方（可定制）的能力。Flume提供了从console（控制台）、RPC（Thrift-RPC）、text（文件）、tail（UNIX tail）、syslog（syslog日志系统），支持TCP和UDP等2种模式），exec（命令执行）等数据源上收集数据的能力。</p>
+<p>使用Flume，我们可以将从多个服务器中获取的数据迅速的移交给Hadoop中，可以高效率的将多个网站服务器中收集的日志信息存入HDFS/HBase中。</p>
+</blockquote>
+<h3 id="环境配置-3">环境配置</h3>
+<p>创建目录，使用winscp把压缩包上传</p>
+<pre><code>mkdir flume
+cd flume
+tar -zxvf apache-flume-1.8.0-bin.tar.gz 
+mv apache-flume-1.8.0-bin flume-1.8.0
+
+</code></pre>
+<p>如图：</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac30389c66e.png" alt=""></p>
+<p>打开<code>vim /etc/profile</code>，如下修改</p>
+<pre><code>export JAVA_HOME=/usr/local/java/jdk1.8.0_210
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10
+export SCALA_HOME=/usr/local/scala/scala-2.11.8
+export FLUME_HOME=/usr/local/flume/flume-1.8.0
+export FLUME_CONF_DIR=$FLUME_HOME/conf
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$ZOOKEEPER_HOME/bin:$SCALA_HOME/bin:$FLUME_HOME/bin
+
+</code></pre>
+<p>如图所示：</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac305539db5.png" alt=""></p>
+<p><code>source /etc/profile</code>使其生效</p>
+<h3 id="修改flume-confproperties">修改flume-conf.properties</h3>
+<pre><code>cd flume-1.8.0/conf
+cp flume-conf.properties.template flume-conf.properties
+
+</code></pre>
+<p><code>vim flume-conf.properties</code>在文件最后加上如下内容：</p>
+<pre><code>#agent1表示代理名称
+agent1.sources=source1
+agent1.sinks=sink1
+agent1.channels=channel1
+#配置source1
+agent1.sources.source1.type=spooldir
+agent1.sources.source1.spoolDir=/usr/local/flume/logs
+agent1.sources.source1.channels=channel1
+agent1.sources.source1.fileHeader = false
+agent1.sources.source1.interceptors = i1
+agent1.sources.source1.interceptors.i1.type = timestamp
+#配置channel1
+agent1.channels.channel1.type=file
+agent1.channels.channel1.checkpointDir=/usr/local/flume/logs_tmp_cp
+agent1.channels.channel1.dataDirs=/usr/local/flume/logs_tmp
+#配置sink1
+agent1.sinks.sink1.type=hdfs
+agent1.sinks.sink1.hdfs.path=hdfs://master:9000/logs
+agent1.sinks.sink1.hdfs.fileType=DataStream
+agent1.sinks.sink1.hdfs.writeFormat=TEXT
+agent1.sinks.sink1.hdfs.rollInterval=1
+agent1.sinks.sink1.channel=channel1
+agent1.sinks.sink1.hdfs.filePrefix=%Y-%m-%d
+
+</code></pre>
+<p>因为上面监听的文件夹是<code>usr/local/flume/logs</code>所以我们要手动创建</p>
+<pre><code>cd /usr/local/flume
+mkdir logs
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac306e31d14.png" alt=""></p>
+<p>上面的配置文件中 <code>agent1.sinks.sink1.hdfs.path=hdfs://master:9000/logs</code>下，即将监听到的<code>/usr/local/flume/logs</code>下的文件自动上传到hdfs的<code>/logs</code>下，所以我们要手动创建hdfs下的目录</p>
+<pre><code>hdfs dfs -mkdir /logs 
+</code></pre>
+<p>未完待续….</p>
+<h2 id="安装hbase">安装Hbase</h2>
+<h3 id="介绍-6">介绍</h3>
+<blockquote>
+<p>HBase – Hadoop Database，是一个高可靠性、高性能、面向列、可伸缩的分布式存储系统。Hadoop HDFS为HBase提供了高可靠性的底层存储支持，Hadoop MapReduce为HBase提供了高性能的计算能力，Zookeeper为HBase提供了稳定服务和failover机制。</p>
+</blockquote>
+<h3 id="环境配置-4">环境配置</h3>
+<p>创建目录，使用winscp将压缩包上传</p>
+<pre><code>mkdir hbase
+cd hbase
+tar -zxvf hbase-2.1.1-bin.tar.gz
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac310163575.png" alt=""></p>
+<p>打开<code>vim /etc/profile</code>环境变量</p>
+<pre><code>export JAVA_HOME=/usr/local/java/jdk1.8.0_210
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10
+export SCALA_HOME=/usr/local/scala/scala-2.11.8
+export FLUME_HOME=/usr/local/flume/flume-1.8.0
+export FLUME_CONF_DIR=$FLUME_HOME/conf
+export HBASE_HOME=/usr/local/hbase/hbase-2.1.1
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$ZOOKEEPER_HOME/bin:$SCALA_HOME/bin:$FLUME_HOME/bin:$HBASE_HOME/bin
+
+</code></pre>
+<p>如图所示</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac3193bdd8a.png" alt=""></p>
+<p>保存退出并<code>source /etc/profile</code>使其生效</p>
+<h3 id="配置hbase-envsh">配置hbase-env.sh</h3>
+<pre><code>cd hbase-2.1.1/conf
+vim hbase-env.sh
+
+#后面添加如下字段
+export JAVA_HOME=/usr/local/java/jdk1.8.0_210
+export HBASE_LOG_DIR=${HBASE_HOME}/logs 
+export HBASE_MANAGES_ZK=false
+
+</code></pre>
+<p>如图</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac31b765090.png" alt=""></p>
+<h3 id="配置hbase-sitexml">配置hbase-site.xml</h3>
+<p>编辑<code>vim hbase-site.xml</code></p>
+<pre><code>&lt;configuration&gt;
+&lt;property&gt; 
+    &lt;name&gt;hbase.rootdir&lt;/name&gt; 
+    &lt;value&gt;hdfs://master:9000/hbase&lt;/value&gt; 
+  &lt;/property&gt; 
+  &lt;property&gt; 
+    &lt;name&gt;hbase.cluster.distributed&lt;/name&gt; 
+    &lt;value&gt;true&lt;/value&gt; 
+  &lt;/property&gt; 
+  &lt;property&gt; 
+    &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt; 
+    &lt;value&gt;master,slave1,slave2&lt;/value&gt; 
+  &lt;/property&gt; 
+  &lt;property&gt; 
+    &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt; 
+    &lt;value&gt;/usr/local/zookeeper/zookeeper-3.4.10/data&lt;/value&gt; 
+  &lt;/property&gt; 
+  &lt;property&gt; 
+    &lt;name&gt;hbase.master&lt;/name&gt; 
+    &lt;value&gt;hdfs://master:60000&lt;/value&gt; 
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;hbase.master.info.port&lt;/name&gt;
+    &lt;value&gt;16010&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;hbase.regionserver.info.port&lt;/name&gt;
+    &lt;value&gt;16030&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac31d484fb2.png" alt=""></p>
+<h3 id="配置regionservers文件">配置regionservers文件</h3>
+<p>因为我这里只有一个master节点，故文件里只修改master</p>
+<pre><code>vim regionservers 
+master
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac31f5d19b3.png" alt=""></p>
+<h3 id="测试-4">测试</h3>
+<pre><code>cd hbase/hbase-2.1.1
+bin/start-hbase.sh   
+jps
+
+</code></pre>
+<p>查看是否启动了<strong>HMaster</strong>和<strong>HRegionServer</strong>，如图所示</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac320ebc60f.png" alt=""></p>
+<h2 id="安装spark">安装Spark</h2>
+<h3 id="介绍-7">介绍</h3>
+<blockquote>
+<p>Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎，是类似于Hadoop MapReduce的通用并行框架。Spark拥有Hadoop MapReduce所具有的优点，但不同于MapReduce的是——Job中间输出结果可以保存在内存中，从而不再需要读写HDFS，因此Spark能更好地适用于数据挖掘与机器学习等需要迭代的MapReduce的算法。Spark实际上是对Hadoop的一种补充，可以很好的在Hadoop 文件系统中并行运行。</p>
+</blockquote>
+<h3 id="环境配置-5">环境配置</h3>
+<p>创建目录，使用winscp将压缩包上传</p>
+<pre><code>mkdir spark
+cd spark
+tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz 
+mv spark-2.4.0-bin-hadoop2.7 spark-2.4.0
+
+</code></pre>
+<p><img src="https://i.loli.net/2019/04/09/5cac32255d68f.png" alt=""></p>
+<p>修改系统变量</p>
+<pre><code>vim /etc/profile
+export JAVA_HOME=/usr/local/jdk/jdk1.8.0_201
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HIVE_HOME=/usr/local/hive/hive-2.3.4
+export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.4.10
+export SCALA_HOME=/usr/local/scala/scala-2.11.8
+export FLUME_HOME=/usr/local/flume/flume-1.8.0
+export FLUME_CONF_DIR=$FLUME_HOME/conf
+export HBASE_HOME=/usr/local/hbase/hbase-2.1.1
+export SPARK_HOME=/usr/local/spark/spark-2.4.0
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$ZOOKEEPER_HOME/bin:$SCALA_HOME/bin:$FLUME_HOME/bin:$HBASE_HOME/bin:$SPARK_HOME/bin
+
+</code></pre>
+<p>保存退出并<code>source /etc/profile</code></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac323a76b22.png" alt=""></p>
+<h3 id="配置spark-envsh文件">配置spark-env.sh文件</h3>
+<pre><code>cd spark-2.4.0/conf/
+cp spark-env.sh.template spark-env.sh
+vim spark-env.sh 
+#
+export JAVA_HOME=/usr/local/jdk/jdk1.8.0_201
+export SCALA_HOME=/usr/local/scala/scala-2.11.8
+export HADOOP_HOME=/usr/local/hadoop/hadoop-2.7.7
+export HADOOP_CONF_DIR=/usr/local/hadoop/hadoop-2.7.7/etc/hadoop
+</code></pre>
+<h3 id="配置slaves文件">配置slaves文件</h3>
+<pre><code>mv slaves.template slaves
+vim slaves
+master
+</code></pre>
+<p>如图所示：</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac3266773cb.png" alt=""></p>
+<p>打开浏览器<strong>http://192.168.6.22:8080/</strong></p>
+<p><img src="https://i.loli.net/2019/04/09/5cac32a8d2fb6.png" alt=""></p>
+<h3 id="测试-5">测试</h3>
+<p>使用Spark自带的计算圆周率做测试</p>
+<pre><code>./bin/spark-submit  \
+--class  org.apache.spark.examples.SparkPi  \
+--master  local  \
+examples/jars/spark-examples_2.11-2.4.0.jar
+</code></pre>
+<p>在控制台中可以找到输出的结果</p>
+<p><img src="https://i.loli.net/2019/04/09/5cac32c7b9e27.png" alt=""></p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tediorelee.github.io/post/azurevpn-osx">
+              <h3 class="post-title">
+                How to connect Azure Vnet on OSX
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

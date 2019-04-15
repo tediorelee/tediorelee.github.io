@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to connect Azure Vnet on OSX | tediorelee&#39;s 漫游之歌～</title>
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1555314520629">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tediorelee.github.io">
+  <img class="avatar" src="https://tediorelee.github.io/images/avatar.png?v=1555314520629" alt="">
+  </a>
+  <h1 class="site-title">
+    tediorelee&#39;s 漫游之歌～
+  </h1>
+  <p class="site-description">
+    未来没有人能够预测
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              How to connect Azure Vnet on OSX
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-04-15 ·
+              </time>
+              
+                <a href="https://tediorelee.github.io/tag/x6J1TFbCJ" class="post-tags">
+                  # Azure
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://i.loli.net/2019/04/15/5cb4351110030.png')">
+              </div>
+            
+            <div class="post-content">
+              <h1 id="how-to-connect-azure-vnet-on-osx">How to connect Azure Vnet on OSX</h1>
+<h2 id="intro">Intro</h2>
+<blockquote>
+<p>Company decided to use certificate as the authentication to our cloud resources , unlike the windows , OSX must manually set up the IKeV2 VPN</p>
+</blockquote>
+<!--more-->
+<h2 id="step-1">Step 1</h2>
+<p>Download your installation scripts on Azure Portal</p>
+<p>Open the folder &quot;<strong>Generic</strong>&quot;</p>
+<p>find the file &quot;<strong>vpnSettings.xml</strong>&quot;and the &quot;<strong>VpnServerRoot.cer</strong>&quot;</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab095c10f8a.png" alt=""></p>
+<p>Import the &quot;<strong>VpnServerRoot.cer</strong>&quot; and open the  &quot;<strong>vpnSettings.xml</strong>&quot;</p>
+<p>Copy the &quot;<strong>vpnserver</strong>&quot; name , like this :</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0a288e95e.png" alt=""></p>
+<h2 id="step-2">Step 2</h2>
+<p>Import your xx.pfx certificate that your selfsigned</p>
+<p>In OSX, open <strong>Keychains</strong> and on the left side select <strong>Certificates</strong></p>
+<p>You can see all the certificates you imported</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0b1080c02.png" alt=""></p>
+<h2 id="step-3">Step 3</h2>
+<p>Open <strong>System Preference</strong></p>
+<p>Select <strong>Network</strong></p>
+<p>Click the &quot;<strong>+</strong>&quot; on the bottom to add a new configuration and settings like this:</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0c406d909.png" alt=""></p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0c6cc37b8.png" alt=""></p>
+<p>Click <strong>Create</strong> to create a new IKEv2 VPN connection</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0d17f0034.png" alt=""></p>
+<p>In the <strong>Server Address</strong> and <strong>Remote ID</strong> fill in the <strong>vpnname</strong> copied in the <strong>vpnSettings.xml</strong></p>
+<p>Like this:</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0db419128.png" alt=""></p>
+<p>Go to the <strong>Authenticaion Settings</strong></p>
+<p>Choose type as <strong>Certificate</strong></p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0e1817f98.png" alt=""></p>
+<p>And select your Certificate click <strong>Continue</strong></p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0e6824cb3.png" alt=""></p>
+<p>In the <strong>Local ID</strong>  fill in your Certificate name like this</p>
+<p><img src="https://i.loli.net/2019/04/08/5cab0ea869ae6.png" alt=""></p>
+<p>Click <strong>Apply</strong></p>
+<p>After this click <strong>Connect</strong> and if nothing's wrong , you can connect to your Azure Vnet!</p>
+<h2 id="reference-link">Reference link</h2>
+<blockquote>
+<p><strong>https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-how-to-vpn-client-install-azure-cert</strong></p>
+</blockquote>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tediorelee.github.io/post/passwd-policy">
+              <h3 class="post-title">
+                Update Domain Password Policy
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
