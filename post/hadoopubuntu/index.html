@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>🌈AD FS Customize UI SetUp | Fire and Blood 🔥</title>
+<title>🌈Hadoop+Ubuntu伪分布式搭建 | Fire and Blood 🔥</title>
 <link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556004195907">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
@@ -141,99 +141,139 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-23-48.png">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbebd3f02eb1.png">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2019-04-15 ·</span> <span> / </span>
+          <span class="date">· 2018-04-03 ·</span> <span> / </span>
           <span class="author">
             <a href="https://tediorelee.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://tediorelee.github.io/tag/e0FqaAlmZ">AD FS</a>
+                    <a href="https://tediorelee.github.io/tag/sYpHDKKCm">Bigdata</a>
                 </span>
           
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>🌈AD FS Customize UI SetUp</h1>
+          <h1 class='entry-title'>🌈Hadoop+Ubuntu伪分布式搭建</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
               <blockquote>
-<p>How to Customize AD FS UI</p>
+<p>School Work</p>
 </blockquote>
 <!--more-->
-<h2 id="参考资料">参考资料</h2>
-<blockquote>
-<p><strong>http://blog.51cto.com/scnbwy/2174017</strong>
-<strong>http://blog.51cto.com/scnbwy/2174003</strong>
-<strong>https://blog.csdn.net/blackwolves/article/details/50995689</strong></p>
-</blockquote>
-<h2 id="更换login界面的渲染图和logo">更换login界面的渲染图和Logo</h2>
-<p><strong>图片尺寸要求如下:</strong></p>
-<p>左侧图片要求：1420X1080 ，最大200KB</p>
-<p>右侧logo要求：260X35，最大10KB</p>
-<p><code>powershell</code>命令如下：</p>
-<pre><code>Set-AdfsWebTheme -TargetName micromooc_custom -Illustration @{path=&quot;C:\micromooc_theme\illustration\left.png&quot;}
-Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_theme\illustration\logo.png&quot;}
+<h2 id="前期准备">前期准备</h2>
+<p>ubuntu server需要安装好ssh客户端，在<code>/etc/ssh/sshd_config</code>里修改permissionrootlogin参数为yes
+这样就可以使用root账户直接登录了
+将准备好的jdk和hadoop安装包使用winscp上传到ubuntu里</p>
+<h2 id="安装jdk">安装JDK</h2>
+<p>解压缩jdk安装包，使用命令<code>tar -zxvf jdk1.8.0_121.tar.gz</code>
+我解压到的是<code>/home/hadoop/jdk1.8.0_121</code>路径
+此处图片
+添加jdk环境变量
+打开文件<code>vim /etc/profile</code>在末尾加上</p>
+<pre><code>export JAVA_HOME=&quot;/home/hadoop/jdk1.8.0_121&quot;
+export PATH=$JAVA_HOME/bin:$PATH
 </code></pre>
-<p>效果如下：
-<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-23-48.png" alt=""></p>
-<h2 id="添加自助密码修改页面">添加自助密码修改页面</h2>
-<p>在服务器管理工具中找到ADFS管理-服务-终结点
-<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-11-49.png" alt=""></p>
-<p>在右侧窗口中最下方找到其他，可以看到有一个名字叫做<code>updatepasswd</code>的<code>endpoint</code>
-<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-12-06.png" alt=""></p>
-<p>右键它并选择启用即可
-管理员运行<code>powershell</code>
-我们通过在ADFS登录页面创建一个新的描述并设置一个超链接跳转到重置密码的页面即可
-在<code>powershell</code>中输入：</p>
-<p><code>Set-AdfsGlobalWebContent -SignInPageDescriptionText &quot;&lt;p&gt;提醒：为保障帐户安全，请确保您的密码符合复杂性要求，并定期更改您的密码。点击 &lt;A href='https://your_url/adfs/portal/updatepassword/'&gt;更改密码&lt;/A&gt;&lt;/p &gt;&quot;</code></p>
-<p>打开ADFS登录页面即可看到效果
-<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-18-43.png" alt=""></p>
-<h2 id="登录页面不用输入域名的实现方法">登录页面不用输入域名的实现方法</h2>
-<p>导出当前主题</p>
-<pre><code>Export-AdfsWebTheme -DirectoryPath C:\Theme -Name default
+<p>保存并退出，<code>source /etc/profile</code>使其生效
+这时输入<code>java -version</code>即可查看到版本信息表示jdk安装成功</p>
+<h2 id="安装hadoop">安装hadoop</h2>
+<p>解压缩hadoop<code>tar -zxvf hadoop-2.6.4.tar.gz</code>
+创建存放hadoop文件的目录<code>sudo mkdir /opt/modules</code>
+将hadoop文件夹的所有者指定为hadoop用户<code>sudo chown -R hadoop:hadoop /opt/modules</code>
+配置Hadoop环境变量<code>vim /etc/profile</code>
+末尾加上</p>
+<pre><code>export HADOOP_HOME=&quot;/home/hadoop/hadoop.2.6.4&quot;
+export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 </code></pre>
-<p>修改主题里的<code>onload.js</code>文件
-添加如下字段：</p>
-<pre><code>if (typeof Login != 'undefined') {
-    Login.submitLoginRequest = function () {
-        var u = new InputUtil();
-        var e = new LoginErrors();
-        var userName = document.getElementById(Login.userNameInput);
-        var password = document.getElementById(Login.passwordInput);
-        if (userName.value &amp;&amp; !userName.value.match('[@\\\\]')) {
-            var userNameValue = 'yourdomain.com\\' + userName.value;
-            document.forms['loginForm'].UserName.value = userNameValue;
-        }
- 
-        if (!userName.value) {
-            u.setError(userName, e.userNameFormatError);
-            return false;
-        }
- 
- 
-        if (!password.value) {
-            u.setError(password, e.passwordEmpty);
-            return false;
-        }
-        document.forms['loginForm'].submit();
-        return false;
-    };
-}
+<p>保存并退出，<code>source /etc/profile</code>使其生效
+<strong>配置 <em>hadoop-env.sh</em>、<em>mapred-env.sh</em>、<em>yarn-env.sh</em>文件的<em>JAVA_HOME</em>参数</strong>
+编辑</p>
+<pre><code>vim  ${HADOOP_HOME}/etc/hadoop/hadoop-env.sh
+vim  ${HADOOP_HOME}/etc/hadoop/mapred-env.sh
+vim  ${HADOOP_HOME}/etc/hadoop/yarn-env.sh
 </code></pre>
-<p>PS:记得修改里面的<code>yourdomain.com</code>字段为你自己的</p>
-<p>更新修改到主题中</p>
-<pre><code>Set-AdfsWebTheme -TargetName default -AdditionalFileResource @{Uri=’/adfs/portal/script/onload.js’;path=&quot;C:\xxx\script\onload.js&quot;}
+<p>创建临时目录：</p>
+<pre><code>sudo mkdir -p /opt/data/tmp
 </code></pre>
-<p>打开登录页
-只需要输入用户名就可以了，不用加上域名了
-<img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-29-49.png" alt=""></p>
+<p>将临时目录的所有者修改为hadoop</p>
+<pre><code>sudo chown –R hadoop:hadoop /opt/data/tmp
+</code></pre>
+<p><em>注：默认的hadoop.tmp.dir是/tmp/hadoop-${user.name},此时有个问题就是NameNode会将HDFS的元数据存储在这个/tmp目录下，如果操作系统重启了，系统会清空/tmp目录下的东西，导致NameNode元数据丢失，是个非常严重的问题，所有我们应该修改这个路径。</em></p>
+<p><strong>配置 core-site.xml</strong></p>
+<pre><code>&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+&lt;value&gt;/opt/data/tmp&lt;/value&gt;?????????
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;fs.defaultFS&lt;/name&gt;????????????
+&lt;value&gt;hdfs://hadoopm:9000&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/3.png" alt="3">
+<strong>配置、格式化、启动HDFS</strong></p>
+<pre><code>vim ${HADOOP_HOME}/etc/hadoop/hdfs-site.xml
+</code></pre>
+<p>添加片段</p>
+<pre><code>&lt;property&gt;
+       &lt;name&gt;dfs.replication&lt;/name&gt;
+       &lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/4.png" alt="4">
+dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有一个节点，所以这里设置为1。
+格式化HDFS</p>
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/5.png" alt="5"></p>
+<pre><code>hdfs namenode –format
+</code></pre>
+<p>格式化后，查看core-site.xml里hadoop.tmp.dir（本例是/opt/data目录）指定的目录下是否有了dfs目录，如果有，说明格式化成功。</p>
+<p><strong>启动NameNode</strong></p>
+<pre><code>/sbin/hadoop-daemon.sh start namenode
+</code></pre>
+<p><strong>启动DataNode</strong></p>
+<pre><code>/sbin/hadoop-daemon.sh start datanode
+</code></pre>
+<p><strong>启动SecondaryNameNode</strong></p>
+<pre><code>sbin/hadoop-daemon.sh start secondarynamenode
+</code></pre>
+<p><strong>JPS命令查看是否已经启动成功，有结果就是启动成功了</strong>
+<img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/6.png" alt="6"></p>
+<p><strong>配置、启动YARN</strong>
+默认没有mapred-site.xml文件，但是有个mapred-site.xml.template配置模板文件。复制模板生成mapred-site.xml</p>
+<pre><code>cp etc/hadoop/mapred-site.xml.template etc/hadoop/mapred-site.xml
+</code></pre>
+<p>添加配置如下：</p>
+<pre><code>&lt;property&gt;
+&lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+&lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>配置yarn-site.xml</p>
+<pre><code>
+&lt;property&gt;
+&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+&lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+&lt;value&gt;bigdata-senior01.chybinmy.com&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre>
+<p><strong>启动Resourcemanager</strong></p>
+<pre><code>sbin/yarn-daemon.sh start resourcemanager
+</code></pre>
+<p><strong>启动nodemanager</strong></p>
+<pre><code>sbin/yarn-daemon.sh start nodemanager
+</code></pre>
+<p>可以看到ResourceManager、NodeManager已经启动成功了。
+<img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/7.png" alt="7"></p>
 
             </article>
           </div>
@@ -302,13 +342,6 @@ Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_th
             </div>
           </div>
         </div>
-          
-            <nav class="navigation pagination" role="navigation">
-              <h2 class="screen-reader-text">Posts navigation</h2>
-              <div class="nav-links">
-                <a class="next page-numbers" href="https://tediorelee.github.io/post/create-a-s2s-vpn-with-azure-virtual-network">下一篇->🌈Create a S2S VPN with Azure virtual Network</a>
-              </div>
-            </nav>
           
       </div>
       <section id="comments" class="comments">
