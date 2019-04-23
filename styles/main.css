@@ -968,7 +968,6 @@ a img {
     padding: 0;
     margin-bottom: 1.5em;
     opacity: 0.8;
-    border-radius: 20px;
   }
   .excerpt .featured-image {
     -webkit-transform: translateZ(0);
@@ -1204,6 +1203,7 @@ a img {
     opacity: 0.2;
     -webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
+    border-radius: 20px;
   }
   .entry .featured-image:hover:after {
     opacity: 0;
