@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>🌈Update Domain Password Policy | Fire and Blood 🔥</title>
+<title>🌈Hexo博客添加https解析 | Fire and Blood 🔥</title>
 <link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556004968299">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
@@ -149,47 +149,86 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/15/5cb43272426d8.png">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbec002eb90c.png">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2019-04-15 ·</span> <span> / </span>
+          <span class="date">· 2018-09-12 ·</span> <span> / </span>
           <span class="author">
             <a href="https://tediorelee.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://tediorelee.github.io/tag/aXetfket7">Windows</a>
+                    <a href="https://tediorelee.github.io/tag/5Z456dcn_">Hexo</a>
                 </span>
           
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>🌈Update Domain Password Policy</h1>
+          <h1 class='entry-title'>🌈Hexo博客添加https解析</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
               <blockquote>
-<p>Setup Your Own Password Domain Policy</p>
+<p>4/22更新，Fuck Hexo，Gridea YES！</p>
 </blockquote>
-<!--more-->
-<h2 id="步骤">步骤</h2>
-<p>在DC上打开组策略管理</p>
-<p><strong><img src="https://i.loli.net/2019/04/03/5ca4c41d0c6c8.png" alt=""></strong></p>
-<p>双击<strong>Default Domain Policy</strong>，在右侧能看到你组织的当前所有策略。</p>
-<p><strong><img src="https://i.loli.net/2019/04/03/5ca4c46509ed1.png" alt=""></strong></p>
-<p>在<strong>Default Domain Policy</strong>上右键，编辑，可以编辑当前组策略</p>
-<p><strong><img src="https://i.loli.net/2019/04/03/5ca4c4ad13d82.png" alt=""></strong></p>
-<p>依次展开，策略-Windows设置-安全设置-账户策略-密码策略</p>
-<p><strong><img src="https://i.loli.net/2019/04/03/5ca4c4fb8eea7.png" alt=""></strong></p>
-<p>即可修改你想要的组密码策略，这里以我个人举例</p>
-<p><strong><img src="https://i.loli.net/2019/04/03/5ca4c53433622.png" alt=""></strong></p>
-<h2 id="参考链接">参考链接</h2>
+<!-- more --> 
 <blockquote>
-<p><strong>https://www.youtube.com/watch?v=QuHiklloH10&amp;t=158s</strong></p>
+<p><strong>所需准备：</strong></p>
+<ul>
+<li>腾讯云主机+hexo</li>
+<li>ssl证书（可免费申请）</li>
+<li>winscp</li>
+</ul>
 </blockquote>
+<h2 id="申请ssl证书">申请SSL证书</h2>
+<p>腾讯云可以免费申请一年的ssl证书，<a href="https://console.cloud.tencent.com/ssl">地址如下</a>
+<img src="https://tedioreleeblog.pek3b.qingstor.com/1.png" alt="1">
+审核只花了我几个小时，收到短信后打开腾讯云后台，下载证书压缩包
+解压以后，用winscp上传到服务器<code>/etc/ngix/cert</code>目录下
+如果没有cert目录可自行手动创建<code>mkdir cert</code></p>
+<h2 id="ngix配置">Ngix配置</h2>
+<p>打开你自己的网站配置文件，以我自己为例<code>/etc/ngix/sites-aviliable/default</code>
+添加如下配置：</p>
+<pre><code>server {
+    listen 443;  //开启443https默认端口
+    server_name tediorelee.cn;   //指定域名
+    ssl on;
+    root /var/www/hexo;   //指定网站路径
+    index index.html index.htm;
+    ssl_certificate  cert/1_xxxx.crt;    //指定上传的证书文件名
+    ssl_certificate_key cert/2_xxxx.key;  //指定上传的证书秘钥名
+    ssl_session_timeout 5m;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    location / {
+        root /var/www/hexo;  
+        index index.html index.htm;
+    }
+}
+</code></pre>
+<p>保存退出
+命令行输入<code>ngix -t</code>检查配置文件正确性
+无错误后，<code>/etc/init.d/ngix restart</code>重启ngix服务
+访问域名，前缀加上https即可</p>
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/2.png" alt="2">
+<img src="https://tedioreleeblog.pek3b.qingstor.com/3.png" alt="3">
+<strong>注：我自己配置的时候，看了很多教程，发现ssl_certificate语句后面不需要接绝对路径，相对路径即可，使用了绝对路径反而检查会报错。</strong></p>
+<h2 id="https优化">Https优化</h2>
+<p>添加完证书后，你会发现访问原先的http也会进到博客，我们可以继续配置ngix参数使其自动跳转到https
+打开<code>/etc/ngix/sites-avilable/default</code>
+删掉以前配置的80端口的配置</p>
+<pre><code>server {
+    listen 80 default_server;
+    return 301 https://yourdomin.cn$request_uri; //改为自己的域名
+}
+
+</code></pre>
+<p>重启ngix服务<code>/etc/init.d/restart</code>
+现在就可以默认跳转https了！</p>
 
             </article>
           </div>
@@ -270,7 +309,7 @@
             <nav class="navigation pagination" role="navigation">
               <h2 class="screen-reader-text">Posts navigation</h2>
               <div class="nav-links">
-                <a class="next page-numbers" href="https://tediorelee.github.io/post/hackintosh-g150t">下一篇->🌈雷神G150T2015款Hackintosh安装</a>
+                <a class="next page-numbers" href="https://tediorelee.github.io/post/mirouter">下一篇->🌈小米路由器+pandavan固件破解移动校园网锐捷认证</a>
               </div>
             </nav>
           
