@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Customize Your office365 | Fire and Blood 🔥</title>
-<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556248309089">
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556248777132">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
 
@@ -184,6 +184,49 @@
 <!-- more --> 
 <p>打开https://config.office.com</p>
 <p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426110912.png" alt=""></p>
+<p>点击<strong>创建新的配置</strong></p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426111334.png" alt=""></p>
+<p>可以根据自己的订阅类型和安装喜好选择需要安装的版本和app</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426111402.png" alt=""></p>
+<p>最后配置完成之后，选择导出，生成一个xml文件</p>
+<p>![image-20190426111528203](/Users/tediorelee/Library/Application Support/typora-user-images/image-20190426111528203.png)</p>
+<p>XML示例：</p>
+<pre><code>&lt;!-- Office 365 client configuration file sample. To be used for Office 365 ProPlus apps, 
+     Office 365 Business apps, Project Pro for Office 365 and Visio Pro for Office 365. 
+
+     For detailed information regarding configuration options visit: http://aka.ms/ODT. 
+     To use the configuration file be sure to remove the comments
+
+     The following sample allows you to download and install the 64 bit version of the Office 365 ProPlus apps 
+     and Visio Pro for Office 365 directly from the Office CDN using the Monthly Channel
+     settings  --&gt;
+
+&lt;Configuration&gt;
+
+  &lt;Add OfficeClientEdition=&quot;64&quot; Channel=&quot;Monthly&quot;&gt;
+    &lt;Product ID=&quot;O365ProPlusRetail&quot;&gt;
+      &lt;Language ID=&quot;MatchOS&quot; /&gt;
+      &lt;ExcludeApp ID=&quot;Access&quot; /&gt;
+      &lt;ExcludeApp ID=&quot;Publisher&quot; /&gt;
+      &lt;ExcludeApp ID=&quot;Groove&quot; /&gt;
+      &lt;ExcludeApp ID=&quot;OneDrive&quot; /&gt;
+	&lt;ExcludeApp ID=&quot;Teams&quot; /&gt;
+    &lt;/Product&gt;
+    &lt;Product ID=&quot;ProjectPro2019Retail&quot;&gt;
+      &lt;Language ID=&quot;MatchOS&quot; /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;
+
+  &lt;Updates Enabled=&quot;TRUE&quot; Channel=&quot;Monthly&quot; /&gt;
+
+  &lt;!--  &lt;Display Level=&quot;None&quot; AcceptEULA=&quot;TRUE&quot; /&gt;  --&gt;
+
+  &lt;!--  &lt;Property Name=&quot;AUTOACTIVATE&quot; Value=&quot;1&quot; /&gt;  --&gt;
+
+&lt;/Configuration&gt;
+</code></pre>
+<p>配合office-deployment-tool使用，<a href="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/office-deployment-tool_updated.zip">下载链接</a></p>
+<p>替换掉里面<code>start-install.bat</code>文件里的xml运行即可</p>
 
             </article>
           </div>
@@ -241,7 +284,7 @@
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://tediorelee.github.io/images/avatar.png?v=1556248309089" class='avatar avatar-72 photo' height='72' width='72'>
+              <img alt='' src="https://tediorelee.github.io/images/avatar.png?v=1556248777132" class='avatar avatar-72 photo' height='72' width='72'>
               <span><a href='https://tediorelee.github.io'>Fire and Blood 🔥</a> </span>
             </div>
             <div class="bio">
