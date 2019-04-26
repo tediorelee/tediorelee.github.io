@@ -1,11 +1,11 @@
 <html>
 <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>🌈Hexo博客添加https解析 | Fire and Blood 🔥</title>
+<title>Office365 | Fire and Blood 🔥</title>
 <link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556248800897">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
@@ -19,8 +19,7 @@
 </head>
 <body class="home blog ct-body standard">
 <div id="overflow-container" class="overflow-container">
-  <a class="skip-content" href="#main">Skip to content</a>
-  <header id="site-header" class="site-header" role="banner">
+    <header id="site-header" class="site-header" role="banner">
     <div class='top-navigation top-navigation-important'>
         <div class='container'>
             <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
@@ -158,213 +157,69 @@
 
 
 </header>
-
-  <div id="main" class="main" role="main">
-    <div id="loop-container" class="loop-container">
-      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
-        
-          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbec002eb90c.png">
-          </div>
-        
-
-        <div class="entry-meta">
-          <span class="date">· 2018-09-12 ·</span> <span> / </span>
+        <div class="main-content">
+            <div class="current-tag-container">
+                <h2 class="title">
+                    标签：#Office365
+                </h2>
+            </div>
+        </div>
+    <div id="main" class="main" role="main">
+  <h1 class="screen-reader-text">Posts</h1>
+  
+  <div id="loop-container" class="loop-container">
+    <div class="post type-post status-publish format-standard   has-post-thumbnail hentry category-design tag-memories
+    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
+      
+      even
+       excerpt">
+      
+      <a class="featured-image-link" href="https://tediorelee.github.io/post/customize-your-office365">
+        <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426110633.png"></div>
+      </a>
+      
+      <div class="excerpt-container">
+        <div class="excerpt-meta">
+          <span class="date">  · 2019-04-26 ·</span> <span> / </span>
           <span class="author">
-            <a href="https://tediorelee.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
+              <a href="https://tediorelee.github.io" title="Posts by  Fire and Blood 🔥" rel="author"> Fire and Blood 🔥</a>
           </span>
-          
-            <span class="category">
-                    <span> / </span>
-                    <a href="https://tediorelee.github.io/tag/5Z456dcn_">Hexo</a>
+            
+                <span> / </span>
+                <span class="category">
+                        <a href="https://tediorelee.github.io/tag/f7tGobuX0">Office365</a>
                 </span>
-          
+            
+
         </div>
-        <div class='entry-header'>
-          <h1 class='entry-title'>🌈Hexo博客添加https解析</h1>
+        <div class='excerpt-header'>
+          <h2 class='excerpt-title'>
+            <a href="https://tediorelee.github.io/post/customize-your-office365"> 🌈Customize Your office365 </a>
+          </h2>
         </div>
-        <div class="entry-container">
-          <div class="entry-content">
-            <article>
+        <div class='excerpt-content'>
+          <article>
               <blockquote>
-<p>4/22更新，Fuck Hexo，Gridea YES！</p>
+<p>Decide your own installation</p>
 </blockquote>
-<!-- more --> 
-<blockquote>
-<p><strong>所需准备：</strong></p>
-<ul>
-<li>腾讯云主机+hexo</li>
-<li>ssl证书（可免费申请）</li>
-<li>winscp</li>
-</ul>
-</blockquote>
-<h2 id="申请ssl证书">申请SSL证书</h2>
-<p>腾讯云可以免费申请一年的ssl证书，<a href="https://console.cloud.tencent.com/ssl">地址如下</a>
-<img src="https://tedioreleeblog.pek3b.qingstor.com/1.png" alt="1">
-审核只花了我几个小时，收到短信后打开腾讯云后台，下载证书压缩包
-解压以后，用winscp上传到服务器<code>/etc/ngix/cert</code>目录下
-如果没有cert目录可自行手动创建<code>mkdir cert</code></p>
-<h2 id="ngix配置">Ngix配置</h2>
-<p>打开你自己的网站配置文件，以我自己为例<code>/etc/ngix/sites-aviliable/default</code>
-添加如下配置：</p>
-<pre><code>server {
-    listen 443;  //开启443https默认端口
-    server_name tediorelee.cn;   //指定域名
-    ssl on;
-    root /var/www/hexo;   //指定网站路径
-    index index.html index.htm;
-    ssl_certificate  cert/1_xxxx.crt;    //指定上传的证书文件名
-    ssl_certificate_key cert/2_xxxx.key;  //指定上传的证书秘钥名
-    ssl_session_timeout 5m;
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
-    location / {
-        root /var/www/hexo;  
-        index index.html index.htm;
-    }
-}
-</code></pre>
-<p>保存退出
-命令行输入<code>ngix -t</code>检查配置文件正确性
-无错误后，<code>/etc/init.d/ngix restart</code>重启ngix服务
-访问域名，前缀加上https即可</p>
-<p><img src="https://tedioreleeblog.pek3b.qingstor.com/2.png" alt="2">
-<img src="https://tedioreleeblog.pek3b.qingstor.com/3.png" alt="3">
-<strong>注：我自己配置的时候，看了很多教程，发现ssl_certificate语句后面不需要接绝对路径，相对路径即可，使用了绝对路径反而检查会报错。</strong></p>
-<h2 id="https优化">Https优化</h2>
-<p>添加完证书后，你会发现访问原先的http也会进到博客，我们可以继续配置ngix参数使其自动跳转到https
-打开<code>/etc/ngix/sites-avilable/default</code>
-删掉以前配置的80端口的配置</p>
-<pre><code>server {
-    listen 80 default_server;
-    return 301 https://yourdomin.cn$request_uri; //改为自己的域名
-}
 
-</code></pre>
-<p>重启ngix服务<code>/etc/init.d/restart</code>
-现在就可以默认跳转https了！</p>
-
-            </article>
-          </div>
-          <div class='entry-meta-bottom'>
-            <div class="entry-categories">
-              <p>
-                <span>Categories</span>
-                
-                  
-                    
-                  <a href="https://tediorelee.github.io/tag/f7tGobuX0" title="View all posts in Office365">Office365</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/aXetfket7" title="View all posts in Windows">Windows</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/x6J1TFbCJ" title="View all posts in Azure">Azure</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/vsYNOwC5t" title="View all posts in Tech">Tech</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/e0FqaAlmZ" title="View all posts in AD FS">AD FS</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/2ec75jeIG" title="View all posts in Other">Other</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/sYpHDKKCm" title="View all posts in Bigdata">Bigdata</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/Cp6cuL_aC" title="View all posts in Hackintosh">Hackintosh</a>
-                    
-                    
-                    
-                  <a href="https://tediorelee.github.io/tag/5Z456dcn_" title="View all posts in Hexo">Hexo</a>
-                    
-                    
-                <!--<a href="/blog/categories/github" title="View all posts in Github">Github</a>
-                <a href="/blog/categories/ssh" title="View all posts in SSH">SSH</a>
-                <a href="/blog/categories/apidoc" title="View all posts in apidoc">apidoc</a>
-                <a href="/blog/categories/code" title="View all posts in code">code</a>
-                <a href="/blog/categories/markdown" title="View all posts in markdown">markdown</a>
-                <a href="/blog/categories/snap" title="View all posts in snap">snap</a>
-                <a href="/blog/categories/snap-store" title="View all posts in snap store">snap store</a>-->
-              </p>
-            </div>
-            <div class="entry-tags">
-              <p><span>Tags</span>
-              </p>
-            </div>
-          </div>
-          <div class="author-meta">
-            <div class="author">
-              <img alt='' src="https://tediorelee.github.io/images/avatar.png?v=1556248800897" class='avatar avatar-72 photo' height='72' width='72'>
-              <span><a href='https://tediorelee.github.io'>Fire and Blood 🔥</a> </span>
-            </div>
-            <div class="bio">
-              <p>Fire and Blood 🔥</p>
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            </div>
-          </div>
+          </article>
         </div>
-          
-            <nav class="navigation pagination" role="navigation">
-              <h2 class="screen-reader-text">Posts navigation</h2>
-              <div class="nav-links">
-                <a class="next page-numbers" href="https://tediorelee.github.io/post/mirouter">下一篇->🌈小米路由器+pandavan固件破解移动校园网锐捷认证</a>
-              </div>
-            </nav>
-          
       </div>
-      <section id="comments" class="comments">
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '0102793645acc8ba1446',
-    clientSecret: 'dbc9e05fb6ac3866c98a32d4af38e4494934965c',
-    repo: 'tediorelee.github.io',
-    owner: 'tediorelee',
-    admin: ['tediorelee'],
-    id: location.pathname,      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-      </section>
     </div>
   </div>
+  
+</div>
 
-  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <nav class="navigation pagination" role="navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+        
+        
+    </div>
+</nav>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
     <h1>
         <a href="https://tediorelee.github.io"> Fire and Blood 🔥 </a>
     </h1>
@@ -401,4 +256,3 @@
 </div>
 </body>
 </html>
-
