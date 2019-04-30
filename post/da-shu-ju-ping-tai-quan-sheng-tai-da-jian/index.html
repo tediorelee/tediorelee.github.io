@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈大数据平台全生态搭建 | Fire and Blood 🔥</title>
-<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556331806505">
+<link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1556618143795">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
 
@@ -90,6 +90,10 @@
                 
                     
                 
+                    
+                
+                    
+                
             </ul>
         </div>
     </div>
@@ -97,7 +101,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="https://tediorelee.github.io">  Fire and Blood 🔥 </a>
+                <a href="/https://tediorelee.github.io">  Fire and Blood 🔥 </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -158,89 +162,6 @@
 
 
 </header>
-  <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA">安装虚拟机</a>
-<ul>
-<li><a href="#%E4%BF%AE%E6%94%B9ubuntu%E7%9A%84root%E7%94%A8%E6%88%B7%E5%90%8D">修改Ubuntu的root用户名</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip">配置静态IP</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEssh%E7%99%BB%E5%BD%95">配置SSH登录</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90">修改软件源</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85jdk">安装JDK</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95">配置SSH免密登录</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85hadoop">安装Hadoop</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D">介绍</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置环境变量</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEcore-sitexml">配置core-site.xml</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEhdfs-sitexml">配置hdfs-site.xml</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEmapred-sitexml">配置mapred-site.xml</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEyarn-sitexml">配置yarn-site.xml</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85hive">安装Hive</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D-2">介绍</a></li>
-<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">环境配置</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEhive-sitexml">配置hive-site.xml</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEhive-envsh%E6%96%87%E4%BB%B6">配置hive-env.sh文件</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BDmysql-connector-javajar">下载mysql-connector-java.jar</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AEmysql">安装并配置mysql</a></li>
-<li><a href="#mysql%E4%B8%8A%E5%88%9B%E5%BB%BAhive%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BAhive%E8%B4%A6%E5%8F%B7%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%8E%88%E6%9D%83">Mysql上创建hive元数据库，创建hive账号，并进行授权</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85zookeeper">安装Zookeeper</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D-3">介绍</a></li>
-<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-2">环境配置</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEzoocfg%E6%96%87%E4%BB%B6">配置zoo.cfg文件</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEmyid%E6%96%87%E4%BB%B6">配置myid文件</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95-2">测试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85kafka">安装Kafka</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D-4">介绍</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85scala">安装Scala</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-2">配置环境变量</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEkafka">配置Kafka</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9serverproperties%E6%96%87%E4%BB%B6">修改server.properties文件</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95-3">测试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85flume">安装Flume</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D-5">介绍</a></li>
-<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-3">环境配置</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9flume-confproperties">修改flume-conf.properties</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85hbase">安装Hbase</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D-6">介绍</a></li>
-<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-4">环境配置</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEhbase-envsh">配置hbase-env.sh</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEhbase-sitexml">配置hbase-site.xml</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEregionservers%E6%96%87%E4%BB%B6">配置regionservers文件</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95-4">测试</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%89%E8%A3%85spark">安装Spark</a>
-<ul>
-<li><a href="#%E4%BB%8B%E7%BB%8D-7">介绍</a></li>
-<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-5">环境配置</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEspark-envsh%E6%96%87%E4%BB%B6">配置spark-env.sh文件</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AEslaves%E6%96%87%E4%BB%B6">配置slaves文件</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95-5">测试</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 
   <div id="main" class="main" role="main">
     <div id="loop-container" class="loop-container">
@@ -947,13 +868,6 @@ examples/jars/spark-examples_2.11-2.4.0.jar
                   <a href="https://tediorelee.github.io/tag/5Z456dcn_" title="View all posts in Hexo">Hexo</a>
                     
                     
-                <!--<a href="/blog/categories/github" title="View all posts in Github">Github</a>
-                <a href="/blog/categories/ssh" title="View all posts in SSH">SSH</a>
-                <a href="/blog/categories/apidoc" title="View all posts in apidoc">apidoc</a>
-                <a href="/blog/categories/code" title="View all posts in code">code</a>
-                <a href="/blog/categories/markdown" title="View all posts in markdown">markdown</a>
-                <a href="/blog/categories/snap" title="View all posts in snap">snap</a>
-                <a href="/blog/categories/snap-store" title="View all posts in snap store">snap store</a>-->
               </p>
             </div>
             <div class="entry-tags">
@@ -963,11 +877,15 @@ examples/jars/spark-examples_2.11-2.4.0.jar
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://tediorelee.github.io/images/avatar.png?v=1556331806505" class='avatar avatar-72 photo' height='72' width='72'>
-              <span><a href='https://tediorelee.github.io'>Fire and Blood 🔥</a> </span>
+              <img alt='' src="https://tediorelee.github.io/images/avatar.png?v=1556618143795" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://tediorelee.github.io'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p>Fire and Blood 🔥</p>
+              <p>未来没有人能够预测</p>
+              
+                
+              
+                
               
                 
               
@@ -1035,6 +953,10 @@ examples/jars/spark-examples_2.11-2.4.0.jar
         </div>
     </div>
     <ul class="social-media-icons">
+        
+            
+        
+            
         
             
         
