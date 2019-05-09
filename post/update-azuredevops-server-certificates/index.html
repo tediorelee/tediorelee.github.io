@@ -1,11 +1,11 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>Fire and Blood 🔥</title>
+<title>🌈Update AzureDevops Server Certificates | Fire and Blood 🔥</title>
 <link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1557407961715">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
@@ -16,11 +16,11 @@
 
 
 
-  </head>
-  <body class="home blog ct-body standard">
-    <div id="overflow-container" class="overflow-container">
-    <a class="skip-content" href="#main">Skip to content</a>
-        <header id="site-header" class="site-header" role="banner">
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
     <div class='top-navigation top-navigation-important'>
         <div class='container'>
             <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
@@ -163,143 +163,177 @@
 
 </header>
 
-        <div id="main" class="main" role="main">
-  <h1 class="screen-reader-text">Posts</h1>
-  
-  <div id="loop-container" class="loop-container">
-    <div class="post type-post status-publish format-standard   has-post-thumbnail hentry category-design tag-memories
-    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
-      
-      even
-       excerpt">
-      
-      <a class="featured-image-link" href="https://tediorelee.github.io/post/mirouter">
-        <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbebe3db9ea3.png"></div>
-      </a>
-      
-      <div class="excerpt-container">
-        <div class="excerpt-meta">
-          <span class="date">  · 2018-05-24 ·</span> <span> / </span>
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211856.png">
+          </div>
+        
+
+        <div class="entry-meta">
+          <span class="date">· 2019-05-09 ·</span> <span> / </span>
           <span class="author">
-              <a href="https://tediorelee.github.io" title="Posts by  Fire and Blood 🔥" rel="author"> Fire and Blood 🔥</a>
+            <a href="https://tediorelee.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
-            
-                <span> / </span>
-                <span class="category">
-                        <a href="https://tediorelee.github.io/tag/vsYNOwC5t">Tech</a>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://tediorelee.github.io/tag/x6J1TFbCJ">Azure</a>
                 </span>
-            
-
+          
         </div>
-        <div class='excerpt-header'>
-          <h2 class='excerpt-title'>
-            <a href="https://tediorelee.github.io/post/mirouter"> 🌈小米路由器+pandavan固件破解移动校园网锐捷认证 </a>
-          </h2>
+        <div class='entry-header'>
+          <h1 class='entry-title'>🌈Update AzureDevops Server Certificates</h1>
         </div>
-        <div class='excerpt-content'>
-          <article>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
               <blockquote>
-<p>Fuck University Internet😒</p>
+<p>简单记记</p>
 </blockquote>
+<!-- more -->
+<h2 id="获取pfx证书">获取pfx证书</h2>
+<p>如果你的证书已经是pfx格式了，那么可以直接复制到服务器待用</p>
+<p>如果你的证书是<code>.cer</code>格式那么还需要将格式转化为pfx</p>
+<p>可以在<a href="https://freessl.cn/ssltools">https://freessl.cn/ssltools</a>找到SSL证书格式转换</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210650.png" alt=""></p>
+<h2 id="更换证书">更换证书</h2>
+<p>登录到你的服务器</p>
+<p><code>win+r</code>输入<code>certlm.msc</code>打开证书管理控制台</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210801.png" alt=""></p>
+<p>删掉原先导入的服务器证书以免冲突，便于识别</p>
+<p>打开IIS控制台</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211012.png" alt=""></p>
+<p>依次点开左侧网站，找到我们要更换证书的Azure Devops Server</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211133.png" alt=""></p>
+<p>右侧找到<strong>编辑网站</strong>-绑定</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211229.png" alt=""></p>
+<p>编辑443及HTTPS端口的设置</p>
+<p>选择我们正确的证书和主机地址即可</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211353.png" alt=""></p>
+<p>更换完成之后，打开我们的主机名</p>
+<p>可以看到SSL证书已经更换成功</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211551.png" alt=""></p>
 
-          </article>
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://tediorelee.github.io/tag/x6J1TFbCJ" title="View all posts in Azure">Azure</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/f7tGobuX0" title="View all posts in Office365">Office365</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/aXetfket7" title="View all posts in Windows">Windows</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/vsYNOwC5t" title="View all posts in Tech">Tech</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/e0FqaAlmZ" title="View all posts in AD FS">AD FS</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/2ec75jeIG" title="View all posts in Other">Other</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/sYpHDKKCm" title="View all posts in Bigdata">Bigdata</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/Cp6cuL_aC" title="View all posts in Hackintosh">Hackintosh</a>
+                    
+                    
+                    
+                  <a href="https://tediorelee.github.io/tag/5Z456dcn_" title="View all posts in Hexo">Hexo</a>
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://tediorelee.github.io/images/avatar.png?v=1557407961715" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://tediorelee.github.io'>tediorelee</a> </span>
+            </div>
+            <div class="bio">
+              <p>未来没有人能够预测</p>
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
         </div>
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://tediorelee.github.io/post/customize-your-office365">下一篇->🌈Customize Your office365</a>
+              </div>
+            </nav>
+          
       </div>
+      <section id="comments" class="comments">
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '0102793645acc8ba1446',
+    clientSecret: 'dbc9e05fb6ac3866c98a32d4af38e4494934965c',
+    repo: 'tediorelee.github.io',
+    owner: 'tediorelee',
+    admin: ['tediorelee'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+      </section>
     </div>
   </div>
-  
-  <div id="loop-container" class="loop-container">
-    <div class="post type-post status-publish format-standard   has-post-thumbnail hentry category-design tag-memories
-    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
-      
-        odd
-       excerpt">
-      
-      <a class="featured-image-link" href="https://tediorelee.github.io/post/steam-asf">
-        <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbebf35dc049.png"></div>
-      </a>
-      
-      <div class="excerpt-container">
-        <div class="excerpt-meta">
-          <span class="date">  · 2018-05-04 ·</span> <span> / </span>
-          <span class="author">
-              <a href="https://tediorelee.github.io" title="Posts by  Fire and Blood 🔥" rel="author"> Fire and Blood 🔥</a>
-          </span>
-            
 
-        </div>
-        <div class='excerpt-header'>
-          <h2 class='excerpt-title'>
-            <a href="https://tediorelee.github.io/post/steam-asf"> 🌈腾讯云使用ASF云挂卡 </a>
-          </h2>
-        </div>
-        <div class='excerpt-content'>
-          <article>
-              <blockquote>
-<p>G胖我来了💰</p>
-</blockquote>
-
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="loop-container" class="loop-container">
-    <div class="post type-post status-publish format-standard   has-post-thumbnail hentry category-design tag-memories
-    tag-normal-post tag-standard-2 excerpt zoom full-without-featured
-      
-      even
-       excerpt">
-      
-      <a class="featured-image-link" href="https://tediorelee.github.io/post/hadoopubuntu">
-        <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbebd3f02eb1.png"></div>
-      </a>
-      
-      <div class="excerpt-container">
-        <div class="excerpt-meta">
-          <span class="date">  · 2018-04-03 ·</span> <span> / </span>
-          <span class="author">
-              <a href="https://tediorelee.github.io" title="Posts by  Fire and Blood 🔥" rel="author"> Fire and Blood 🔥</a>
-          </span>
-            
-                <span> / </span>
-                <span class="category">
-                        <a href="https://tediorelee.github.io/tag/sYpHDKKCm">Bigdata</a>
-                </span>
-            
-
-        </div>
-        <div class='excerpt-header'>
-          <h2 class='excerpt-title'>
-            <a href="https://tediorelee.github.io/post/hadoopubuntu"> 🌈Hadoop+Ubuntu伪分布式搭建 </a>
-          </h2>
-        </div>
-        <div class='excerpt-content'>
-          <article>
-              <blockquote>
-<p>School Work</p>
-</blockquote>
-
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div>
-
-        <nav class="navigation pagination" role="navigation">
-    <h2 class="screen-reader-text">Posts navigation</h2>
-    <div class="nav-links">
-        
-            <a class="page-numbers" href="https://tediorelee.github.io/page/3/">上一页</a>
-        
-        
-    </div>
-</nav>
-
-        <footer id="site-footer" class="site-footer" role="contentinfo">
+  <footer id="site-footer" class="site-footer" role="contentinfo">
     <h1>
         <a href="https://tediorelee.github.io"> Fire and Blood 🔥 </a>
     </h1>
@@ -337,7 +371,7 @@
 <script src="https://tediorelee.github.io/media/scripts/lib/jquery.min.js"></script>
 <script src="https://tediorelee.github.io/media/scripts/lib/jquerymigrate.js"></script>
 <script src="https://tediorelee.github.io/media/scripts/lib/production.min.js"></script>
-      </div>
-  </body>
+</div>
+</body>
 </html>
 
