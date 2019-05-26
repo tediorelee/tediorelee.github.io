@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>🌈Create a S2S VPN with Azure virtual Network | Fire and Blood 🔥</title>
+<title>🌈How to Install Windows 10 (Fully Installation Guide) | Fire and Blood 🔥</title>
 <link rel="shortcut icon" href="https://tediorelee.github.io/favicon.ico?v=1558847278123">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.github.io/styles/main.css" type='text/css' media='all'>
@@ -167,103 +167,108 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/15/5cb438e55a60b.png">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526130743.png">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2019-04-15 ·</span> <span> / </span>
+          <span class="date">· 2019-05-26 ·</span> <span> / </span>
           <span class="author">
             <a href="https://tediorelee.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://tediorelee.github.io/tag/x6J1TFbCJ">Azure</a>
+                    <a href="https://tediorelee.github.io/tag/vsYNOwC5t">Tech</a>
                 </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://tediorelee.github.io/tag/aXetfket7">Windows</a>
+                    <a href="https://tediorelee.github.io/tag/2ec75jeIG">Other</a>
                 </span>
           
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>🌈Create a S2S VPN with Azure virtual Network</h1>
+          <h1 class='entry-title'>🌈How to Install Windows 10 (Fully Installation Guide)</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
               <blockquote>
-<p>Connect Your Computer with Azure Vnet</p>
+<p>为什么现在的人都不会重装系统呢（就是你lxk</p>
 </blockquote>
-<!--more-->
-<h2 id="准备">准备</h2>
+<!-- more -->
+<h2 id="预备知识">预备知识</h2>
 <ul>
-<li>Azure上有订阅并且能够创建连接需要的虚拟网络资源</li>
-<li>本地需要一台服务器作为路由设备</li>
+<li>尽量使用UEFI启动，不行再使用Legacy启动</li>
+<li>UEFI启动必须使用64位的系统</li>
+<li>UEFI启动磁盘格式必须是GPT格式（后面会讲到如何判断并格式化）</li>
+<li>GPT磁盘分为EFI（ESP）和MSR分区，用于开机UEFI寻找启动入口</li>
 </ul>
-<h2 id="create-a-virtual-network">Create a virtual network</h2>
-<p><img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-create-virtual-network-portal-include/create-virtual-network.png" alt=""></p>
-<h2 id="create-the-gateway-subnet">Create the gateway subnet</h2>
-<p>在刚才第一步创建的virtual network那里，找到gateway subnet
-<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-gateway-subnet-portal-include/gateway-subnet.png" alt=""></p>
-<p>根据提示创建你的gateway subnet
-<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-gateway-subnet-portal-include/add-gateway-subnet.png" alt=""></p>
-<h2 id="create-the-vpn-gateway">Create the VPN gateway</h2>
-<p>在Azure portal中搜索 <strong>Virtual network gateway</strong>
-创建一个新的<code>Virtual network gateway</code>
-<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-gateway-portal-include/create-gateway.png" alt=""></p>
-<p>注意：这里的public ip要记好，后面会用到.</p>
-<h2 id="create-the-local-network-gateway">Create the local network gateway</h2>
-<p>创建一个新的<code>local network gatewa</code>
-<img src="https://docs.microsoft.com/en-us/azure/includes/media/vpn-gateway-add-local-network-gateway-portal-include/create-local-network-gateway.png" alt=""></p>
-<p><strong>图中的IP Address注意填写你的VPN设备的公网IP</strong></p>
-<h2 id="prepare-rras-server">Prepare RRAS server</h2>
-<p>在你本地作为VPN设备的服务器上，定位到<code>网络适配器</code>设置
-PS：VPN设备有两个网卡，一个对外一个对内。名称可以修改为<code>Internal</code>和<code>External</code>
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-13-34.png" alt=""></p>
-<p>右键Internal-属性,去掉ipv6的复选框
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-15-51.png" alt=""></p>
-<p>双击ipv4配置，删除默认网关的字段，DNS服务器指向你的DC
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-16-34.png" alt=""></p>
-<p>右键External-属性，去掉除开ipv4的其他所有复选框
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-19-24.png" alt=""></p>
-<p>双击ipv4配置,填写你的配置。
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-19-35.png" alt=""></p>
-<h2 id="add-rras-server-role">Add RRAS server role</h2>
-<p>在服务器管理面板-添加角色和功能
-找到远程访问功能，并勾选路由和DirecAccess&amp;VPN
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-22-03.png" alt=""></p>
-<p>等待安装完成之后,打开安装向导,选择仅部署VPN
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-28-52.png" alt=""></p>
-<p>在路由和远程访问页面，右键RRAS，选择<code>配置并启用路由和远程访问</code>
-选择自定义配置
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-29-21.png" alt=""></p>
-<p>勾选LAN路由和VPN访问
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-31-18.png" alt=""></p>
-<p>完成后点击启动服务即可
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-32-02.png" alt=""></p>
-<h2 id="configure-rras">Configure RRAS</h2>
-<p>在网络接口右键-新建请求拨号接口
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-33-45.png" alt=""></p>
-<p>名称随便写比如Azure，接口类型选择VPN，类型选择IKEv2
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-34-51.png" alt="">
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-35-37.png" alt=""></p>
-<p>目标地址请填写你Azure虚拟网关的public IP
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-36-51.png" alt=""></p>
-<p>在静态路由这里点击新建,目标地址依据个人Azure资源的而定
-<img src="https://blog2019.pek3b.qingstor.com/s2s_vpn/Snipaste_2019-02-21_14-39-25.png" alt=""></p>
-<p>用户凭据这里只需填写一个用户名即可，因为认证是用的PSK</p>
-<p>最后，在你创建的<code>Azure</code>上右键属性
-在安全中选择使用PSK认证并填入你的psk即可
-右键Azure，选择连接，等待连接成功即可。</p>
-<h2 id="参考文档">参考文档</h2>
-<blockquote>
-<p><strong>https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal</strong>
-<strong>https://www.youtube.com/watch?v=bUeDVrVAiZ4</strong>
-<strong>https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal</strong></p>
-</blockquote>
+<h2 id="安装步骤">安装步骤</h2>
+<ol>
+<li>制作安装启动盘</li>
+<li>准备驱动程序（现在基础驱动都自带了）</li>
+<li>从BIOS里启动安装U盘</li>
+<li>分区、安装系统</li>
+<li>激活、安装系统所需软件和驱动</li>
+</ol>
+<h2 id="制作启动盘">制作启动盘</h2>
+<p>插上启动盘</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124400.png" alt=""></p>
+<p>右键格式化</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124433.png" alt=""></p>
+<p>选择默认FAT32磁盘格式</p>
+<p><strong>PS：如果使用exFAT格式会导致UEFI无法识别</strong></p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124502.png" alt=""></p>
+<p>下载的Windows10镜像右键打开方式为文件资源管理器，里面文件结构如下</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124633.png" alt=""></p>
+<p>将所有文件复制到启动U盘</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124722.png" alt=""></p>
+<p>到此为止启动盘就准备好了</p>
+<p>备注：也可以使用微软的Windows10 Media Creation Tool下载并制作启动盘，<a href="https://www.microsoft.com/en-hk/software-download/windows10">链接点我</a></p>
+<h2 id="通过bios启动安装程序">通过BIOS启动安装程序</h2>
+<p>常见主板BIOS快捷键如下图：（来自互联网）</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125207.png" alt="">、</p>
+<p>进入BIOS之后，确定你的SATA模式是AHCI（Raid阵列不做讨论）</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125343.png" alt=""></p>
+<p>Windows8及以上可以打开安全启动，但是如果你还有其他双系统比如Linux存在，请关闭</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125425.png" alt=""></p>
+<p>确定你的启动模式是UEFI，并将安装U盘放在第一位</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125458.png" alt=""></p>
+<p>保存退出并重启</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125521.png" alt=""></p>
+<p>至此BIOS设置完毕</p>
+<h2 id="分区并安装系统">分区并安装系统</h2>
+<p>用U盘启动进入Windows安装界面</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125611.png" alt=""></p>
+<p>一路默认安装，在安装到磁盘那里选择自定义安装</p>
+<p>Shift+F10打开cmd控制台</p>
+<p>输入以下命令：</p>
+<pre><code>diskpart	#进入分区管理软件
+list disk	#列出磁盘
+select disk x	#选中磁盘x，x为你要安装到系统的盘符
+clean	#格式化磁盘
+convert gpt		#转换磁盘格式为GPT
+create partition efi size=200	#创建EFI分区，大于等于200MB
+create partition msr size=128	#创建MSR分区，大小128MB即可
+</code></pre>
+<p>图示：</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526130123.png" alt=""></p>
+<p><strong>提示：磁盘后面的Gpt下有<code>*</code>即表示已经是GPT分区格式了</strong></p>
+<h2 id="激活-安装系统所需软件和驱动">激活、安装系统所需软件和驱动</h2>
+<p>激活请尽量购买正版key或者私信我要激活码</p>
+<p><strong>驱动更新下载请使用Windows10 自带更新下载驱动，强烈建议不要使用诸如鲁大师、驱动精灵等流氓软件！！</strong></p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526130402.png" alt="">、</p>
+<h2 id="错误小贴士">错误小贴士</h2>
+<p>如果在安装到磁盘的时候提示无法安装到该磁盘，以下几个解决思路：</p>
+<ul>
+<li>更换U盘</li>
+<li>换USB2.0的口</li>
+<li>重新格式化磁盘</li>
+</ul>
+<p>其他杂七杂八的问题，请善用搜索引擎</p>
+<p>（要我给你Google🐎？</p>
 
             </article>
           </div>
@@ -345,7 +350,7 @@ PS：VPN设备有两个网卡，一个对外一个对内。名称可以修改为
             <nav class="navigation pagination" role="navigation">
               <h2 class="screen-reader-text">Posts navigation</h2>
               <div class="nav-links">
-                <a class="next page-numbers" href="https://tediorelee.github.io/post/azure-devops-server-2019-rc2-installation">下一篇->🌈Azure DevOps Server 2019 RC2 Installation</a>
+                <a class="next page-numbers" href="https://tediorelee.github.io/post/update-azuredevops-server-certificates">下一篇->🌈Update AzureDevops Server Certificates</a>
               </div>
             </nav>
           
