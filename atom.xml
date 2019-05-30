@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tediorelee.github.io</id>
-    <title>Fire and Blood 🔥</title>
-    <updated>2019-05-28T03:49:02.659Z</updated>
+    <title>漫游之歌🎵</title>
+    <updated>2019-05-30T05:52:54.694Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tediorelee.github.io"/>
     <link rel="self" href="https://tediorelee.github.io/atom.xml"/>
-    <subtitle>“他就是预言中的王子,他的歌就是冰与火之歌”</subtitle>
+    <subtitle>“哪吒守护着大家”</subtitle>
     <logo>https://tediorelee.github.io/images/avatar.png</logo>
     <icon>https://tediorelee.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Fire and Blood 🔥</rights>
+    <rights>All rights reserved 2019, 漫游之歌🎵</rights>
     <entry>
         <title type="html"><![CDATA[🌈How to Install Windows 10 (Fully Installation Guide)]]></title>
         <id>https://tediorelee.github.io/post/how-to-install-windows-10</id>
@@ -23,78 +23,6 @@
         <content type="html"><![CDATA[<blockquote>
 <p>为什么现在的人都不会重装系统呢（就是你lxk</p>
 </blockquote>
-<!-- more -->
-<h2 id="预备知识">预备知识</h2>
-<ul>
-<li>尽量使用UEFI启动，不行再使用Legacy启动</li>
-<li>UEFI启动必须使用64位的系统</li>
-<li>UEFI启动磁盘格式必须是GPT格式（后面会讲到如何判断并格式化）</li>
-<li>GPT磁盘分为EFI（ESP）和MSR分区，用于开机UEFI寻找启动入口</li>
-</ul>
-<h2 id="安装步骤">安装步骤</h2>
-<ol>
-<li>制作安装启动盘</li>
-<li>准备驱动程序（现在基础驱动都自带了）</li>
-<li>从BIOS里启动安装U盘</li>
-<li>分区、安装系统</li>
-<li>激活、安装系统所需软件和驱动</li>
-</ol>
-<h2 id="制作启动盘">制作启动盘</h2>
-<p>插上启动盘</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124400.png" alt=""></p>
-<p>右键格式化</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124433.png" alt=""></p>
-<p>选择默认FAT32磁盘格式</p>
-<p><strong>PS：如果使用exFAT格式会导致UEFI无法识别</strong></p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124502.png" alt=""></p>
-<p>下载的Windows10镜像右键打开方式为文件资源管理器，里面文件结构如下</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124633.png" alt=""></p>
-<p>将所有文件复制到启动U盘</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526124722.png" alt=""></p>
-<p>到此为止启动盘就准备好了</p>
-<p>备注：也可以使用微软的Windows10 Media Creation Tool下载并制作启动盘，<a href="https://www.microsoft.com/en-hk/software-download/windows10">链接点我</a></p>
-<h2 id="通过bios启动安装程序">通过BIOS启动安装程序</h2>
-<p>常见主板BIOS快捷键如下图：（来自互联网）</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125207.png" alt="">、</p>
-<p>进入BIOS之后，确定你的SATA模式是AHCI（Raid阵列不做讨论）</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125343.png" alt=""></p>
-<p>Windows8及以上可以打开安全启动，但是如果你还有其他双系统比如Linux存在，请关闭</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125425.png" alt=""></p>
-<p>确定你的启动模式是UEFI，并将安装U盘放在第一位</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125458.png" alt=""></p>
-<p>保存退出并重启</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125521.png" alt=""></p>
-<p>至此BIOS设置完毕</p>
-<h2 id="分区并安装系统">分区并安装系统</h2>
-<p>用U盘启动进入Windows安装界面</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526125611.png" alt=""></p>
-<p>一路默认安装，在安装到磁盘那里选择自定义安装</p>
-<p>Shift+F10打开cmd控制台</p>
-<p>输入以下命令：</p>
-<pre><code>diskpart	#进入分区管理软件
-list disk	#列出磁盘
-select disk x	#选中磁盘x，x为你要安装到系统的盘符
-clean	#格式化磁盘
-convert gpt		#转换磁盘格式为GPT
-create partition efi size=200	#创建EFI分区，大于等于200MB
-create partition msr size=128	#创建MSR分区，大小128MB即可
-</code></pre>
-<p>图示：</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526130123.png" alt=""></p>
-<p><strong>提示：磁盘后面的Gpt下有<code>*</code>即表示已经是GPT分区格式了</strong></p>
-<h2 id="激活-安装系统所需软件和驱动">激活、安装系统所需软件和驱动</h2>
-<p>激活请尽量购买正版key或者私信我要激活码</p>
-<p><strong>驱动更新下载请使用Windows10 自带更新下载驱动，强烈建议不要使用诸如鲁大师、驱动精灵等流氓软件！！</strong></p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526130402.png" alt="">、</p>
-<h2 id="错误小贴士">错误小贴士</h2>
-<p>如果在安装到磁盘的时候提示无法安装到该磁盘，以下几个解决思路：</p>
-<ul>
-<li>更换U盘</li>
-<li>换USB2.0的口</li>
-<li>重新格式化磁盘</li>
-</ul>
-<p>其他杂七杂八的问题，请善用搜索引擎</p>
-<p>（要我给你Google🐎？</p>
 ]]></content>
     </entry>
     <entry>
@@ -110,29 +38,6 @@ create partition msr size=128	#创建MSR分区，大小128MB即可
         <content type="html"><![CDATA[<blockquote>
 <p>简单记记</p>
 </blockquote>
-<!-- more -->
-<h2 id="获取pfx证书">获取pfx证书</h2>
-<p>如果你的证书已经是pfx格式了，那么可以直接复制到服务器待用</p>
-<p>如果你的证书是<code>.cer</code>格式那么还需要将格式转化为pfx</p>
-<p>可以在<a href="https://freessl.cn/ssltools">https://freessl.cn/ssltools</a>找到SSL证书格式转换</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210650.png" alt=""></p>
-<h2 id="更换证书">更换证书</h2>
-<p>登录到你的服务器</p>
-<p><code>win+r</code>输入<code>certlm.msc</code>打开证书管理控制台</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210801.png" alt=""></p>
-<p>删掉原先导入的服务器证书以免冲突，便于识别</p>
-<p>打开IIS控制台</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211012.png" alt=""></p>
-<p>依次点开左侧网站，找到我们要更换证书的Azure Devops Server</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211133.png" alt=""></p>
-<p>右侧找到<strong>编辑网站</strong>-绑定</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211229.png" alt=""></p>
-<p>编辑443及HTTPS端口的设置</p>
-<p>选择我们正确的证书和主机地址即可</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211353.png" alt=""></p>
-<p>更换完成之后，打开我们的主机名</p>
-<p>可以看到SSL证书已经更换成功</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211551.png" alt=""></p>
 ]]></content>
     </entry>
     <entry>
@@ -148,52 +53,6 @@ create partition msr size=128	#创建MSR分区，大小128MB即可
         <content type="html"><![CDATA[<blockquote>
 <p>Decide your own installation</p>
 </blockquote>
-<!-- more --> 
-<p>打开https://config.office.com</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426110912.png" alt=""></p>
-<p>点击<strong>创建新的配置</strong></p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426111334.png" alt=""></p>
-<p>可以根据自己的订阅类型和安装喜好选择需要安装的版本和app</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426111402.png" alt=""></p>
-<p>最后配置完成之后，选择导出，生成一个xml文件</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190426112133.png" alt=""></p>
-<p>XML示例：</p>
-<pre><code>&lt;!-- Office 365 client configuration file sample. To be used for Office 365 ProPlus apps, 
-     Office 365 Business apps, Project Pro for Office 365 and Visio Pro for Office 365. 
-
-     For detailed information regarding configuration options visit: http://aka.ms/ODT. 
-     To use the configuration file be sure to remove the comments
-
-     The following sample allows you to download and install the 64 bit version of the Office 365 ProPlus apps 
-     and Visio Pro for Office 365 directly from the Office CDN using the Monthly Channel
-     settings  --&gt;
-
-&lt;Configuration&gt;
-
-  &lt;Add OfficeClientEdition=&quot;64&quot; Channel=&quot;Monthly&quot;&gt;
-    &lt;Product ID=&quot;O365ProPlusRetail&quot;&gt;
-      &lt;Language ID=&quot;MatchOS&quot; /&gt;
-      &lt;ExcludeApp ID=&quot;Access&quot; /&gt;
-      &lt;ExcludeApp ID=&quot;Publisher&quot; /&gt;
-      &lt;ExcludeApp ID=&quot;Groove&quot; /&gt;
-      &lt;ExcludeApp ID=&quot;OneDrive&quot; /&gt;
-	&lt;ExcludeApp ID=&quot;Teams&quot; /&gt;
-    &lt;/Product&gt;
-    &lt;Product ID=&quot;ProjectPro2019Retail&quot;&gt;
-      &lt;Language ID=&quot;MatchOS&quot; /&gt;
-    &lt;/Product&gt;
-  &lt;/Add&gt;
-
-  &lt;Updates Enabled=&quot;TRUE&quot; Channel=&quot;Monthly&quot; /&gt;
-
-  &lt;!--  &lt;Display Level=&quot;None&quot; AcceptEULA=&quot;TRUE&quot; /&gt;  --&gt;
-
-  &lt;!--  &lt;Property Name=&quot;AUTOACTIVATE&quot; Value=&quot;1&quot; /&gt;  --&gt;
-
-&lt;/Configuration&gt;
-</code></pre>
-<p>配合office-deployment-tool使用，<a href="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/office-deployment-tool_updated.zip">下载链接</a></p>
-<p>替换掉里面<code>start-install.bat</code>文件里的xml运行即可</p>
 ]]></content>
     </entry>
     <entry>
@@ -209,90 +68,6 @@ create partition msr size=128	#创建MSR分区，大小128MB即可
         <content type="html"><![CDATA[<blockquote>
 <p>Hello, Windows Admin Center!</p>
 </blockquote>
-<!-- more --> 
-<h2 id="下载">下载</h2>
-<p><a href="https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center">参考链接如下</a></p>
-<p>目前版本为<a href="https://aka.ms/WACDownload">Windows Admin Center (version 1904)</a></p>
-<h2 id="自签名证书">自签名证书</h2>
-<p>由于Windows Admin Center在安装时需要绑定443端口，所以有两种安装方式</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11e5286772.png" alt=""></p>
-<p>要么使用安装工具生成一个自签名证书（60天过期）</p>
-<p>要么使用现有的证书绑定指纹</p>
-<p>由于Admin Center多用于企业内部，外网肯定是不需要用到的，但是这里生成的自签名证书有效期又太短</p>
-<p>所以我们可以用Powershell自己生成一个有效期长的自签名证书</p>
-<h3 id="生成">生成</h3>
-<p>New-SelfSignedCertificate使用规范：</p>
-<pre><code>New-SelfSignedCertificate
-   [-SecurityDescriptor &lt;FileSecurity&gt;]
-   [-TextExtension &lt;String[]&gt;]
-   [-Extension &lt;X509Extension[]&gt;]
-   [-HardwareKeyUsage &lt;HardwareKeyUsage[]&gt;]
-   [-KeyUsageProperty &lt;KeyUsageProperty[]&gt;]
-   [-KeyUsage &lt;KeyUsage[]&gt;]
-   [-KeyProtection &lt;KeyProtection[]&gt;]
-   [-KeyExportPolicy &lt;KeyExportPolicy[]&gt;]
-   [-KeyLength &lt;Int32&gt;]
-   [-KeyAlgorithm &lt;String&gt;]
-   [-SmimeCapabilities]
-   [-ExistingKey]
-   [-KeyLocation &lt;String&gt;]
-   [-SignerReader &lt;String&gt;]
-   [-Reader &lt;String&gt;]
-   [-SignerPin &lt;SecureString&gt;]
-   [-Pin &lt;SecureString&gt;]
-   [-KeyDescription &lt;String&gt;]
-   [-KeyFriendlyName &lt;String&gt;]
-   [-Container &lt;String&gt;]
-   [-Provider &lt;String&gt;]
-   [-CurveExport &lt;CurveParametersExportType&gt;]
-   [-KeySpec &lt;KeySpec&gt;]
-   [-Type &lt;CertificateType&gt;]
-   [-FriendlyName &lt;String&gt;]
-   [-NotAfter &lt;DateTime&gt;]
-   [-NotBefore &lt;DateTime&gt;]
-   [-SerialNumber &lt;String&gt;]
-   [-Subject &lt;String&gt;]
-   [-DnsName &lt;String[]&gt;]
-   [-SuppressOid &lt;String[]&gt;]
-   [-HashAlgorithm &lt;String&gt;]
-   [-AlternateSignatureAlgorithm]
-   [-TestRoot]
-   [-Signer &lt;Certificate&gt;]
-   [-CloneCert &lt;Certificate&gt;]
-   [-CertStoreLocation &lt;String&gt;]
-   [-WhatIf]
-   [-Confirm]
-   [&lt;CommonParameters&gt;]
-</code></pre>
-<p>打开powershell，这里以生成有效期5年为例，输入：</p>
-<pre><code>New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My\ -DnsName 'yoursite' -NotAfter (Get-Date).AddMonths(60)
-</code></pre>
-<p>打开<code>certlm.msc</code>可以看到，我们的自签名证书已经生成好了</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11ea64bc67.png" alt=""></p>
-<h3 id="导出">导出</h3>
-<p>以导出pfx格式为例</p>
-<pre><code>PS C:\&gt; $certPwd = ConvertTo-SecureString -String ‘yourcert_pwd’  -Force -AsPlainText
-PS C:\&gt; $thumbprint = 'yourcert_thumbprint'
-PS C:\&gt; $cerPath = Get-Item Cert:\LocalMachine\My\$thumbprint
-PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password $certPwd
-</code></pre>
-<p>⚠️注意指定具体的值</p>
-<p>导出成功如图</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11f9750b19.png" alt=""></p>
-<h2 id="安装admincenter">安装AdminCenter</h2>
-<p>直接双击安装包，在指定证书这里，填上端口443和证书的指纹</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc125d285688.png" alt=""></p>
-<p>完成剩下安装即可</p>
-<p>打开给出的访问地址https://infra-srv发现还不能访问</p>
-<p>因为我们的dns配置没有把域名指向正确的ip地址</p>
-<p>使用管理员权限打开notepad</p>
-<p>选择打开，定位到C:\Windows\System32\drivers\etc</p>
-<p>修改hosts文件，末尾加上对应的ip和域名</p>
-<p>打开cmd，<code>ipconfig /flushdns</code>刷新一下dns，这时候再ping infra-srv就有解析结果了</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc126b1e696c.png" alt=""></p>
-<p>浏览器打开https://infra-srv</p>
-<p>只要是在内网环境的电脑，都可以访问Admin Center了！</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc127014ab2f.png" alt=""></p>
 ]]></content>
     </entry>
     <entry>
@@ -308,35 +83,6 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
         <content type="html"><![CDATA[<blockquote>
 <p>A  Step-by-step tutorial of Migrate Azure DC VM to On-Premises VM</p>
 </blockquote>
-<!-- more --> 
-<h2 id="download-vhd">Download VHD</h2>
-<p>在Azure Potal中，找到你的虚拟机并关闭</p>
-<p>点击左侧的磁盘选项，下载整个虚拟机磁盘</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc017cf94e96.png" alt=""></p>
-<p>PS: 建议使用例如idm这类的下载工具，浏览器自带下载可能会造成下载中断。</p>
-<h2 id="add-a-new-domain-controller">Add a new Domain Controller</h2>
-<p>打开Hyper-V管理器，新建一个用作之后本地主DC的虚拟机,配置自定，安装完成之后注意修改主机名，配置静态ip，为之后加域做好准备。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01a1c387f2.png" alt=""></p>
-<p>再新建一个虚拟机，配置注意保持与云端虚拟机一模一样防止启动报错，启动盘挂载为下载下来的vhd文件。</p>
-<p>成功启动后，修改此虚拟机的ip以符合本地网络环境，注意关闭不必要的服务比如AAD Sync等，避免和云端起冲突。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01ab8a9d49.png" alt=""></p>
-<p>在之前创建的DC中，将dns指向原云端DC，并加入域。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01b25cfe86.png" alt=""></p>
-<h2 id="promote-system-to-a-domain-controller">Promote system to a Domain Controller</h2>
-<p>在新DC中，添加角色，安装Active Directory Domain Services</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01ba6bb7b5.png" alt=""></p>
-<p>等待安装完成之后，选择将此服务器提升为域控制器。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01c369ab04.png" alt=""></p>
-<p>选择添加域控制器至现有的域</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01cd087bab.png" alt=""></p>
-<p>设置好你的DSRM密码</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01d251805b.png" alt=""></p>
-<p>选择从旧的DC复制</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01da4f3a62.png" alt=""></p>
-<p>等待检查安装并自动重启</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01debb2be5.png" alt=""></p>
-<h2 id="transfer-fsmo-roles">Transfer FSMO roles</h2>
-<p>未完待续</p>
 ]]></content>
     </entry>
     <entry>
@@ -352,38 +98,6 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
         <content type="html"><![CDATA[<blockquote>
 <p>Self-Hosted File Sync and Sharing</p>
 </blockquote>
- <!-- more --> 
-<h2 id="环境概述">环境概述</h2>
-<ul>
-<li>CentOS 7</li>
-<li>宝塔面板</li>
-<li>php5.6</li>
-<li>MySQL</li>
-</ul>
-<h2 id="安装步骤">安装步骤</h2>
-<h3 id="下载安装包">下载安装包</h3>
-<p>定位到FileRun官网-Download，下载最新的安装包。</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb95fc289e2c.png" alt=""></p>
-<h3 id="上传至服务器">上传至服务器</h3>
-<p>在宝塔面板里上传压缩包至网站根目录，解压缩</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb9613a4d8a3.png" alt=""></p>
-<h3 id="排错">排错</h3>
-<p>注意需要安装诸多PHP的插件</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb9617a7e6a6.png" alt=""></p>
-<p>同时也要启用PHP configuration: &quot;exec&quot;，在宝塔面板的软件中找到PHP，点开安装扩展，将图上需要用到的扩展全部安装。</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb961fb1298f.png" alt=""></p>
-<p>定位到左侧配置修改，搜索enable_dl字段，将off改为on，搜索disabled_functions，删除里面的exec字段并重启php服务即可。</p>
-<h3 id="开始安装">开始安装</h3>
-<p>输入你的域名，FileRun会自动进入安装界面</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb963dbd7cc0.png" alt=""></p>
-<p>检查你的组件和配置是否都安装完毕。</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb96a7856a96.png" alt=""></p>
-<p>对于open_basedir的设置打开宝塔面板左侧的配置文件，找到open_basedir字段，修改为open_basedir = /www/wwwroot/yourdomain.com/:/tmp/:/proc/</p>
-<p>点击下一步开始配置MySQL数据库。</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb96b4f6b1e6.png" alt=""></p>
-<p>输入对应的用户名，数据库名和密码，下一步即可。</p>
-<p><img src="https://i.loli.net/2019/04/19/5cb96b99d4b62.png" alt=""></p>
-<p>记住你的账户和密码，之后即可登录</p>
 ]]></content>
     </entry>
     <entry>
@@ -399,45 +113,6 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
         <content type="html"><![CDATA[<blockquote>
 <p>A Simple Summary of AD FS Deployment</p>
 </blockquote>
-<!--more-->
-<h2 id="实验环境">实验环境</h2>
-<p><strong>4台虚拟机，均为windows server 2019 datacenter版本</strong>
-<strong>一个公网认证的通配符证书（*.tediorelee.cn.pfx</strong>
-<strong>一个个人域名（tediorelee.cn</strong></p>
-<h2 id="服务器结构">服务器结构</h2>
-<p><img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-43-13.png" alt=""></p>
-<h2 id="安装步骤">安装步骤</h2>
-<p>1.首先两台作为DC的服务器修改名字，安装ad域功能，两台服务器组成AD forest（tediorelee.cn）
-2.在AD域用户和计算机里，新建一个部门，新建一个用户，两台服务器同步即可
-3.在两台DC上安装AAD connect工具，分别与国内版和国际版azure同步，安装选项详见以前文档
-4.登录chinacloud和global的azure，看到aad用户里同步成功即可
-5.在adfs服务器上，加入域（ps：adfs服务器不要安装在DC上）修改计算机名
-6.adfs上添加ad联合身份认证服务功能，导入我们的域名通配符证书，详情配置参照旧文档
-7.在DC-Global上，运行aad connect，选择“更改用户登录”，用户登录方式选择“使用AD FS进行联合身份认证”，后面跟着配置即可
-8.在aad connect工具中，选择“管理联合身份认证服务”-“更新AD FS ssl证书“，导入你的通配符证书并更新
-9.在aad connect工具中，选择“管理联合身份认证服务”-“联合AzureAD 域”，配置你的adfs和aad域
-10.在adfs服务器上，打开ADFS 管理，检查是否添加成功信赖方信任，如图：
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Untitled%20picture.png" alt="">
-11.在DC-Chinacloud上，步骤同上，联合国内版aad域，但是这时会报个错，无法使用aad connect工具自动添加国内版的信赖方信任，故在ADFS管理中手动添加（具体配置参照tab《ADFS安装相关》）</p>
-<h2 id="截图展示">截图展示</h2>
-<p>登录<a href="https://portal.azure.com">国际版azure</a>
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-48-12.png" alt="">
-在登录框中输入你的域账号
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-48-35.png" alt="">
-跳转到AD FS 服务器认证
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-48-44.png" alt="">
-输入你的域账号账号和密码
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-48-53.png" alt="">
-成功登录国际版Azure
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-49-09.png" alt=""></p>
-<p>登录<a href="https://portal.azure.cn">国内版azure</a><img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-50-03.png" alt="">
-同样输入你的域账号和密码
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-50-20.png" alt="">
-跳转到AD FS服务器认证
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-50-33.png" alt="">
-由于之前已经通过了单点登录的认证，这里直接进入。
-成功登录国内版Azure
-<img src="https://blog2019.pek3b.qingstor.com/1-23/Snipaste_2019-01-23_16-51-02.png" alt=""></p>
 ]]></content>
     </entry>
     <entry>
@@ -452,37 +127,6 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>Learn How to Force Delete AAD Users</p>
-</blockquote>
-<!--more-->
-<h2 id="安装msonline模块">安装MSOnline模块</h2>
-<p>打开powershell，输入<code>Install-Module MSOnline</code>
-弹出来的提示框中输入两次<code>Y</code>
-等待两分钟安装完成即可
-<img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-15-11.png" alt=""></p>
-<h2 id="连接到azure云">连接到Azure云</h2>
-<p>powershell中输入<code>Connect-MsolService</code>
-注意：这里因为是国际版环境，所以后面不用接参数，假如是国内版或者其他版本需要后面接上参数，如下图
-<img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-02-51.png" alt=""></p>
-<p>在弹出来的对话框中输入你的管理员账号和密码即可
-<img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-06-29.png" alt=""></p>
-<h2 id="停止dirsync同步">停止DirSync同步</h2>
-<p>powershell中输入<code>Set-MsolDirSyncEnabled -EnableDirSync $false</code>
-弹出来的提示框中输入<code>Y</code>
-登录portal可看到AAD connect中同步已经显示停止
-<img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-34-14.png" alt=""></p>
-<h2 id="删除aad用户">删除AAD用户</h2>
-<p>powershell中输入<code>Get-MsolUser | Export-CSV C:\users.csv</code>
-将AAD用户导出到本地为csv文档
-<img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-21-47.png" alt=""></p>
-<p><code>Import-CSV C:\users.csv | Remove-MsOlUser –Force</code>
-使用force参数强制删除用户即可</p>
-<p>登录portal可看到除了管理员用户之外的所有AAD用户均被删除
-<img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-22-30.png" alt=""></p>
-<h2 id="参考文档">参考文档</h2>
-<blockquote>
-<p><strong>https://docs.microsoft.com/en-us/office365/enterprise/turn-off-directory-synchronization</strong>
-<strong>https://docs.microsoft.com/zh-cn/office365/enterprise/powershell/connect-to-office-365-powershell</strong>
-<strong>https://blogs.technet.microsoft.com/jeffgilb/2017/03/09/deleting-azure-active-directory/</strong></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -499,59 +143,6 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
         <content type="html"><![CDATA[<blockquote>
 <p>一直白嫖一直爽</p>
 </blockquote>
-<!--more-->
-<h2 id="准备">准备</h2>
-<ul>
-<li>云服务器（centos）x1</li>
-<li>域名（download.xxxx.cn）x1</li>
-<li>onedrive账号 x1</li>
-</ul>
-<h2 id="申请一个onedrive">申请一个onedrive</h2>
-<p>根据微博大佬<a href="https://media.weibo.cn/article?jumpfrom=weibocom&amp;id=2309404332460509925014&amp;display=0&amp;retcode=6102">@倒吸一口凉屁</a>的教程
-随机生成一个fake邮箱，步骤简单易懂
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_10-56-37.png" alt=""></p>
-<h2 id="服务器安装宝塔面板">服务器安装宝塔面板</h2>
-<p>在宝塔<a href="https://www.bt.cn/bbs/thread-19376-1-1.html">主页</a>
-用SSH连接云主机
-输入<code>yum install -y wget &amp;&amp; wget -O install.sh</code>
-自动安装宝塔面板
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-07-24.png" alt=""></p>
-<p>安装完成后，浏览器打开<code>http://ip:8888</code>登录后台，用户密码前面会自动生成，请记得及时修改
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-10-50.png" alt=""></p>
-<h2 id="安装pyone">安装Pyone</h2>
-<p>所有步骤参考<a href="https://wiki.pyone.me/pyone-an-zhuang/xia-zai-yuan-ma-yi-jian-an-zhuang/">PyoneWiKi</a>
-完成之后，打开<code>http://ip:34567</code>即可进入后台
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-16-53.png" alt=""></p>
-<p>PS:这里我使用一键安装脚本出现了问题，有一个依赖包没有安装
-导致我排错了很久，建议手动输入<code>pip install -r requirements.txt</code>一次</p>
-<h2 id="绑定网盘">绑定网盘</h2>
-<p>获取应用机密（client_secret)和应用ID（client_id)
-详情参考<a href="https://wiki.pyone.me/pyone-an-zhuang/bang-ding-wang-pan.html">PyoneWiKi</a>
-<img src="https://wiki.pyone.me/.gitbook/assets/pyone-bang-ding-liu-cheng.gif" alt=""></p>
-<h2 id="绑定域名">绑定域名</h2>
-<p>在宝塔面板里新建你的网站目录，设置里添加反向代理，并修改nginx配置文件
-详情参考<a href="https://wiki.pyone.me/pyone-an-zhuang/bang-ding-yu-ming.html">PyoneWiKi</a>
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-29-55.png" alt="">
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-30-04.png" alt=""></p>
-<h2 id="添加ssl证书">添加SSL证书</h2>
-<p>1.在腾讯云上申请一个你的下载站域名证书，或者去<a href="https://freessl.cn/">FreeSSL</a>申请一个免费证书
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-33-06.png" alt=""></p>
-<p>2.进入宝塔面板后台，打开你的网站，找到SSL-其他证书
-输入你的证书和密钥，保存即可，记得勾选<strong>强制HTTPS</strong>
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-33-22.png" alt=""></p>
-<h2 id="其他">其他</h2>
-<p>绑定多网盘和其他错误信息请参考<a href="https://wiki.pyone.me">PyoneWiKi</a>
-如果所有步骤均无误，浏览器输入<code>https://yourdomian</code>即可访问
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-44-37.png" alt=""></p>
-<h2 id="下载在线播放测试">下载&amp;在线播放测试</h2>
-<p>使用idm随意下载一个文件，可见在100M网络下，速度已经很不错了
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-50-00.png" alt=""></p>
-<p>随便传了一集美剧，在线播放加载也挺快
-<img src="https://blog2019.pek3b.qingstor.com/pyone/Snipaste_2019-01-28_11-53-09.png" alt=""></p>
-<h2 id="参考文献">参考文献</h2>
-<blockquote>
-<p><a href="https://wiki.pyone.me/">PyOne介绍 · GitBook</a></p>
-</blockquote>
 ]]></content>
     </entry>
     <entry>
@@ -567,35 +158,6 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
         <content type="html"><![CDATA[<blockquote>
 <p>更新于4/23，对不起我转Hyper-V了😂</p>
 </blockquote>
-<!--more-->
-<h2 id="参考文档">参考文档</h2>
-<blockquote>
-<p><strong>https://jingyan.baidu.com/article/da1091fb780e48027949d610.html</strong></p>
-<p><strong>https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage#turn-off-with-hardware-readiness-tool</strong></p>
-<p><strong>https://www.microsoft.com/download/details.aspx?id=53337</strong></p>
-</blockquote>
-<h2 id="报错信息">报错信息</h2>
-<p><img src="https://blog2019.pek3b.qingstor.com/vmware/2018-05-24-00_10_28-Windows-Server-2016_VM1-VMware-Workstation.png" alt=""></p>
-<h2 id="解决方案总结">解决方案总结</h2>
-<ul>
-<li><strong>关闭Win10的Hyper-V功能</strong></li>
-</ul>
-<p>在<strong>控制面板</strong>-<strong>卸载软件</strong>-<strong>开启/关闭windows功能</strong>处，找到HyperV功能，取消选中，保存并重启
-<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-41-00.png" alt=""></p>
-<ul>
-<li><strong>使用Windows官方docs里的Uninstall Tool</strong>
-<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-45-17.png" alt="">
-下载解压后
-用powershell定位到目录（ps：必须是管理员身份不然会报错）
-<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-45-35.png" alt=""></li>
-</ul>
-<p>运行*.ps1文件
-<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-46-02.png" alt=""></p>
-<p>完成之后重启一遍
-最后为了保险起见，手动关闭hyper服务的启动
-<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-46-19.png" alt=""></p>
-<p>大功告成，进入Vmware，是不是可以启动虚拟机了？
-<img src="https://blog2019.pek3b.qingstor.com/vmware/Snipaste_2019-01-29_11-51-08.png" alt=""></p>
 ]]></content>
     </entry>
 </feed>
