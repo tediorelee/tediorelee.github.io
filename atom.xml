@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tediorelee.github.io</id>
     <title>tediorelee&apos;s ～漫游之歌☁️</title>
-    <updated>2019-05-30T06:08:12.797Z</updated>
+    <updated>2019-05-30T09:03:55.155Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tediorelee.github.io"/>
     <link rel="self" href="https://tediorelee.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://tediorelee.github.io/images/avatar.png</logo>
     <icon>https://tediorelee.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, tediorelee&apos;s ～漫游之歌☁️</rights>
+    <entry>
+        <title type="html"><![CDATA[🌈Docker学习笔记]]></title>
+        <id>https://tediorelee.github.io/post/7u9aJm8FG</id>
+        <link href="https://tediorelee.github.io/post/7u9aJm8FG">
+        </link>
+        <updated>2019-05-30T08:34:27.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>Dokcer是个好东西</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>Dokcer是个好东西</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[🌈How to Install Windows 10 (Fully Installation Guide)]]></title>
         <id>https://tediorelee.github.io/post/how-to-install-windows-10</id>
@@ -142,21 +157,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>一直白嫖一直爽</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🌈VMware与 Device&Credential Guard不兼容的solution]]></title>
-        <id>https://tediorelee.github.io/post/vmware-yu-deviceandcredential-guard-bu-jian-rong-de-solution</id>
-        <link href="https://tediorelee.github.io/post/vmware-yu-deviceandcredential-guard-bu-jian-rong-de-solution">
-        </link>
-        <updated>2019-04-15T08:07:01.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>更新于4/23，对不起我转Hyper-V了😂</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>更新于4/23，对不起我转Hyper-V了😂</p>
 </blockquote>
 ]]></content>
     </entry>
