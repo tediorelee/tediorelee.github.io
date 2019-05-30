@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tediorelee.github.io</id>
-    <title>漫游之歌🎵</title>
-    <updated>2019-05-30T05:53:24.924Z</updated>
+    <title>tediorelee&apos;s ～漫游之歌☁️</title>
+    <updated>2019-05-30T06:02:22.318Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tediorelee.github.io"/>
     <link rel="self" href="https://tediorelee.github.io/atom.xml"/>
     <subtitle>“哪吒守护着大家”</subtitle>
     <logo>https://tediorelee.github.io/images/avatar.png</logo>
     <icon>https://tediorelee.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, 漫游之歌🎵</rights>
+    <rights>All rights reserved 2019, tediorelee&apos;s ～漫游之歌☁️</rights>
     <entry>
         <title type="html"><![CDATA[🌈How to Install Windows 10 (Fully Installation Guide)]]></title>
         <id>https://tediorelee.github.io/post/how-to-install-windows-10</id>
