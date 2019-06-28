@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://tediorelee.github.io</id>
+    <id>https://doc.tediorelee.cn</id>
     <title>tediorelee&apos;s ～漫游之歌☁️</title>
-    <updated>2019-06-27T08:13:03.119Z</updated>
+    <updated>2019-06-28T02:41:23.213Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://tediorelee.github.io"/>
-    <link rel="self" href="https://tediorelee.github.io/atom.xml"/>
+    <link rel="alternate" href="https://doc.tediorelee.cn"/>
+    <link rel="self" href="https://doc.tediorelee.cn/atom.xml"/>
     <subtitle>“哪吒守护着大家”</subtitle>
-    <logo>https://tediorelee.github.io/images/avatar.png</logo>
-    <icon>https://tediorelee.github.io/favicon.ico</icon>
+    <logo>https://doc.tediorelee.cn/images/avatar.png</logo>
+    <icon>https://doc.tediorelee.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, tediorelee&apos;s ～漫游之歌☁️</rights>
     <entry>
         <title type="html"><![CDATA[🌈Microsoft Teams 简要使用指南]]></title>
-        <id>https://tediorelee.github.io/post/microsoft-teams</id>
-        <link href="https://tediorelee.github.io/post/microsoft-teams">
+        <id>https://doc.tediorelee.cn/post/microsoft-teams</id>
+        <link href="https://doc.tediorelee.cn/post/microsoft-teams">
         </link>
         <updated>2019-06-27T07:18:13.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -27,8 +27,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Docker学习笔记]]></title>
-        <id>https://tediorelee.github.io/post/7u9aJm8FG</id>
-        <link href="https://tediorelee.github.io/post/7u9aJm8FG">
+        <id>https://doc.tediorelee.cn/post/7u9aJm8FG</id>
+        <link href="https://doc.tediorelee.cn/post/7u9aJm8FG">
         </link>
         <updated>2019-05-30T08:34:27.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -42,8 +42,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈How to Install Windows 10 (Fully Installation Guide)]]></title>
-        <id>https://tediorelee.github.io/post/how-to-install-windows-10</id>
-        <link href="https://tediorelee.github.io/post/how-to-install-windows-10">
+        <id>https://doc.tediorelee.cn/post/how-to-install-windows-10</id>
+        <link href="https://doc.tediorelee.cn/post/how-to-install-windows-10">
         </link>
         <updated>2019-05-26T05:06:25.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -57,8 +57,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Update AzureDevops Server Certificates]]></title>
-        <id>https://tediorelee.github.io/post/update-azuredevops-server-certificates</id>
-        <link href="https://tediorelee.github.io/post/update-azuredevops-server-certificates">
+        <id>https://doc.tediorelee.cn/post/update-azuredevops-server-certificates</id>
+        <link href="https://doc.tediorelee.cn/post/update-azuredevops-server-certificates">
         </link>
         <updated>2019-05-09T13:17:22.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -72,8 +72,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Customize Your office365]]></title>
-        <id>https://tediorelee.github.io/post/customize-your-office365</id>
-        <link href="https://tediorelee.github.io/post/customize-your-office365">
+        <id>https://doc.tediorelee.cn/post/customize-your-office365</id>
+        <link href="https://doc.tediorelee.cn/post/customize-your-office365">
         </link>
         <updated>2019-04-26T03:03:06.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -87,8 +87,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Windows Admin Center 入坑指南]]></title>
-        <id>https://tediorelee.github.io/post/windows-admin-center</id>
-        <link href="https://tediorelee.github.io/post/windows-admin-center">
+        <id>https://doc.tediorelee.cn/post/windows-admin-center</id>
+        <link href="https://doc.tediorelee.cn/post/windows-admin-center">
         </link>
         <updated>2019-04-25T03:18:53.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -102,8 +102,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Migrate Azure VM to On-Premises]]></title>
-        <id>https://tediorelee.github.io/post/migrate-azure-vm-to-on-premises</id>
-        <link href="https://tediorelee.github.io/post/migrate-azure-vm-to-on-premises">
+        <id>https://doc.tediorelee.cn/post/migrate-azure-vm-to-on-premises</id>
+        <link href="https://doc.tediorelee.cn/post/migrate-azure-vm-to-on-premises">
         </link>
         <updated>2019-04-24T09:40:56.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -117,8 +117,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈FileRun网盘安装]]></title>
-        <id>https://tediorelee.github.io/post/filerun</id>
-        <link href="https://tediorelee.github.io/post/filerun">
+        <id>https://doc.tediorelee.cn/post/filerun</id>
+        <link href="https://doc.tediorelee.cn/post/filerun">
         </link>
         <updated>2019-04-19T08:29:17.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -132,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈ADFS-Document Summary]]></title>
-        <id>https://tediorelee.github.io/post/adfs-document-summary</id>
-        <link href="https://tediorelee.github.io/post/adfs-document-summary">
+        <id>https://doc.tediorelee.cn/post/adfs-document-summary</id>
+        <link href="https://doc.tediorelee.cn/post/adfs-document-summary">
         </link>
         <updated>2019-04-15T08:23:28.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -147,8 +147,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Use Powershell Force Delete AzureAD Users]]></title>
-        <id>https://tediorelee.github.io/post/use-powershell-force-delete-azuread-users</id>
-        <link href="https://tediorelee.github.io/post/use-powershell-force-delete-azuread-users">
+        <id>https://doc.tediorelee.cn/post/use-powershell-force-delete-azuread-users</id>
+        <link href="https://doc.tediorelee.cn/post/use-powershell-force-delete-azuread-users">
         </link>
         <updated>2019-04-15T08:18:13.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
