@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://doc.tediorelee.cn</id>
-    <title>tediorelee&apos;s ～漫游之歌☁️</title>
-    <updated>2019-06-28T02:43:20.685Z</updated>
+    <title>漫游之歌☁️</title>
+    <updated>2019-06-28T02:44:28.180Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://doc.tediorelee.cn"/>
     <link rel="self" href="https://doc.tediorelee.cn/atom.xml"/>
     <subtitle>“哪吒守护着大家”</subtitle>
     <logo>https://doc.tediorelee.cn/images/avatar.png</logo>
     <icon>https://doc.tediorelee.cn/favicon.ico</icon>
-    <rights>All rights reserved 2019, tediorelee&apos;s ～漫游之歌☁️</rights>
+    <rights>All rights reserved 2019, 漫游之歌☁️</rights>
     <entry>
         <title type="html"><![CDATA[🌈Microsoft Teams 简要使用指南]]></title>
         <id>https://doc.tediorelee.cn/post/microsoft-teams</id>
