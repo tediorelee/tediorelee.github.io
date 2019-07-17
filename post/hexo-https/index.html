@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Hexo博客添加https解析 | 漫游之歌☁️</title>
-<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1561689801621">
+<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1563354784100">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://doc.tediorelee.cn/styles/main.css" type='text/css' media='all'>
 
@@ -85,9 +85,30 @@
                     
                 
                     
-                
+                        <li>
+                            <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
                     
                 
+                    
+                        <li>
+                            <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
                     
                 
                     
@@ -103,7 +124,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="/https://doc.tediorelee.cn">  漫游之歌☁️ </a>
+                <a href="https://doc.tediorelee.cn">  漫游之歌☁️ </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -117,7 +138,7 @@
                      
                         
                             <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="https://tediorelee.cn/" target="_blank">Home</a>
+                                <a href="https://doc.tediorelee.cn/" target="_blank">Home</a>
                             </li>
                         
                     
@@ -198,13 +219,13 @@
 </ul>
 </blockquote>
 <h2 id="申请ssl证书">申请SSL证书</h2>
-<p>腾讯云可以免费申请一年的ssl证书，<a href="https://console.cloud.tencent.com/ssl">地址如下</a>
-<img src="https://tedioreleeblog.pek3b.qingstor.com/1.png" alt="1">
-审核只花了我几个小时，收到短信后打开腾讯云后台，下载证书压缩包
-解压以后，用winscp上传到服务器<code>/etc/ngix/cert</code>目录下
+<p>腾讯云可以免费申请一年的ssl证书，<a href="https://console.cloud.tencent.com/ssl">地址如下</a><br>
+<img src="https://tedioreleeblog.pek3b.qingstor.com/1.png" alt="1"><br>
+审核只花了我几个小时，收到短信后打开腾讯云后台，下载证书压缩包<br>
+解压以后，用winscp上传到服务器<code>/etc/ngix/cert</code>目录下<br>
 如果没有cert目录可自行手动创建<code>mkdir cert</code></p>
 <h2 id="ngix配置">Ngix配置</h2>
-<p>打开你自己的网站配置文件，以我自己为例<code>/etc/ngix/sites-aviliable/default</code>
+<p>打开你自己的网站配置文件，以我自己为例<code>/etc/ngix/sites-aviliable/default</code><br>
 添加如下配置：</p>
 <pre><code>server {
     listen 443;  //开启443https默认端口
@@ -224,16 +245,16 @@
     }
 }
 </code></pre>
-<p>保存退出
-命令行输入<code>ngix -t</code>检查配置文件正确性
-无错误后，<code>/etc/init.d/ngix restart</code>重启ngix服务
+<p>保存退出<br>
+命令行输入<code>ngix -t</code>检查配置文件正确性<br>
+无错误后，<code>/etc/init.d/ngix restart</code>重启ngix服务<br>
 访问域名，前缀加上https即可</p>
-<p><img src="https://tedioreleeblog.pek3b.qingstor.com/2.png" alt="2">
-<img src="https://tedioreleeblog.pek3b.qingstor.com/3.png" alt="3">
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/2.png" alt="2"><br>
+<img src="https://tedioreleeblog.pek3b.qingstor.com/3.png" alt="3"><br>
 <strong>注：我自己配置的时候，看了很多教程，发现ssl_certificate语句后面不需要接绝对路径，相对路径即可，使用了绝对路径反而检查会报错。</strong></p>
 <h2 id="https优化">Https优化</h2>
-<p>添加完证书后，你会发现访问原先的http也会进到博客，我们可以继续配置ngix参数使其自动跳转到https
-打开<code>/etc/ngix/sites-avilable/default</code>
+<p>添加完证书后，你会发现访问原先的http也会进到博客，我们可以继续配置ngix参数使其自动跳转到https<br>
+打开<code>/etc/ngix/sites-avilable/default</code><br>
 删掉以前配置的80端口的配置</p>
 <pre><code>server {
     listen 80 default_server;
@@ -241,7 +262,7 @@
 }
 
 </code></pre>
-<p>重启ngix服务<code>/etc/init.d/restart</code>
+<p>重启ngix服务<code>/etc/init.d/restart</code><br>
 现在就可以默认跳转https了！</p>
 
             </article>
@@ -301,18 +322,33 @@
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1561689801621" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'></a> </span>
+              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1563354784100" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p></p>
+              <p>未来没有人能够预测</p>
               
                 
               
                 
-              
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/ted1ore_lee">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
                 
               
+                
+                  <a class="weibo" target="_blank"
+                     href="http://weibo.com/u/3200965454">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/tediorelee-10/activities">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
                 
               
                 
@@ -381,9 +417,30 @@
             
         
             
-        
+                <li>
+                    <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
             
         
+            
+                <li>
+                    <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
             
         
             

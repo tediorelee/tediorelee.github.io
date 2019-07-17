@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈AD FS Customize UI SetUp | 漫游之歌☁️</title>
-<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1561689801621">
+<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1563354784100">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://doc.tediorelee.cn/styles/main.css" type='text/css' media='all'>
 
@@ -85,9 +85,30 @@
                     
                 
                     
-                
+                        <li>
+                            <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
                     
                 
+                    
+                        <li>
+                            <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
                     
                 
                     
@@ -103,7 +124,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="/https://doc.tediorelee.cn">  漫游之歌☁️ </a>
+                <a href="https://doc.tediorelee.cn">  漫游之歌☁️ </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -117,7 +138,7 @@
                      
                         
                             <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="https://tediorelee.cn/" target="_blank">Home</a>
+                                <a href="https://doc.tediorelee.cn/" target="_blank">Home</a>
                             </li>
                         
                     
@@ -191,8 +212,8 @@
 <!--more-->
 <h2 id="参考资料">参考资料</h2>
 <blockquote>
-<p><strong>http://blog.51cto.com/scnbwy/2174017</strong>
-<strong>http://blog.51cto.com/scnbwy/2174003</strong>
+<p><strong>http://blog.51cto.com/scnbwy/2174017</strong><br>
+<strong>http://blog.51cto.com/scnbwy/2174003</strong><br>
 <strong>https://blog.csdn.net/blackwolves/article/details/50995689</strong></p>
 </blockquote>
 <h2 id="更换login界面的渲染图和logo">更换login界面的渲染图和Logo</h2>
@@ -203,25 +224,25 @@
 <pre><code>Set-AdfsWebTheme -TargetName micromooc_custom -Illustration @{path=&quot;C:\micromooc_theme\illustration\left.png&quot;}
 Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_theme\illustration\logo.png&quot;}
 </code></pre>
-<p>效果如下：
+<p>效果如下：<br>
 <img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-23-48.png" alt=""></p>
 <h2 id="添加自助密码修改页面">添加自助密码修改页面</h2>
-<p>在服务器管理工具中找到ADFS管理-服务-终结点
+<p>在服务器管理工具中找到ADFS管理-服务-终结点<br>
 <img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-11-49.png" alt=""></p>
-<p>在右侧窗口中最下方找到其他，可以看到有一个名字叫做<code>updatepasswd</code>的<code>endpoint</code>
+<p>在右侧窗口中最下方找到其他，可以看到有一个名字叫做<code>updatepasswd</code>的<code>endpoint</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-12-06.png" alt=""></p>
-<p>右键它并选择启用即可
-管理员运行<code>powershell</code>
-我们通过在ADFS登录页面创建一个新的描述并设置一个超链接跳转到重置密码的页面即可
+<p>右键它并选择启用即可<br>
+管理员运行<code>powershell</code><br>
+我们通过在ADFS登录页面创建一个新的描述并设置一个超链接跳转到重置密码的页面即可<br>
 在<code>powershell</code>中输入：</p>
 <p><code>Set-AdfsGlobalWebContent -SignInPageDescriptionText &quot;&lt;p&gt;提醒：为保障帐户安全，请确保您的密码符合复杂性要求，并定期更改您的密码。点击 &lt;A href='https://your_url/adfs/portal/updatepassword/'&gt;更改密码&lt;/A&gt;&lt;/p &gt;&quot;</code></p>
-<p>打开ADFS登录页面即可看到效果
+<p>打开ADFS登录页面即可看到效果<br>
 <img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-18-43.png" alt=""></p>
 <h2 id="登录页面不用输入域名的实现方法">登录页面不用输入域名的实现方法</h2>
 <p>导出当前主题</p>
 <pre><code>Export-AdfsWebTheme -DirectoryPath C:\Theme -Name default
 </code></pre>
-<p>修改主题里的<code>onload.js</code>文件
+<p>修改主题里的<code>onload.js</code>文件<br>
 添加如下字段：</p>
 <pre><code>if (typeof Login != 'undefined') {
     Login.submitLoginRequest = function () {
@@ -253,8 +274,8 @@ Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_th
 <p>更新修改到主题中</p>
 <pre><code>Set-AdfsWebTheme -TargetName default -AdditionalFileResource @{Uri=’/adfs/portal/script/onload.js’;path=&quot;C:\xxx\script\onload.js&quot;}
 </code></pre>
-<p>打开登录页
-只需要输入用户名就可以了，不用加上域名了
+<p>打开登录页<br>
+只需要输入用户名就可以了，不用加上域名了<br>
 <img src="https://blog2019.pek3b.qingstor.com/AD%20FS%20Customize%20UI%20SetUp/Snipaste_2019-02-11_13-29-49.png" alt=""></p>
 
             </article>
@@ -314,18 +335,33 @@ Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_th
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1561689801621" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'></a> </span>
+              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1563354784100" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p></p>
+              <p>未来没有人能够预测</p>
               
                 
               
                 
-              
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/ted1ore_lee">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
                 
               
+                
+                  <a class="weibo" target="_blank"
+                     href="http://weibo.com/u/3200965454">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/tediorelee-10/activities">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
                 
               
                 
@@ -394,9 +430,30 @@ Set-AdfsWebTheme -TargetName micromooc_custom -Logo @{path=&quot;C:\micromooc_th
             
         
             
-        
+                <li>
+                    <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
             
         
+            
+                <li>
+                    <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
             
         
             

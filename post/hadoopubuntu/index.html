@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Hadoop+Ubuntu伪分布式搭建 | 漫游之歌☁️</title>
-<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1561689801621">
+<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1563354784100">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://doc.tediorelee.cn/styles/main.css" type='text/css' media='all'>
 
@@ -85,9 +85,30 @@
                     
                 
                     
-                
+                        <li>
+                            <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
                     
                 
+                    
+                        <li>
+                            <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
                     
                 
                     
@@ -103,7 +124,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="/https://doc.tediorelee.cn">  漫游之歌☁️ </a>
+                <a href="https://doc.tediorelee.cn">  漫游之歌☁️ </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -117,7 +138,7 @@
                      
                         
                             <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="https://tediorelee.cn/" target="_blank">Home</a>
+                                <a href="https://doc.tediorelee.cn/" target="_blank">Home</a>
                             </li>
                         
                     
@@ -190,31 +211,31 @@
 </blockquote>
 <!--more-->
 <h2 id="前期准备">前期准备</h2>
-<p>ubuntu server需要安装好ssh客户端，在<code>/etc/ssh/sshd_config</code>里修改permissionrootlogin参数为yes
-这样就可以使用root账户直接登录了
+<p>ubuntu server需要安装好ssh客户端，在<code>/etc/ssh/sshd_config</code>里修改permissionrootlogin参数为yes<br>
+这样就可以使用root账户直接登录了<br>
 将准备好的jdk和hadoop安装包使用winscp上传到ubuntu里</p>
 <h2 id="安装jdk">安装JDK</h2>
-<p>解压缩jdk安装包，使用命令<code>tar -zxvf jdk1.8.0_121.tar.gz</code>
-我解压到的是<code>/home/hadoop/jdk1.8.0_121</code>路径
-此处图片
-添加jdk环境变量
+<p>解压缩jdk安装包，使用命令<code>tar -zxvf jdk1.8.0_121.tar.gz</code><br>
+我解压到的是<code>/home/hadoop/jdk1.8.0_121</code>路径<br>
+此处图片<br>
+添加jdk环境变量<br>
 打开文件<code>vim /etc/profile</code>在末尾加上</p>
 <pre><code>export JAVA_HOME=&quot;/home/hadoop/jdk1.8.0_121&quot;
 export PATH=$JAVA_HOME/bin:$PATH
 </code></pre>
-<p>保存并退出，<code>source /etc/profile</code>使其生效
+<p>保存并退出，<code>source /etc/profile</code>使其生效<br>
 这时输入<code>java -version</code>即可查看到版本信息表示jdk安装成功</p>
 <h2 id="安装hadoop">安装hadoop</h2>
-<p>解压缩hadoop<code>tar -zxvf hadoop-2.6.4.tar.gz</code>
-创建存放hadoop文件的目录<code>sudo mkdir /opt/modules</code>
-将hadoop文件夹的所有者指定为hadoop用户<code>sudo chown -R hadoop:hadoop /opt/modules</code>
-配置Hadoop环境变量<code>vim /etc/profile</code>
+<p>解压缩hadoop<code>tar -zxvf hadoop-2.6.4.tar.gz</code><br>
+创建存放hadoop文件的目录<code>sudo mkdir /opt/modules</code><br>
+将hadoop文件夹的所有者指定为hadoop用户<code>sudo chown -R hadoop:hadoop /opt/modules</code><br>
+配置Hadoop环境变量<code>vim /etc/profile</code><br>
 末尾加上</p>
 <pre><code>export HADOOP_HOME=&quot;/home/hadoop/hadoop.2.6.4&quot;
 export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 </code></pre>
-<p>保存并退出，<code>source /etc/profile</code>使其生效
-<strong>配置 <em>hadoop-env.sh</em>、<em>mapred-env.sh</em>、<em>yarn-env.sh</em>文件的<em>JAVA_HOME</em>参数</strong>
+<p>保存并退出，<code>source /etc/profile</code>使其生效<br>
+<strong>配置 <em>hadoop-env.sh</em>、<em>mapred-env.sh</em>、<em>yarn-env.sh</em>文件的<em>JAVA_HOME</em>参数</strong><br>
 编辑</p>
 <pre><code>vim  ${HADOOP_HOME}/etc/hadoop/hadoop-env.sh
 vim  ${HADOOP_HOME}/etc/hadoop/mapred-env.sh
@@ -239,7 +260,7 @@ vim  ${HADOOP_HOME}/etc/hadoop/yarn-env.sh
 &lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre>
-<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/3.png" alt="3">
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/3.png" alt="3"><br>
 <strong>配置、格式化、启动HDFS</strong></p>
 <pre><code>vim ${HADOOP_HOME}/etc/hadoop/hdfs-site.xml
 </code></pre>
@@ -249,8 +270,8 @@ vim  ${HADOOP_HOME}/etc/hadoop/yarn-env.sh
        &lt;value&gt;1&lt;/value&gt;
 &lt;/property&gt;
 </code></pre>
-<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/4.png" alt="4">
-dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有一个节点，所以这里设置为1。
+<p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/4.png" alt="4"><br>
+dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有一个节点，所以这里设置为1。<br>
 格式化HDFS</p>
 <p><img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/5.png" alt="5"></p>
 <pre><code>hdfs namenode –format
@@ -265,9 +286,9 @@ dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有�
 <p><strong>启动SecondaryNameNode</strong></p>
 <pre><code>sbin/hadoop-daemon.sh start secondarynamenode
 </code></pre>
-<p><strong>JPS命令查看是否已经启动成功，有结果就是启动成功了</strong>
+<p><strong>JPS命令查看是否已经启动成功，有结果就是启动成功了</strong><br>
 <img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/6.png" alt="6"></p>
-<p><strong>配置、启动YARN</strong>
+<p><strong>配置、启动YARN</strong><br>
 默认没有mapred-site.xml文件，但是有个mapred-site.xml.template配置模板文件。复制模板生成mapred-site.xml</p>
 <pre><code>cp etc/hadoop/mapred-site.xml.template etc/hadoop/mapred-site.xml
 </code></pre>
@@ -294,7 +315,7 @@ dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有�
 <p><strong>启动nodemanager</strong></p>
 <pre><code>sbin/yarn-daemon.sh start nodemanager
 </code></pre>
-<p>可以看到ResourceManager、NodeManager已经启动成功了。
+<p>可以看到ResourceManager、NodeManager已经启动成功了。<br>
 <img src="https://tedioreleeblog.pek3b.qingstor.com/hadoop-ubuntu%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/7.png" alt="7"></p>
 
             </article>
@@ -354,18 +375,33 @@ dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有�
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1561689801621" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'></a> </span>
+              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1563354784100" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p></p>
+              <p>未来没有人能够预测</p>
               
                 
               
                 
-              
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/ted1ore_lee">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
                 
               
+                
+                  <a class="weibo" target="_blank"
+                     href="http://weibo.com/u/3200965454">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/tediorelee-10/activities">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
                 
               
                 
@@ -427,9 +463,30 @@ dfs.replication配置是HDFS存储时的备份数量，伪分布式环境只有�
             
         
             
-        
+                <li>
+                    <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
             
         
+            
+                <li>
+                    <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
             
         
             

@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Use Powershell Force Delete AzureAD Users | 漫游之歌☁️</title>
-<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1561689801621">
+<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1563354784100">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://doc.tediorelee.cn/styles/main.css" type='text/css' media='all'>
 
@@ -85,9 +85,30 @@
                     
                 
                     
-                
+                        <li>
+                            <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
                     
                 
+                    
+                        <li>
+                            <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
                     
                 
                     
@@ -103,7 +124,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="/https://doc.tediorelee.cn">  漫游之歌☁️ </a>
+                <a href="https://doc.tediorelee.cn">  漫游之歌☁️ </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -117,7 +138,7 @@
                      
                         
                             <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="https://tediorelee.cn/" target="_blank">Home</a>
+                                <a href="https://doc.tediorelee.cn/" target="_blank">Home</a>
                             </li>
                         
                     
@@ -190,33 +211,33 @@
 </blockquote>
 <!--more-->
 <h2 id="安装msonline模块">安装MSOnline模块</h2>
-<p>打开powershell，输入<code>Install-Module MSOnline</code>
-弹出来的提示框中输入两次<code>Y</code>
-等待两分钟安装完成即可
+<p>打开powershell，输入<code>Install-Module MSOnline</code><br>
+弹出来的提示框中输入两次<code>Y</code><br>
+等待两分钟安装完成即可<br>
 <img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-15-11.png" alt=""></p>
 <h2 id="连接到azure云">连接到Azure云</h2>
-<p>powershell中输入<code>Connect-MsolService</code>
-注意：这里因为是国际版环境，所以后面不用接参数，假如是国内版或者其他版本需要后面接上参数，如下图
+<p>powershell中输入<code>Connect-MsolService</code><br>
+注意：这里因为是国际版环境，所以后面不用接参数，假如是国内版或者其他版本需要后面接上参数，如下图<br>
 <img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-02-51.png" alt=""></p>
-<p>在弹出来的对话框中输入你的管理员账号和密码即可
+<p>在弹出来的对话框中输入你的管理员账号和密码即可<br>
 <img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-06-29.png" alt=""></p>
 <h2 id="停止dirsync同步">停止DirSync同步</h2>
-<p>powershell中输入<code>Set-MsolDirSyncEnabled -EnableDirSync $false</code>
-弹出来的提示框中输入<code>Y</code>
-登录portal可看到AAD connect中同步已经显示停止
+<p>powershell中输入<code>Set-MsolDirSyncEnabled -EnableDirSync $false</code><br>
+弹出来的提示框中输入<code>Y</code><br>
+登录portal可看到AAD connect中同步已经显示停止<br>
 <img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-34-14.png" alt=""></p>
 <h2 id="删除aad用户">删除AAD用户</h2>
-<p>powershell中输入<code>Get-MsolUser | Export-CSV C:\users.csv</code>
-将AAD用户导出到本地为csv文档
+<p>powershell中输入<code>Get-MsolUser | Export-CSV C:\users.csv</code><br>
+将AAD用户导出到本地为csv文档<br>
 <img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-21-47.png" alt=""></p>
-<p><code>Import-CSV C:\users.csv | Remove-MsOlUser –Force</code>
+<p><code>Import-CSV C:\users.csv | Remove-MsOlUser –Force</code><br>
 使用force参数强制删除用户即可</p>
-<p>登录portal可看到除了管理员用户之外的所有AAD用户均被删除
+<p>登录portal可看到除了管理员用户之外的所有AAD用户均被删除<br>
 <img src="https://blog2019.pek3b.qingstor.com/powershelldelaaduser/Snipaste_2019-01-25_17-22-30.png" alt=""></p>
 <h2 id="参考文档">参考文档</h2>
 <blockquote>
-<p><strong>https://docs.microsoft.com/en-us/office365/enterprise/turn-off-directory-synchronization</strong>
-<strong>https://docs.microsoft.com/zh-cn/office365/enterprise/powershell/connect-to-office-365-powershell</strong>
+<p><strong>https://docs.microsoft.com/en-us/office365/enterprise/turn-off-directory-synchronization</strong><br>
+<strong>https://docs.microsoft.com/zh-cn/office365/enterprise/powershell/connect-to-office-365-powershell</strong><br>
 <strong>https://blogs.technet.microsoft.com/jeffgilb/2017/03/09/deleting-azure-active-directory/</strong></p>
 </blockquote>
 
@@ -277,18 +298,33 @@
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1561689801621" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'></a> </span>
+              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1563354784100" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p></p>
+              <p>未来没有人能够预测</p>
               
                 
               
                 
-              
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/ted1ore_lee">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
                 
               
+                
+                  <a class="weibo" target="_blank"
+                     href="http://weibo.com/u/3200965454">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/tediorelee-10/activities">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
                 
               
                 
@@ -357,9 +393,30 @@
             
         
             
-        
+                <li>
+                    <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
             
         
+            
+                <li>
+                    <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
             
         
             

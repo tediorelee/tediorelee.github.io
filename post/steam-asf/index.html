@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈腾讯云使用ASF云挂卡 | 漫游之歌☁️</title>
-<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1561689801621">
+<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1563354784100">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://doc.tediorelee.cn/styles/main.css" type='text/css' media='all'>
 
@@ -85,9 +85,30 @@
                     
                 
                     
-                
+                        <li>
+                            <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
                     
                 
+                    
+                        <li>
+                            <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
                     
                 
                     
@@ -103,7 +124,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="/https://doc.tediorelee.cn">  漫游之歌☁️ </a>
+                <a href="https://doc.tediorelee.cn">  漫游之歌☁️ </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -117,7 +138,7 @@
                      
                         
                             <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="https://tediorelee.cn/" target="_blank">Home</a>
+                                <a href="https://doc.tediorelee.cn/" target="_blank">Home</a>
                             </li>
                         
                     
@@ -194,31 +215,31 @@
 </blockquote>
 <p><em>ASF（全称ArchiSteamFarm） 是一款由 C# 编写的挂卡工具，能同时挂载多个 Steam 账号，现在在 Linux 服务器中配置 ASF 云挂卡。它不像 Idle Master 那样，同一时间只能为一个账号挂卡，需要后台运行 Steam 客户端，需启动额外进程模拟正在游戏状态。ASF 不需要后台运行任何 Steam 客户端，不需要启动额外进程，而且能为不限数目的 Steam 账号同时挂卡。不仅如此，该软件还能在服务器和其他非桌面电脑上运行，并拥有完整支持 Mono 的特性，这能让其在 Linux、Windows 和 OS X 等平台支持 Mono 的操作系统上运行。ASF 存在的基础要归功于 SteamKit2。</em></p>
 <h2 id="下载ascf">下载ASCF</h2>
-<p>修改服务器的host，因为现在steam服务器处于被墙的状态，所以一般是打不开的
-我们可以使用AnotherSteamCommunityFix这个工具来达到不修改hosts使得服务器可以访问steam社区的功能
-github链接<a href="https://github.com/zyfworks/AnotherSteamCommunityFix">AnotherSteamCommunityFix</a>
-下载后，用winscp工具上传到服务器任意位置，unzip解压缩后得到ascf文件
-修改ascf文件的权限，使得其可以运行<code>chmod +x ./ascf</code>
+<p>修改服务器的host，因为现在steam服务器处于被墙的状态，所以一般是打不开的<br>
+我们可以使用AnotherSteamCommunityFix这个工具来达到不修改hosts使得服务器可以访问steam社区的功能<br>
+github链接<a href="https://github.com/zyfworks/AnotherSteamCommunityFix">AnotherSteamCommunityFix</a><br>
+下载后，用winscp工具上传到服务器任意位置，unzip解压缩后得到ascf文件<br>
+修改ascf文件的权限，使得其可以运行<code>chmod +x ./ascf</code><br>
 注：因为涉及到修改系统文件hosts等，所以务必使用root权限</p>
 <h2 id="下载asf">下载ASF</h2>
-<p>github项目地址<a href="https://github.com/JustArchi/ArchiSteamFarm/releases">ArchiSteamFarm</a>
-找到最新版本的压缩包，下载后同样使用winscp上传到服务器任意位置
-unzip解压后，打开web网页配置页面<a href="https://justarchinet.github.io/ASF-WebConfigGenerator/#/">WebConfigGenerator</a>
-<img src="https://tedioreleeblog.pek3b.qingstor.com/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BD%BF%E7%94%A8ASF%E4%BA%91%E6%8C%82%E5%8D%A1/1.png" alt="1">
-点击机器人，新建一个bot，名字随便写，login那里填写你的steam账户名，passwd填写你的密码，选中enable的√，点击下载，得到一个json文件
-<img src="https://tedioreleeblog.pek3b.qingstor.com/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BD%BF%E7%94%A8ASF%E4%BA%91%E6%8C%82%E5%8D%A1/2.png" alt="2">
+<p>github项目地址<a href="https://github.com/JustArchi/ArchiSteamFarm/releases">ArchiSteamFarm</a><br>
+找到最新版本的压缩包，下载后同样使用winscp上传到服务器任意位置<br>
+unzip解压后，打开web网页配置页面<a href="https://justarchinet.github.io/ASF-WebConfigGenerator/#/">WebConfigGenerator</a><br>
+<img src="https://tedioreleeblog.pek3b.qingstor.com/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BD%BF%E7%94%A8ASF%E4%BA%91%E6%8C%82%E5%8D%A1/1.png" alt="1"><br>
+点击机器人，新建一个bot，名字随便写，login那里填写你的steam账户名，passwd填写你的密码，选中enable的√，点击下载，得到一个json文件<br>
+<img src="https://tedioreleeblog.pek3b.qingstor.com/%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BD%BF%E7%94%A8ASF%E4%BA%91%E6%8C%82%E5%8D%A1/2.png" alt="2"><br>
 把下载得到的json文件用winscp上传到asf路径下的config文件夹</p>
 <h2 id="启动挂卡">启动挂卡</h2>
-<p>这里要用到linux的screen命令，先启动ascf社区访问程序，命令窗口中输入<code>nohup sudo ./ascf &amp;</code>
-这样ascf程序就默认在后台一直运行，就算<code>ctrl+c</code>结束程序也不会影响了
-新建一个<code>screen -S ASF</code>
-进入到 ASF 所在目录<code>cd /ASF #</code>
-添加可执行文件 ArchiSteamFarm 权限：<code>chmod +x ArchiSteamFarm.sh</code>
-执行程序：<code>./ArchiSteamFarm.sh</code>
-当前页面按 <code>ctrl +a +d</code>进入后台
+<p>这里要用到linux的screen命令，先启动ascf社区访问程序，命令窗口中输入<code>nohup sudo ./ascf &amp;</code><br>
+这样ascf程序就默认在后台一直运行，就算<code>ctrl+c</code>结束程序也不会影响了<br>
+新建一个<code>screen -S ASF</code><br>
+进入到 ASF 所在目录<code>cd /ASF #</code><br>
+添加可执行文件 ArchiSteamFarm 权限：<code>chmod +x ArchiSteamFarm.sh</code><br>
+执行程序：<code>./ArchiSteamFarm.sh</code><br>
+当前页面按 <code>ctrl +a +d</code>进入后台<br>
 恢复 screen 请终端输入：<code>screen -r ASF</code></p>
-<p><strong>最后，打开你的steam，是不是看到你的状态是正在玩游戏了！
-asf挂卡速度可观，而且你要玩游戏直接挤掉就行了，不玩了他会自动连上继续帮你挂卡！
+<p><strong>最后，打开你的steam，是不是看到你的状态是正在玩游戏了！<br>
+asf挂卡速度可观，而且你要玩游戏直接挤掉就行了，不玩了他会自动连上继续帮你挂卡！<br>
 帮朋友挂他说一晚上起来挂了40来张LOL</strong></p>
 
             </article>
@@ -278,18 +299,33 @@ asf挂卡速度可观，而且你要玩游戏直接挤掉就行了，不玩了�
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1561689801621" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'></a> </span>
+              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1563354784100" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p></p>
+              <p>未来没有人能够预测</p>
               
                 
               
                 
-              
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/ted1ore_lee">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
                 
               
+                
+                  <a class="weibo" target="_blank"
+                     href="http://weibo.com/u/3200965454">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/tediorelee-10/activities">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
                 
               
                 
@@ -358,9 +394,30 @@ asf挂卡速度可观，而且你要玩游戏直接挤掉就行了，不玩了�
             
         
             
-        
+                <li>
+                    <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
             
         
+            
+                <li>
+                    <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
             
         
             

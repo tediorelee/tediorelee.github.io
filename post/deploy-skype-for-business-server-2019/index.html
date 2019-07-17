@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Deploy Skype For Business Server 2019 | 漫游之歌☁️</title>
-<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1561689801621">
+<link rel="shortcut icon" href="https://doc.tediorelee.cn/favicon.ico?v=1563354784100">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://doc.tediorelee.cn/styles/main.css" type='text/css' media='all'>
 
@@ -85,9 +85,30 @@
                     
                 
                     
-                
+                        <li>
+                            <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                                <i class="fab fa-twitter" title="twitter"></i>
+                                <span class="screen-reader-text">twitter</span>
+                            </a>
+                        </li>
                     
                 
+                    
+                        <li>
+                            <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                                <i class="fab fa-weibo" title="weibo"></i>
+                                <span class="screen-reader-text">weibo</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                                <i class="fab fa-zhihu" title="zhihu"></i>
+                                <span class="screen-reader-text">zhihu</span>
+                            </a>
+                        </li>
                     
                 
                     
@@ -103,7 +124,7 @@
     <div class="container">
         <div id="title-info" class="title-info">
             <div id='site-title' class='site-title'>
-                <a href="/https://doc.tediorelee.cn">  漫游之歌☁️ </a>
+                <a href="https://doc.tediorelee.cn">  漫游之歌☁️ </a>
             </div>
         </div>
         <button id="toggle-navigation" class="toggle-navigation">
@@ -117,7 +138,7 @@
                      
                         
                             <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="https://tediorelee.cn/" target="_blank">Home</a>
+                                <a href="https://doc.tediorelee.cn/" target="_blank">Home</a>
                             </li>
                         
                     
@@ -198,193 +219,193 @@
 <li>ISO镜像，skype2019 &amp; sql2017 &amp; windowsserver 2019</li>
 </ul>
 <p>DC&amp;SQL服务器的安装和配置略过，着重描述Skype服务器的安装步骤</p>
-<p><strong>微软官方给出的步骤图</strong>：
+<p><strong>微软官方给出的步骤图</strong>：<br>
 <img src="https://docs.microsoft.com/en-us/skypeforbusiness/sfbserver/media/b1a59b39-a7f0-4781-ac4d-2dfef7ca3700.png" alt=""></p>
 <h2 id="system-requirements">System requirements</h2>
-<p>三台服务器均加域，修改服务器名，在windows更新中获取最新更新，确保系统版本是最新的。
+<p>三台服务器均加域，修改服务器名，在windows更新中获取最新更新，确保系统版本是最新的。<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_12-11-23.png" alt=""></p>
-<p>打开powershell
+<p>打开powershell<br>
 安装skype服务器上所需的所有软件</p>
 <pre><code>Add-WindowsFeature RSAT-ADDS, Web-Server, Web-Static-Content, Web-Default-Doc, Web-Http-Errors, Web-Asp-Net, Web-Net-Ext, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Http-Logging, Web-Log-Libraries, Web-Request-Monitor, Web-Http-Tracing, Web-Basic-Auth, Web-Windows-Auth, Web-Client-Auth, Web-Filtering, Web-Stat-Compression, Web-Dyn-Compression, NET-WCF-HTTP-Activation45, Web-Asp-Net45, Web-Mgmt-Tools, Web-Scripting-Tools, Web-Mgmt-Compat, Server-Media-Foundation, Telnet-Client
 </code></pre>
-<p>等待安装
-<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_13-50-48.png" alt="">
-安装完成
+<p>等待安装<br>
+<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_13-50-48.png" alt=""><br>
+安装完成<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_13-53-22.png" alt=""></p>
 <h2 id="create-a-file-share">Create a file share</h2>
-<p>在DC服务器上新建<code>C:\share</code>文件夹
-右键-属性-共享-高级共享-权限
-把当前域管理员<code>Administrator</code>添加到权限组里，并赋予完全控制权限
-<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-01-00.png" alt="">
+<p>在DC服务器上新建<code>C:\share</code>文件夹<br>
+右键-属性-共享-高级共享-权限<br>
+把当前域管理员<code>Administrator</code>添加到权限组里，并赋予完全控制权限<br>
+<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-01-00.png" alt=""><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-01-10.png" alt=""></p>
 <h2 id="install-administrative-tools">Install administrative tools</h2>
-<p>挂载skypeserver的ISO镜像，找到<code>setup.exe</code>双击启动
+<p>挂载skypeserver的ISO镜像，找到<code>setup.exe</code>双击启动<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-04-34.png" alt=""></p>
-<p>选择下载并安装更新
-我这里已经更新完了，所有没有需要更新的内容了
+<p>选择下载并安装更新<br>
+我这里已经更新完了，所有没有需要更新的内容了<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-05-49.png" alt=""></p>
-<p>Deployment Wizard如图
+<p>Deployment Wizard如图<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-08-20.png" alt=""></p>
-<p>选择Install administrative tools
-等待安装
+<p>选择Install administrative tools<br>
+等待安装<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-09-39.png" alt=""></p>
-<p>完成之后，你应该能看到一个绿色的完成√
+<p>完成之后，你应该能看到一个绿色的完成√<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-11-25.png" alt=""></p>
 <h2 id="prepare-active-directory">Prepare Active Directory</h2>
 <p>为了能够让skypeserver正确的跑起来，所有机器必须加域，且安装skype的服务器不能是DC。</p>
 <ol>
 <li><strong>Prepare schema</strong></li>
 </ol>
-<p>在Deployment Wizard里，点击<code>Prepare Active Directory</code>，如图
-<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-26-27.png" alt="">
+<p>在Deployment Wizard里，点击<code>Prepare Active Directory</code>，如图<br>
+<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-26-27.png" alt=""><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-26-41.png" alt=""></p>
-<p>PS:
-这里遇到一个问题
-进入<code>Prepare Active Directory</code>后会有红字提示说无法联系到<code>ActiveDirectoryController</code>
+<p>PS:<br>
+这里遇到一个问题<br>
+进入<code>Prepare Active Directory</code>后会有红字提示说无法联系到<code>ActiveDirectoryController</code><br>
 请一定记得：</p>
 <ul>
 <li>在DC服务器上的DNS解析中添加你的其他服务器，并使用正确的FSQN</li>
 <li>在skype服务器上注销使用域管理员账户登录（<code>TEDIORELEE\ADMINISTRATOR</code>）</li>
 </ul>
-<p>若无异常，点击<code>RUN</code>
+<p>若无异常，点击<code>RUN</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-32-56.png" alt=""></p>
-<p>安装完成后，会显示<code>Completed</code>
-也可以点击<code>view log</code>查看日志文件
+<p>安装完成后，会显示<code>Completed</code><br>
+也可以点击<code>view log</code>查看日志文件<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-34-03.png" alt=""></p>
 <ol start="2">
 <li><strong>Verify replication of schema partition</strong></li>
 </ol>
-<p>切换到DC服务器
-在服务器管理器面板中，找到<code>ADSI编辑器</code>
-点击<strong>操作</strong>-<strong>连接到</strong>
+<p>切换到DC服务器<br>
+在服务器管理器面板中，找到<code>ADSI编辑器</code><br>
+点击<strong>操作</strong>-<strong>连接到</strong><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-46-50.png" alt=""></p>
-<p>选择<strong>架构</strong>并确定
+<p>选择<strong>架构</strong>并确定<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-47-58.png" alt=""></p>
-<p>点击左侧的<strong>架构</strong>
-在中间的名称中，找到<code>CN=ms-RTC-SIP-SchemaVersion</code>
+<p>点击左侧的<strong>架构</strong><br>
+在中间的名称中，找到<code>CN=ms-RTC-SIP-SchemaVersion</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-52-15.png" alt=""></p>
-<p>双击，找到<code>rangeLower</code>和<code>rangeUpper</code>
-如果你的<code>schema</code>配置正确，那么这两个值会显示为<code>3</code>和<code>1150</code>
+<p>双击，找到<code>rangeLower</code>和<code>rangeUpper</code><br>
+如果你的<code>schema</code>配置正确，那么这两个值会显示为<code>3</code>和<code>1150</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-53-20.png" alt=""></p>
 <ol start="3">
 <li><strong>Prepare current forest</strong></li>
 </ol>
-<p>回到你的Skype服务器
-找到<code>Prepare current forest</code>并点击<code>RUN</code>
+<p>回到你的Skype服务器<br>
+找到<code>Prepare current forest</code>并点击<code>RUN</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-58-23.png" alt=""></p>
-<p>如果你的skype服务器已经加域，这里就可以直接选择<code>localdomain</code>
+<p>如果你的skype服务器已经加域，这里就可以直接选择<code>localdomain</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_14-58-32.png" alt=""></p>
 <p>等待安装完成即可</p>
-<p>在所有程序中
-找到<code>Skype for Business Server Management Shell</code>
-输入命令<code>Get-CsAdForest</code>
-如果看到弹出来的显示<strong>LC_FORESTSETTINGS_STATE_READY</strong>
-那么表示你的<strong>forest has successfully been prepared</strong>
+<p>在所有程序中<br>
+找到<code>Skype for Business Server Management Shell</code><br>
+输入命令<code>Get-CsAdForest</code><br>
+如果看到弹出来的显示<strong>LC_FORESTSETTINGS_STATE_READY</strong><br>
+那么表示你的<strong>forest has successfully been prepared</strong><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_15-05-07.png" alt=""></p>
 <ol start="4">
 <li><strong>Verify replication of the global catalog</strong></li>
 </ol>
-<p>回到DC服务器
-在服务器管理面板中，找到<code>ActiveDirectory 用户和计算机</code>
-展开你的域名，在<code>Users</code>中找到<code>CSAdministrators</code>
-如果能看到该用户，即表明<strong>replication is complete</strong>
+<p>回到DC服务器<br>
+在服务器管理面板中，找到<code>ActiveDirectory 用户和计算机</code><br>
+展开你的域名，在<code>Users</code>中找到<code>CSAdministrators</code><br>
+如果能看到该用户，即表明<strong>replication is complete</strong><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_15-10-34.png" alt=""></p>
 <ol start="5">
 <li><strong>Prepare the current domain</strong></li>
 </ol>
-<p>回到skype服务器，继续点击第五步<code>Prepare the current domain</code>并<code>RUN</code>
-完成即可
+<p>回到skype服务器，继续点击第五步<code>Prepare the current domain</code>并<code>RUN</code><br>
+完成即可<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_15-14-47.png" alt=""></p>
 <ol start="6">
 <li><strong>Verify replication in the domain</strong></li>
 </ol>
-<p>同样打开<code>Skype for Business Server Management Shell</code>
-输入<code>Get-CsAdDomain</code>
+<p>同样打开<code>Skype for Business Server Management Shell</code><br>
+输入<code>Get-CsAdDomain</code><br>
 PS：记得后面接上参数</p>
 <pre><code>Get-CsAdDomain [-Domain &lt;Fqdn&gt;] [-DomainController &lt;Fqdn&gt;] [-GlobalCatalog &lt;Fqdn&gt;] [-GlobalSettingsDomainController &lt;Fqdn&gt;]
 </code></pre>
-<p>当出现<strong>LC_DOMAINSETTINGS_STATE_READY</strong>字样时
-即表示<strong>the domain has successfully replicated</strong>
+<p>当出现<strong>LC_DOMAINSETTINGS_STATE_READY</strong>字样时<br>
+即表示<strong>the domain has successfully replicated</strong><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_15-24-39.png" alt=""></p>
 <ol start="7">
 <li><strong>Add users to provide administrative access to the Skype for Business Server Control Panel</strong></li>
 </ol>
-<p>在DC服务器上，打开<code>ActiveDirectory 用户和计算机</code>
-展开你的域名，在<code>Users</code>中找到<code>CSAdministrators</code>
-右键<code>属性</code>-<code>成员</code>
-点击<code>添加</code>,输入你的域用户管理员账号，确定即可
+<p>在DC服务器上，打开<code>ActiveDirectory 用户和计算机</code><br>
+展开你的域名，在<code>Users</code>中找到<code>CSAdministrators</code><br>
+右键<code>属性</code>-<code>成员</code><br>
+点击<code>添加</code>,输入你的域用户管理员账号，确定即可<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_15-30-49.png" alt=""></p>
-<p>回到skype服务器，注销登录，并用域管理员账户重新登录
-重新打开<strong>Deployment Wizard</strong>
-即可看到<strong>Prepare Active Director</strong>已经显示<strong>complete</strong>
+<p>回到skype服务器，注销登录，并用域管理员账户重新登录<br>
+重新打开<strong>Deployment Wizard</strong><br>
+即可看到<strong>Prepare Active Director</strong>已经显示<strong>complete</strong><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_15-33-13.png" alt=""></p>
 <h2 id="create-and-publish-new-topology">Create and publish new topology</h2>
 <ol>
 <li><strong>Create a new topology</strong></li>
 </ol>
-<p>在skype服务器上，注销域管理员账户，使用普通管理员账户登录
-打开<strong>Skype for Business Server Topology Builder</strong>
-选择新建拓扑
+<p>在skype服务器上，注销域管理员账户，使用普通管理员账户登录<br>
+打开<strong>Skype for Business Server Topology Builder</strong><br>
+选择新建拓扑<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-05-21.png" alt=""></p>
-<p>定义一个你自己的保存位置，会生成一个<code>*.tbxml</code>文件，方便以后备份和恢复
+<p>定义一个你自己的保存位置，会生成一个<code>*.tbxml</code>文件，方便以后备份和恢复<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-08-28.png" alt=""></p>
-<p>输入你的<code>主域名</code>
+<p>输入你的<code>主域名</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-08-41.png" alt=""></p>
-<p>下一步
-如果你有其他的<code>SIP Domain</code>
-可在此添加，若无即可跳过
-输入你的名字和描述
+<p>下一步<br>
+如果你有其他的<code>SIP Domain</code><br>
+可在此添加，若无即可跳过<br>
+输入你的名字和描述<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-12-35.png" alt=""></p>
-<p>输入城市、省份、国家代码
+<p>输入城市、省份、国家代码<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-13-32.png" alt=""></p>
 <ol start="2">
 <li><strong>Define a Front End pool or Standard Edition server</strong></li>
 </ol>
-<p>在弹出来的<code>Define New Front End Pool</code>中
-输入你<code>pool</code>的<code>FQDN</code>
+<p>在弹出来的<code>Define New Front End Pool</code>中<br>
+输入你<code>pool</code>的<code>FQDN</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-18-22.png" alt=""></p>
-<p>这里我选择的版本是<code>Standard Edition</code>
+<p>这里我选择的版本是<code>Standard Edition</code><br>
 因为测试环境下就一台服务器，不需要那么多用户</p>
-<p>在<code>Select features</code>面板，勾选第一个<code>Conferencing</code>
+<p>在<code>Select features</code>面板，勾选第一个<code>Conferencing</code><br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-23-44.png" alt=""></p>
-<p>在<code>Select collocated server roles</code>这里
-如果你是选择的<code>Enterprise</code>版本，那么请勾选这里的复选框
-我用的是<code>Standard Edition</code>所有直接下一步
+<p>在<code>Select collocated server roles</code>这里<br>
+如果你是选择的<code>Enterprise</code>版本，那么请勾选这里的复选框<br>
+我用的是<code>Standard Edition</code>所有直接下一步<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-31-38.png" alt=""></p>
-<p>在<code>Define Sql Server Store</code>这里
-因为使用的是<code>Standard Edition</code>所以它会自动给我们创建
+<p>在<code>Define Sql Server Store</code>这里<br>
+因为使用的是<code>Standard Edition</code>所以它会自动给我们创建<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-34-03.png" alt=""></p>
-<p>在<code>Specify web services URL</code>这里
-不用做什么修改，直接下一步
+<p>在<code>Specify web services URL</code>这里<br>
+不用做什么修改，直接下一步<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-34-41.png" alt=""></p>
-<p>在<code>Select an Office web app server</code>这里
-一样不需要修改，直接下一步
+<p>在<code>Select an Office web app server</code>这里<br>
+一样不需要修改，直接下一步<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-34-49.png" alt=""></p>
-<p>在<code>Topology Builder</code>主页
-右键<code>Skype For Business Server</code> - <code>Edit Properties</code>
-<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-45-59.png" alt="">
-找到<code>Central Management Server</code>
+<p>在<code>Topology Builder</code>主页<br>
+右键<code>Skype For Business Server</code> - <code>Edit Properties</code><br>
+<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-45-59.png" alt=""><br>
+找到<code>Central Management Server</code><br>
 下拉中选择刚才创建的<code>pool</code>，保存退出</p>
-<p>在<code>Topology Builder</code>主页
-右键<code>Skype For Business Server</code> - <code>Publish Topology</code>
-默认选择了你的<code>pool.tediorelee.cn</code>
-<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-53-51.png" alt="">
+<p>在<code>Topology Builder</code>主页<br>
+右键<code>Skype For Business Server</code> - <code>Publish Topology</code><br>
+默认选择了你的<code>pool.tediorelee.cn</code><br>
+<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_16-53-51.png" alt=""><br>
 直接下一步等待安装完成即可</p>
 <h2 id="install-skype-for-business-server">Install Skype for Business Server</h2>
 <p><strong>wanring:</strong></p>
 <p><strong>在服务器上安装Skype for Business Server之前，您必须使用拓扑生成器来完成并发布拓扑</strong></p>
-<p>打开<code>Deployment Wizard</code>
-点击<code>Prepare first Standard Edition Server</code>
-选择<code>oscore.msi</code>安装文件
-<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_17-28-20.png" alt="">
-等待安装
+<p>打开<code>Deployment Wizard</code><br>
+点击<code>Prepare first Standard Edition Server</code><br>
+选择<code>oscore.msi</code>安装文件<br>
+<img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_17-28-20.png" alt=""><br>
+等待安装<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_17-29-19.png" alt=""></p>
-<p>完成后，回到面板点击<code>Install or Update Skype For Business Server</code>
-一次运行<strong>1-4</strong>步
+<p>完成后，回到面板点击<code>Install or Update Skype For Business Server</code><br>
+一次运行<strong>1-4</strong>步<br>
 <img src="https://blog2019.pek3b.qingstor.com/skype/Snipaste_2019-01-29_17-06-04.png" alt=""></p>
 <h2 id="参考文档">参考文档</h2>
-<p><strong>https://docs.microsoft.com/en-us/skypeforbusiness</strong>
-<strong>http://blog.51cto.com/itwish/2050654</strong>
+<p><strong>https://docs.microsoft.com/en-us/skypeforbusiness</strong><br>
+<strong>http://blog.51cto.com/itwish/2050654</strong><br>
 <strong>https://0755yang.com/deploy-skype-for-business-server-2019/</strong></p>
 
             </article>
@@ -444,18 +465,33 @@ PS：记得后面接上参数</p>
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1561689801621" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'></a> </span>
+              <img alt='' src="https://doc.tediorelee.cn/images/avatar.png?v=1563354784100" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://doc.tediorelee.cn'>tediorelee</a> </span>
             </div>
             <div class="bio">
-              <p></p>
+              <p>未来没有人能够预测</p>
               
                 
               
                 
-              
+                  <a class="twitter" target="_blank"
+                     href="https://twitter.com/ted1ore_lee">
+                    <i class="fab fa-twitter" title="twitter"></i>
+                  </a>
                 
               
+                
+                  <a class="weibo" target="_blank"
+                     href="http://weibo.com/u/3200965454">
+                    <i class="fab fa-weibo" title="weibo"></i>
+                  </a>
+                
+              
+                
+                  <a class="zhihu" target="_blank"
+                     href="https://www.zhihu.com/people/tediorelee-10/activities">
+                    <i class="fab fa-zhihu" title="zhihu"></i>
+                  </a>
                 
               
                 
@@ -524,9 +560,30 @@ PS：记得后面接上参数</p>
             
         
             
-        
+                <li>
+                    <a href="https://twitter.com/ted1ore_lee" data-animate-hover="pulse" class="twitter" target="_blank">
+                        <i class="fab fa-twitter" title="twitter"></i>
+                        <span class="screen-reader-text">twitter</span>
+                    </a>
+                </li>
             
         
+            
+                <li>
+                    <a href="http://weibo.com/u/3200965454" data-animate-hover="pulse" class="weibo" target="_blank">
+                        <i class="fab fa-weibo" title="weibo"></i>
+                        <span class="screen-reader-text">weibo</span>
+                    </a>
+                </li>
+            
+        
+            
+                <li>
+                    <a href="https://www.zhihu.com/people/tediorelee-10/activities" data-animate-hover="pulse" class="zhihu" target="_blank">
+                        <i class="fab fa-zhihu" title="zhihu"></i>
+                        <span class="screen-reader-text">zhihu</span>
+                    </a>
+                </li>
             
         
             
