@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>🌈Docker学习笔记 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&#39;𝓈 𝐵𝐿𝒪𝒢 </title>
+<title>🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&#39;𝓈 𝐵𝐿𝒪𝒢 </title>
 <link rel="shortcut icon" href="https://tediorelee.cn/favicon.ico?v=1565520631068">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://tediorelee.cn/styles/main.css" type='text/css' media='all'>
@@ -205,55 +205,279 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530170336.png">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190811184628.png">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2019-05-30 ·</span> <span> / </span>
+          <span class="date">· 2019-08-11 ·</span> <span> / </span>
           <span class="author">
             <a href="https://tediorelee.cn" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://tediorelee.cn/tag/FRQBgPRT2">Docker</a>
+                    <a href="https://tediorelee.cn/tag/NluVhaZaE">V2ray</a>
                 </span>
           
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>🌈Docker学习笔记</h1>
+          <h1 class='entry-title'>🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
               <blockquote>
-<p>Dokcer是个好东西</p>
+<p>A platform for building proxies to bypass network restrictions.</p>
 </blockquote>
-<!-- more --> 
-<ul>
-<li>Docker pull images:<code>$docker pull images:tag</code>(default tag name is 'latest')</li>
-</ul>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530164103.png" alt=""></p>
-<ul>
-<li>Docker list all images:<code>$docker images</code></li>
-</ul>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530164157.png" alt=""></p>
-<ul>
-<li>Docker start a image:<code>$docker run -itd ubuntu</code></li>
-</ul>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530165327.png" alt=""></p>
-<ul>
-<li>Docker list all running image:<code>$docker ps -a</code></li>
-</ul>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530165608.png" alt=""></p>
-<ul>
-<li>Docker attach a running image:<code>$docker attach id</code></li>
-</ul>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530165834.png" alt=""></p>
-<ul>
-<li>Docker dettach from a running image:<code>ctrl+p+q</code></li>
-</ul>
+<!-- more -->
+<h1 id="安装模块">安装模块</h1>
+<p>打开Magisk Manager找到并下载安装v2ray模块</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/Screenshot_2019-08-06-15-26-52-285_com.topjohnwu..jpg" alt=""></p>
+<p>如图</p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/Screenshot_2019-08-06-15-27-01-551_com.topjohnwu..jpg" alt=""></p>
+<h1 id="configjson配置">config.json配置</h1>
+<p>v2ray模块默认随手机启动而启动，我们只需要替换<code>/root/data/v2ray</code>里面的配置文件<code>config.json</code>即可</p>
+<p>修改默认的配置文件，删除在<code>outbounds</code>字段下的默认数据</p>
+<p>使用你自己的v2ray配置替换掉即可，如图</p>
+<p><strong>注意：注意大括号是否对应</strong></p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190806153216.png" alt=""></p>
+<p><strong>如何导出v2ray服务端配置？</strong></p>
+<p>这里以我自己的电脑举例，mac系统上安装的是v2rayU这款GUI软件</p>
+<p>定位到<code>/Applications/V2rayU.app/Contents/Resources</code>下，找到<code>config.json</code>文件</p>
+<p><strong>注意：这里的config.json文件不能直接用于magisk v2ray，只需要复制我们需要的outbounds字段即可</strong></p>
+<h1 id="修改appidlist">修改appid.list</h1>
+<p><code>appid.list</code>文件位于<code>/data/v2ray</code>路径下</p>
+<p>一般的，我们将app的<code>uid</code>写入该文件中，即可定义特定的app走v2ray透明代理</p>
+<p>这里我自己直接在该文件中写入<code>0</code>，即为定义全局app走透明代理（<strong>实测发现，不会影响到国内app的使用，应该是自动跳过了GFW内的流量</strong>）</p>
+<h1 id="后记">后记</h1>
+<p>配置完成后，可以重启一下手机，这样配置文件就生效了并且已经可以访问外网了</p>
+<p>尽情享用吧！</p>
+<p><strong>贴一下config.json文件备份</strong></p>
+<pre><code>// Config file of V2Ray. This file follows standard JSON format, with comments support.
+// Uncomment entries below to satisfy your needs. Also read our manual for more detail at
+// https://www.v2ray.com/
+{
+  &quot;log&quot;: {
+    // By default, V2Ray writes access log to stdout.
+    // &quot;access&quot;: &quot;/path/to/access/log/file&quot;,
+
+    // By default, V2Ray write error log to stdout.
+    // &quot;error&quot;: &quot;/path/to/error/log/file&quot;,
+    &quot;error&quot;: &quot;/data/v2ray/run/error.log&quot;,
+
+    // Log level, one of &quot;debug&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;error&quot;, &quot;none&quot;
+    &quot;loglevel&quot;: &quot;warning&quot;
+  },
+  // List of inbound proxy configurations.
+  &quot;inbounds&quot;: [{
+    // Just listen for DNS proxy.
+    &quot;port&quot;: 65534,
+
+    // Tag of the inbound for DNS proxy routing.
+    &quot;tag&quot;: &quot;dns-in&quot;,
+
+    // DNS proxy protocol must be dokodemo-door.
+    &quot;protocol&quot;: &quot;dokodemo-door&quot;,
+
+    // Setting of DNS proxy.
+    &quot;settings&quot;: {
+      &quot;port&quot;: 53,
+      &quot;address&quot;: &quot;1.1.1.1&quot;,
+      &quot;network&quot;: &quot;tcp,udp&quot;
+    }
+  },{
+    // Port to listen on. You may need root access if the value is less than 1024.
+    &quot;port&quot;: 65535,
+
+    // IP address to listen on. Change to &quot;0.0.0.0&quot; to listen on all network interfaces.
+    &quot;listen&quot;: &quot;0.0.0.0&quot;,
+
+    // Tag of the inbound proxy. May be used for routing.
+    &quot;tag&quot;: &quot;proxy-inbound&quot;,
+
+    // Protocol name of inbound proxy.
+    &quot;protocol&quot;: &quot;dokodemo-door&quot;,
+
+    // Settings of the protocol. Varies based on protocol.
+    &quot;settings&quot;: {
+      // Disable timeout setting for keeping persistent connection. Such as FCM.   
+      //  &quot;timeout&quot;: 10,
+      &quot;network&quot;: &quot;tcp,udp&quot;,
+      &quot;followRedirect&quot;: true
+    },
+
+    // Enable sniffing on TCP connection.
+    &quot;sniffing&quot;: {
+      &quot;enabled&quot;: true,
+      // Target domain will be overriden to the one carried by the connection, if the connection is HTTP or HTTPS.
+      &quot;destOverride&quot;: [&quot;http&quot;, &quot;tls&quot;]
+    }
+  }],
+  // List of outbound proxy configurations.
+  &quot;outbounds&quot;: [{
+    &quot;mux&quot;: {
+      &quot;enabled&quot;: false,
+      &quot;concurrency&quot;: 8
+    },
+    &quot;protocol&quot;: &quot;vmess&quot;,
+    &quot;streamSettings&quot;: {
+      &quot;tcpSettings&quot;: {
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;none&quot;
+        }
+      },
+      &quot;tlsSettings&quot;: {
+        &quot;allowInsecure&quot;: true
+      },
+      &quot;security&quot;: &quot;none&quot;,
+      &quot;network&quot;: &quot;tcp&quot;
+    },
+    &quot;tag&quot;: &quot;agentout&quot;,
+    &quot;settings&quot;: {
+      &quot;vnext&quot;: [
+        {
+          &quot;address&quot;: &quot;ip&quot;,
+          &quot;users&quot;: [
+            {
+              &quot;id&quot;: &quot;uuid&quot;,
+              &quot;alterId&quot;: xxx,
+              &quot;level&quot;: 0,
+              &quot;security&quot;: &quot;xxx&quot;
+            }
+          ],
+          &quot;port&quot;: xxxx
+        }
+      ]
+    }
+  },
+  {
+    &quot;tag&quot;: &quot;direct&quot;,
+    &quot;protocol&quot;: &quot;freedom&quot;,
+    &quot;settings&quot;: {
+      &quot;domainStrategy&quot;: &quot;AsIs&quot;,
+      &quot;redirect&quot;: &quot;&quot;,
+      &quot;userLevel&quot;: 0
+    }
+  },
+  {
+    &quot;tag&quot;: &quot;blockout&quot;,
+    &quot;protocol&quot;: &quot;blackhole&quot;,
+    &quot;settings&quot;: {
+      &quot;response&quot;: {
+        &quot;type&quot;: &quot;none&quot;
+      }
+    }
+  }],
+
+  // Transport is for global transport settings. If you have multiple transports with same settings
+  // (say mKCP), you may put it here, instead of in each individual inbound/outbounds.
+  //&quot;transport&quot;: {},
+
+  // Routing controls how traffic from inbounds are sent to outbounds.
+  &quot;routing&quot;: {
+    &quot;domainStrategy&quot;: &quot;IPOnDemand&quot;,
+    &quot;rules&quot;:[
+      {
+        // Proxy DNS request
+        &quot;type&quot;: &quot;field&quot;,
+        &quot;inboundTag&quot;: [&quot;dns-in&quot;],
+        &quot;outboundTag&quot;: &quot;dns-out&quot;
+      },
+      {
+        // Bypass private IPs.
+        &quot;type&quot;: &quot;field&quot;,
+        &quot;ip&quot;: [&quot;geoip:private&quot;],
+        &quot;outboundTag&quot;: &quot;direct&quot;
+      },
+      {
+        // Bypass all china IPs.
+        &quot;type&quot;: &quot;field&quot;,
+        &quot;ip&quot;: [&quot;geoip:cn&quot;],
+        &quot;outboundTag&quot;: &quot;direct&quot;
+      },
+      {
+        // Bypass all china sites.
+        &quot;type&quot;: &quot;field&quot;,
+        &quot;domain&quot;: [&quot;geosite:cn&quot;],
+        &quot;outboundTag&quot;: &quot;direct&quot;
+      },
+      {
+        // Blocks major ads.
+        &quot;type&quot;: &quot;field&quot;,
+        &quot;domain&quot;: [&quot;geosite:category-ads&quot;],
+        &quot;outboundTag&quot;: &quot;blocked&quot;
+      }
+    ]
+  },
+
+  // Dns settings for domain resolution.
+  &quot;dns&quot;: {
+    // Static hosts, similar to hosts file.
+    &quot;hosts&quot;: {
+      // Match v2ray.com to another domain on CloudFlare. This domain will be used when querying IPs for v2ray.com.
+      &quot;domain:v2ray.com&quot;: &quot;www.vicemc.net&quot;,
+
+      // The following settings help to eliminate DNS poisoning in mainland China.
+      // It is safe to comment these out if this is not the case for you.
+      &quot;domain:github.io&quot;: &quot;pages.github.com&quot;,
+      &quot;domain:wikipedia.org&quot;: &quot;www.wikimedia.org&quot;,
+      &quot;domain:shadowsocks.org&quot;: &quot;electronicsrealm.com&quot;
+    },
+    &quot;servers&quot;: [
+      &quot;1.1.1.1&quot;,
+      &quot;8.8.8.8&quot;,
+      &quot;9.9.9.9&quot;,
+      {
+        &quot;address&quot;: &quot;114.114.114.114&quot;,
+        &quot;port&quot;: 53,
+        // List of domains that use this DNS first.
+        &quot;domains&quot;: [
+          &quot;geosite:cn&quot;
+        ]
+      },
+      &quot;localhost&quot;
+    ]
+  },
+
+  // Policy controls some internal behavior of how V2Ray handles connections.
+  // It may be on connection level by user levels in 'levels', or global settings in 'system.'
+  &quot;policy&quot;: {
+    // Connection policys by user levels
+    &quot;levels&quot;: {
+      &quot;0&quot;: {
+        &quot;uplinkOnly&quot;: 0,
+        &quot;downlinkOnly&quot;: 0
+      }
+    },
+    &quot;system&quot;: {
+      &quot;statsInboundUplink&quot;: false,
+      &quot;statsInboundDownlink&quot;: false
+    }
+  },
+
+  // Stats enables internal stats counter.
+  // This setting can be used together with Policy and Api. 
+  //&quot;stats&quot;:{},
+
+  // Api enables gRPC APIs for external programs to communicate with V2Ray instance.
+  //&quot;api&quot;: {
+    //&quot;tag&quot;: &quot;api&quot;,
+    //&quot;services&quot;: [
+    //  &quot;HandlerService&quot;,
+    //  &quot;LoggerService&quot;,
+    //  &quot;StatsService&quot;
+    //]
+  //},
+
+  // You may add other entries to the configuration, but they will not be recognized by V2Ray.
+  &quot;other&quot;: {}
+}
+</code></pre>
+<h2 id="reflink">RefLink</h2>
+<blockquote>
+<p>https://github.com/Magisk-Modules-Repo/v2ray</p>
+</blockquote>
 
             </article>
           </div>
@@ -363,7 +587,7 @@
             <nav class="navigation pagination" role="navigation">
               <h2 class="screen-reader-text">Posts navigation</h2>
               <div class="nav-links">
-                <a class="next page-numbers" href="https://tediorelee.cn/post/how-to-install-windows-10">下一篇->🌈How to Install Windows 10 (Fully Installation Guide)</a>
+                <a class="next page-numbers" href="https://tediorelee.cn/post/microsoft-teams">下一篇->🌈Microsoft Teams 简要使用指南</a>
               </div>
             </nav>
           

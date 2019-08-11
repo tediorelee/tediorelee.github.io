@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://doc.tediorelee.cn</id>
-    <title>漫游之歌☁️</title>
-    <updated>2019-07-17T09:13:05.967Z</updated>
+    <id>https://tediorelee.cn</id>
+    <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;𝓈 𝐵𝐿𝒪𝒢 </title>
+    <updated>2019-08-11T10:50:34.641Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://doc.tediorelee.cn"/>
-    <link rel="self" href="https://doc.tediorelee.cn/atom.xml"/>
-    <subtitle>“哪吒守护着大家”</subtitle>
-    <logo>https://doc.tediorelee.cn/images/avatar.png</logo>
-    <icon>https://doc.tediorelee.cn/favicon.ico</icon>
-    <rights>All rights reserved 2019, 漫游之歌☁️</rights>
+    <link rel="alternate" href="https://tediorelee.cn"/>
+    <link rel="self" href="https://tediorelee.cn/atom.xml"/>
+    <subtitle>“ʏᴏᴜ&apos;ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”</subtitle>
+    <logo>https://tediorelee.cn/images/avatar.png</logo>
+    <icon>https://tediorelee.cn/favicon.ico</icon>
+    <rights>All rights reserved 2019, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;𝓈 𝐵𝐿𝒪𝒢 </rights>
+    <entry>
+        <title type="html"><![CDATA[🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙]]></title>
+        <id>https://tediorelee.cn/post/magisk-v2ray</id>
+        <link href="https://tediorelee.cn/post/magisk-v2ray">
+        </link>
+        <updated>2019-08-11T10:39:02.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>A platform for building proxies to bypass network restrictions.</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>A platform for building proxies to bypass network restrictions.</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[🌈Microsoft Teams 简要使用指南]]></title>
-        <id>https://doc.tediorelee.cn/post/microsoft-teams</id>
-        <link href="https://doc.tediorelee.cn/post/microsoft-teams">
+        <id>https://tediorelee.cn/post/microsoft-teams</id>
+        <link href="https://tediorelee.cn/post/microsoft-teams">
         </link>
         <updated>2019-06-27T07:18:13.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -27,8 +42,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Docker学习笔记]]></title>
-        <id>https://doc.tediorelee.cn/post/7u9aJm8FG</id>
-        <link href="https://doc.tediorelee.cn/post/7u9aJm8FG">
+        <id>https://tediorelee.cn/post/7u9aJm8FG</id>
+        <link href="https://tediorelee.cn/post/7u9aJm8FG">
         </link>
         <updated>2019-05-30T08:34:27.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -42,8 +57,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈How to Install Windows 10 (Fully Installation Guide)]]></title>
-        <id>https://doc.tediorelee.cn/post/how-to-install-windows-10</id>
-        <link href="https://doc.tediorelee.cn/post/how-to-install-windows-10">
+        <id>https://tediorelee.cn/post/how-to-install-windows-10</id>
+        <link href="https://tediorelee.cn/post/how-to-install-windows-10">
         </link>
         <updated>2019-05-26T05:06:25.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -57,8 +72,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Update AzureDevops Server Certificates]]></title>
-        <id>https://doc.tediorelee.cn/post/update-azuredevops-server-certificates</id>
-        <link href="https://doc.tediorelee.cn/post/update-azuredevops-server-certificates">
+        <id>https://tediorelee.cn/post/update-azuredevops-server-certificates</id>
+        <link href="https://tediorelee.cn/post/update-azuredevops-server-certificates">
         </link>
         <updated>2019-05-09T13:17:22.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -72,8 +87,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Customize Your office365]]></title>
-        <id>https://doc.tediorelee.cn/post/customize-your-office365</id>
-        <link href="https://doc.tediorelee.cn/post/customize-your-office365">
+        <id>https://tediorelee.cn/post/customize-your-office365</id>
+        <link href="https://tediorelee.cn/post/customize-your-office365">
         </link>
         <updated>2019-04-26T03:03:06.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -87,8 +102,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Windows Admin Center 入坑指南]]></title>
-        <id>https://doc.tediorelee.cn/post/windows-admin-center</id>
-        <link href="https://doc.tediorelee.cn/post/windows-admin-center">
+        <id>https://tediorelee.cn/post/windows-admin-center</id>
+        <link href="https://tediorelee.cn/post/windows-admin-center">
         </link>
         <updated>2019-04-25T03:18:53.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -102,8 +117,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Migrate Azure VM to On-Premises]]></title>
-        <id>https://doc.tediorelee.cn/post/migrate-azure-vm-to-on-premises</id>
-        <link href="https://doc.tediorelee.cn/post/migrate-azure-vm-to-on-premises">
+        <id>https://tediorelee.cn/post/migrate-azure-vm-to-on-premises</id>
+        <link href="https://tediorelee.cn/post/migrate-azure-vm-to-on-premises">
         </link>
         <updated>2019-04-24T09:40:56.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -117,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈FileRun网盘安装]]></title>
-        <id>https://doc.tediorelee.cn/post/filerun</id>
-        <link href="https://doc.tediorelee.cn/post/filerun">
+        <id>https://tediorelee.cn/post/filerun</id>
+        <link href="https://tediorelee.cn/post/filerun">
         </link>
         <updated>2019-04-19T08:29:17.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -132,8 +147,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈ADFS-Document Summary]]></title>
-        <id>https://doc.tediorelee.cn/post/adfs-document-summary</id>
-        <link href="https://doc.tediorelee.cn/post/adfs-document-summary">
+        <id>https://tediorelee.cn/post/adfs-document-summary</id>
+        <link href="https://tediorelee.cn/post/adfs-document-summary">
         </link>
         <updated>2019-04-15T08:23:28.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -142,21 +157,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>A Simple Summary of AD FS Deployment</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🌈Use Powershell Force Delete AzureAD Users]]></title>
-        <id>https://doc.tediorelee.cn/post/use-powershell-force-delete-azuread-users</id>
-        <link href="https://doc.tediorelee.cn/post/use-powershell-force-delete-azuread-users">
-        </link>
-        <updated>2019-04-15T08:18:13.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>Learn How to Force Delete AAD Users</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>Learn How to Force Delete AAD Users</p>
 </blockquote>
 ]]></content>
     </entry>
