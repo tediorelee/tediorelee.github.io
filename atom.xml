@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tediorelee.cn</id>
     <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;𝓈 𝐵𝐿𝒪𝒢 </title>
-    <updated>2019-08-11T10:50:34.641Z</updated>
+    <updated>2019-08-11T11:09:23.525Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tediorelee.cn"/>
     <link rel="self" href="https://tediorelee.cn/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://tediorelee.cn/images/avatar.png</logo>
     <icon>https://tediorelee.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;𝓈 𝐵𝐿𝒪𝒢 </rights>
+    <entry>
+        <title type="html"><![CDATA[🌈解锁你的网易云灰色歌曲]]></title>
+        <id>https://tediorelee.cn/post/unblockNeteaseMusic</id>
+        <link href="https://tediorelee.cn/post/unblockNeteaseMusic">
+        </link>
+        <updated>2019-08-11T11:06:36.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>Revive unavailable songs for Netease Cloud Music</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>Revive unavailable songs for Netease Cloud Music</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙]]></title>
         <id>https://tediorelee.cn/post/magisk-v2ray</id>
@@ -142,21 +157,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>Self-Hosted File Sync and Sharing</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🌈ADFS-Document Summary]]></title>
-        <id>https://tediorelee.cn/post/adfs-document-summary</id>
-        <link href="https://tediorelee.cn/post/adfs-document-summary">
-        </link>
-        <updated>2019-04-15T08:23:28.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>A Simple Summary of AD FS Deployment</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>A Simple Summary of AD FS Deployment</p>
 </blockquote>
 ]]></content>
     </entry>
