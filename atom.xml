@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://iidx.xyz</id>
-    <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;𝓈 𝐵𝐿𝒪𝒢 </title>
-    <updated>2019-09-04T09:09:42.813Z</updated>
+    <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;</title>
+    <updated>2019-09-04T09:27:05.136Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://iidx.xyz"/>
     <link rel="self" href="https://iidx.xyz/atom.xml"/>
     <subtitle>“ʏᴏᴜ&apos;ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”</subtitle>
     <logo>https://iidx.xyz/images/avatar.png</logo>
     <icon>https://iidx.xyz/favicon.ico</icon>
-    <rights>All rights reserved 2019, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;𝓈 𝐵𝐿𝒪𝒢 </rights>
+    <rights>All rights reserved 2019, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸&apos;</rights>
     <entry>
         <title type="html"><![CDATA[🌈解锁你的网易云灰色歌曲]]></title>
         <id>https://iidx.xyz/post/unblockNeteaseMusic</id>
