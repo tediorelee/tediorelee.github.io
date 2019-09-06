@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>🌈Windows Admin Center 入坑指南 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
+<title>🌈个人代理软件规则整理 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
 <link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1567760096884">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://iidx.xyz/styles/main.css" type='text/css' media='all'>
@@ -193,115 +193,98 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/25/5cc127621056f.png">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190906165351.png">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2019-04-25 ·</span> <span> / </span>
+          <span class="date">· 2019-09-06 ·</span> <span> / </span>
           <span class="author">
             <a href="https://iidx.xyz" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://iidx.xyz/tag/aXetfket7">Windows</a>
+                    <a href="https://iidx.xyz/tag/2ec75jeIG">Other</a>
                 </span>
           
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>🌈Windows Admin Center 入坑指南</h1>
+          <h1 class='entry-title'>🌈个人代理软件规则整理</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
               <blockquote>
-<p>Hello, Windows Admin Center!</p>
+<p>If you want to keep a secret, you must also hide it from yourself.</p>
 </blockquote>
-<!-- more --> 
-<h2 id="下载">下载</h2>
-<p><a href="https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center">参考链接如下</a></p>
-<p>目前版本为<a href="https://aka.ms/WACDownload">Windows Admin Center (version 1904)</a></p>
-<h2 id="自签名证书">自签名证书</h2>
-<p>由于Windows Admin Center在安装时需要绑定443端口，所以有两种安装方式</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11e5286772.png" alt=""></p>
-<p>要么使用安装工具生成一个自签名证书（60天过期）</p>
-<p>要么使用现有的证书绑定指纹</p>
-<p>由于Admin Center多用于企业内部，外网肯定是不需要用到的，但是这里生成的自签名证书有效期又太短</p>
-<p>所以我们可以用Powershell自己生成一个有效期长的自签名证书</p>
-<h3 id="生成">生成</h3>
-<p>New-SelfSignedCertificate使用规范：</p>
-<pre><code>New-SelfSignedCertificate
-   [-SecurityDescriptor &lt;FileSecurity&gt;]
-   [-TextExtension &lt;String[]&gt;]
-   [-Extension &lt;X509Extension[]&gt;]
-   [-HardwareKeyUsage &lt;HardwareKeyUsage[]&gt;]
-   [-KeyUsageProperty &lt;KeyUsageProperty[]&gt;]
-   [-KeyUsage &lt;KeyUsage[]&gt;]
-   [-KeyProtection &lt;KeyProtection[]&gt;]
-   [-KeyExportPolicy &lt;KeyExportPolicy[]&gt;]
-   [-KeyLength &lt;Int32&gt;]
-   [-KeyAlgorithm &lt;String&gt;]
-   [-SmimeCapabilities]
-   [-ExistingKey]
-   [-KeyLocation &lt;String&gt;]
-   [-SignerReader &lt;String&gt;]
-   [-Reader &lt;String&gt;]
-   [-SignerPin &lt;SecureString&gt;]
-   [-Pin &lt;SecureString&gt;]
-   [-KeyDescription &lt;String&gt;]
-   [-KeyFriendlyName &lt;String&gt;]
-   [-Container &lt;String&gt;]
-   [-Provider &lt;String&gt;]
-   [-CurveExport &lt;CurveParametersExportType&gt;]
-   [-KeySpec &lt;KeySpec&gt;]
-   [-Type &lt;CertificateType&gt;]
-   [-FriendlyName &lt;String&gt;]
-   [-NotAfter &lt;DateTime&gt;]
-   [-NotBefore &lt;DateTime&gt;]
-   [-SerialNumber &lt;String&gt;]
-   [-Subject &lt;String&gt;]
-   [-DnsName &lt;String[]&gt;]
-   [-SuppressOid &lt;String[]&gt;]
-   [-HashAlgorithm &lt;String&gt;]
-   [-AlternateSignatureAlgorithm]
-   [-TestRoot]
-   [-Signer &lt;Certificate&gt;]
-   [-CloneCert &lt;Certificate&gt;]
-   [-CertStoreLocation &lt;String&gt;]
-   [-WhatIf]
-   [-Confirm]
-   [&lt;CommonParameters&gt;]
+<!-- more -->
+<blockquote>
+<p>参考：</p>
+<p>https://zhuangzhuang.cf/zhuangzhuang.conf</p>
+<p>https://github.com/Hackl0us/SS-Rule-Snippet</p>
+</blockquote>
+<h2 id="clash">🚀Clash</h2>
+<blockquote>
+<p>https://github.com/tediorelee/personal-config</p>
+</blockquote>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190906162249.png" alt=""></p>
+<h2 id="surfboard">🏄Surfboard</h2>
+<blockquote>
+<p>https://github.com/tediorelee/personal-config</p>
+</blockquote>
+<pre><code>[General]
+skip-proxy = 10.0.0.0/8, 17.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 127.0.0.1, localhost, *.local
+dns-server = 221.4.8.1, 223.5.5.5, 119.29.29.29, 101.6.6.6, 9.9.9.9, 116.62.218.19:443, 208.67.220.220:443, 208.67.222.222:443, system
+udp-relay = true
+
+[Proxy]
+Azure-HK1 = ss, 
+Azure-HK2 = ss, 
+Netflix-HK = ss, 
+
+On = reject
+Off = direct
+DIRECT = direct
+
+
+[Proxy Group]
+Proxy = select, Shadowsocks
+ADblock = select, On, Off
+Shadowsocks = select, Azure-HK1, Azure-HK2
+Microsoft = select, Proxy, DIRECT
+Spotify = select, Proxy, DIRECT
+Google = select, Proxy, DIRECT
+Amazon = select, Proxy, DIRECT
+Apple = select, Proxy, DIRECT
+Bilibili = select, Proxy, DIRECT
+Steam = select, Proxy, DIRECT
+Domestic = select, DIRECT, Proxy
+Netflix = select, Netflix-HK
+
+[Rule]
+# AD Block KEYWORD
+DOMAIN-KEYWORD,admarvel,ADblock
+DOMAIN-KEYWORD,admaster,ADblock
+DOMAIN-KEYWORD,adsage,ADblock
+DOMAIN-KEYWORD,adsmogo,ADblock
+DOMAIN-KEYWORD,adsrvmedia,ADblock
+DOMAIN-KEYWORD,adwords,ADblock
+DOMAIN-KEYWORD,domob,ADblock
+DOMAIN-KEYWORD,duomeng,ADblock
+DOMAIN-KEYWORD,dwtrack,ADblock
+DOMAIN-KEYWORD,guanggao,ADblock
+DOMAIN-KEYWORD,lianmeng,ADblock
+DOMAIN-KEYWORD,omgmta,ADblock
+DOMAIN-KEYWORD,openx,ADblock
+DOMAIN-KEYWORD,partnerad,ADblock
+DOMAIN-KEYWORD,pingfore,ADblock
+DOMAIN-KEYWORD,supersonicads,ADblock
+DOMAIN-KEYWORD,tracking,ADblock
+DOMAIN-KEYWORD,uedas,ADblock
+#未写完
 </code></pre>
-<p>打开powershell，这里以生成有效期5年为例，输入：</p>
-<pre><code>New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My\ -DnsName 'yoursite' -NotAfter (Get-Date).AddMonths(60)
-</code></pre>
-<p>打开<code>certlm.msc</code>可以看到，我们的自签名证书已经生成好了</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11ea64bc67.png" alt=""></p>
-<h3 id="导出">导出</h3>
-<p>以导出pfx格式为例</p>
-<pre><code>PS C:\&gt; $certPwd = ConvertTo-SecureString -String ‘yourcert_pwd’  -Force -AsPlainText
-PS C:\&gt; $thumbprint = 'yourcert_thumbprint'
-PS C:\&gt; $cerPath = Get-Item Cert:\LocalMachine\My\$thumbprint
-PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password $certPwd
-</code></pre>
-<p>⚠️注意指定具体的值</p>
-<p>导出成功如图</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11f9750b19.png" alt=""></p>
-<h2 id="安装admincenter">安装AdminCenter</h2>
-<p>直接双击安装包，在指定证书这里，填上端口443和证书的指纹</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc125d285688.png" alt=""></p>
-<p>完成剩下安装即可</p>
-<p>打开给出的访问地址https://infra-srv发现还不能访问</p>
-<p>因为我们的dns配置没有把域名指向正确的ip地址</p>
-<p>使用管理员权限打开notepad</p>
-<p>选择打开，定位到C:\Windows\System32\drivers\etc</p>
-<p>修改hosts文件，末尾加上对应的ip和域名</p>
-<p>打开cmd，<code>ipconfig /flushdns</code>刷新一下dns，这时候再ping infra-srv就有解析结果了</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc126b1e696c.png" alt=""></p>
-<p>浏览器打开https://infra-srv</p>
-<p>只要是在内网环境的电脑，都可以访问Admin Center了！</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc127014ab2f.png" alt=""></p>
+<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190906163344.png" alt=""></p>
 
             </article>
           </div>
@@ -411,7 +394,7 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
             <nav class="navigation pagination" role="navigation">
               <h2 class="screen-reader-text">Posts navigation</h2>
               <div class="nav-links">
-                <a class="next page-numbers" href="https://iidx.xyz/post/migrate-azure-vm-to-on-premises">下一篇->🌈Migrate Azure VM to On-Premises</a>
+                <a class="next page-numbers" href="https://iidx.xyz/post/unblockNeteaseMusic">下一篇->🌈解锁你的网易云灰色歌曲</a>
               </div>
             </nav>
           
