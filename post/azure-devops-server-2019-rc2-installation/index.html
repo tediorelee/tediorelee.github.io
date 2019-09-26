@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Azure DevOps Server 2019 RC2 Installation | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1567760096884">
+<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1569470386763">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://iidx.xyz/styles/main.css" type='text/css' media='all'>
 
@@ -219,7 +219,7 @@
 <p>How to Install Azure DevOps Server</p>
 </blockquote>
 <!--more-->
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/TIM%E5%9B%BE%E7%89%8720190228104711.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://blog2019.pek3b.qingstor.com/devops/TIM%E5%9B%BE%E7%89%8720190228104711.png" alt=""></figure>
 <h2 id="环境准备"><strong>环境准备</strong></h2>
 <ul>
 <li>Azure VM with Windows Server 2019 Datacenter</li>
@@ -229,56 +229,56 @@
 </ul>
 <h2 id="安装sql-server">安装SQL Server</h2>
 <p>DevOps Server根据不同的应用场景，提供不同的部署方案，本次部署因为规模小而且主要作为测试用，所以采用SQL+DevOps单机安装的方案。具体需求参考<a href="https://www.cnblogs.com/danzhang/p/10080190.html">文章</a></p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-09-28.png" alt=""></p>
+<figure data-type="image" tabindex="2"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-09-28.png" alt=""></figure>
 <p>SQL安装简单，基本可以省略，<a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">下载地址</a></p>
 <p><strong>ps：记得开放SQL的通信端口</strong></p>
 <h2 id="安装devops-server-2019-rc2">安装DevOps Server 2019 RC2</h2>
 <p>直接双击安装包，等待下载完成即可(磁盘空间≥4GB)</p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-15-02.png" alt=""></p>
+<figure data-type="image" tabindex="3"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-15-02.png" alt=""></figure>
 <p>下载安装完成之后，即可开始配置</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec164adfa3.png" alt=""></p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2019/04/23/5cbec164adfa3.png" alt=""></figure>
 <p>选择<strong>启动向导</strong></p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec172bd577.png" alt=""></p>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2019/04/23/5cbec172bd577.png" alt=""></figure>
 <p>点击<strong>这是新的Azure DevOps Server部署</strong></p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec180b33e7.png" alt=""></p>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2019/04/23/5cbec180b33e7.png" alt=""></figure>
 <p>选择高级部署，语言默认，中文就好</p>
 <p>数据库设置这里，SQL Server实例写上你的<code>服务器名\数据库实例名</code></p>
 <p>eg:<code>devops-server\tfs</code></p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1926dd82.png" alt=""></p>
+<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2019/04/23/5cbec1926dd82.png" alt=""></figure>
 <p>账户这里我使用的默认服务账户即可</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1a4088e5.png" alt=""></p>
+<figure data-type="image" tabindex="8"><img src="https://i.loli.net/2019/04/23/5cbec1a4088e5.png" alt=""></figure>
 <p>应用层选项这里，选为默认组，启用默认22端口勾选即可</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1b2218e5.png" alt=""></p>
+<figure data-type="image" tabindex="9"><img src="https://i.loli.net/2019/04/23/5cbec1b2218e5.png" alt=""></figure>
 <p>搜索服务这里，默认选择即可，服务用户账户写你的管理员账号和密码即可</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1c4179ff.png" alt=""></p>
+<figure data-type="image" tabindex="10"><img src="https://i.loli.net/2019/04/23/5cbec1c4179ff.png" alt=""></figure>
 <p>因为是单机部署，所以报表功能可以省去</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1d5ebe73.png" alt=""></p>
+<figure data-type="image" tabindex="11"><img src="https://i.loli.net/2019/04/23/5cbec1d5ebe73.png" alt=""></figure>
 <p>创建一个你的团队项目集合,这里可默认，后期可以修改</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1e5f3dc4.png" alt=""></p>
+<figure data-type="image" tabindex="12"><img src="https://i.loli.net/2019/04/23/5cbec1e5f3dc4.png" alt=""></figure>
 <p>检查无误后即可开始安装</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec1f55bc6d.png" alt=""></p>
+<figure data-type="image" tabindex="13"><img src="https://i.loli.net/2019/04/23/5cbec1f55bc6d.png" alt=""></figure>
 <p>这里会检查到java没有安装，因为搜索服务需要用到JRE，勾选安装即可</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec20b87294.png" alt=""></p>
+<figure data-type="image" tabindex="14"><img src="https://i.loli.net/2019/04/23/5cbec20b87294.png" alt=""></figure>
 <p>开始配置，等待10分钟左右</p>
-<p><img src="https://i.loli.net/2019/04/23/5cbec21a88f16.png" alt=""></p>
+<figure data-type="image" tabindex="15"><img src="https://i.loli.net/2019/04/23/5cbec21a88f16.png" alt=""></figure>
 <p>完成安装之后，即可使用浏览器访问<code>http://devops-server</code>访问</p>
 <h2 id="配置external-access-ssl">配置External Access &amp; SSL</h2>
 <p>在上一步中，我们可以使用<code>http://devops-server</code>访问了</p>
 <p>但是在前言中提到了，我们需要给学生使用，只能内网访问是不可能的，我们需要给它配置外网访问权限。</p>
 <p>在所有程序中定位到Azure DevOps Server管理控制台</p>
 <p>点击左侧应用层</p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-29-52.png" alt=""></p>
+<figure data-type="image" tabindex="16"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-29-52.png" alt=""></figure>
 <p>找到右侧的<code>更改公共URL</code></p>
 <p>用你最后想用的公网域名替换掉原来的<code>http://devops-server</code></p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-30-05.png" alt=""></p>
+<figure data-type="image" tabindex="17"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-30-05.png" alt=""></figure>
 <p>再定位到IIS管理器，点开我们的网站，找到右侧的<code>绑定</code></p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-33.png" alt=""></p>
+<figure data-type="image" tabindex="18"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-33.png" alt=""></figure>
 <p>点击新建，协议选择<code>https</code>,端口号默认443，主机名写上你刚才的域名，指定给该域名的证书即可</p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-54.png" alt=""></p>
+<figure data-type="image" tabindex="19"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-54.png" alt=""></figure>
 <p>最后打开你的域名解析，新建一个A记录，比如我这里子域名为devops，指向地址为服务器的ip</p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-38-54.png" alt=""></p>
+<figure data-type="image" tabindex="20"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-38-54.png" alt=""></figure>
 <p>浏览器打开网址<code>https://devops.yourdomain.com</code>，已经可以访问</p>
-<p><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-40-43.png" alt=""></p>
+<figure data-type="image" tabindex="21"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-40-43.png" alt=""></figure>
 <h2 id="参考文档">参考文档</h2>
 <blockquote>
 <p><strong>https://azure.microsoft.com/zh-cn/services/devops/server/</strong></p>
@@ -347,7 +347,7 @@
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1567760096884" class='avatar avatar-72 photo' height='72' width='72'>
+              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1569470386763" class='avatar avatar-72 photo' height='72' width='72'>
               <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://iidx.xyz'>tediorelee</a> </span>
             </div>
             <div class="bio">

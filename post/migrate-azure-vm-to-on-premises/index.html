@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Migrate Azure VM to On-Premises | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1567760096884">
+<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1569470386763">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://iidx.xyz/styles/main.css" type='text/css' media='all'>
 
@@ -222,29 +222,29 @@
 <h2 id="download-vhd">Download VHD</h2>
 <p>在Azure Potal中，找到你的虚拟机并关闭</p>
 <p>点击左侧的磁盘选项，下载整个虚拟机磁盘</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc017cf94e96.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/04/24/5cc017cf94e96.png" alt=""></figure>
 <p>PS: 建议使用例如idm这类的下载工具，浏览器自带下载可能会造成下载中断。</p>
 <h2 id="add-a-new-domain-controller">Add a new Domain Controller</h2>
 <p>打开Hyper-V管理器，新建一个用作之后本地主DC的虚拟机,配置自定，安装完成之后注意修改主机名，配置静态ip，为之后加域做好准备。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01a1c387f2.png" alt=""></p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2019/04/24/5cc01a1c387f2.png" alt=""></figure>
 <p>再新建一个虚拟机，配置注意保持与云端虚拟机一模一样防止启动报错，启动盘挂载为下载下来的vhd文件。</p>
 <p>成功启动后，修改此虚拟机的ip以符合本地网络环境，注意关闭不必要的服务比如AAD Sync等，避免和云端起冲突。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01ab8a9d49.png" alt=""></p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2019/04/24/5cc01ab8a9d49.png" alt=""></figure>
 <p>在之前创建的DC中，将dns指向原云端DC，并加入域。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01b25cfe86.png" alt=""></p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2019/04/24/5cc01b25cfe86.png" alt=""></figure>
 <h2 id="promote-system-to-a-domain-controller">Promote system to a Domain Controller</h2>
 <p>在新DC中，添加角色，安装Active Directory Domain Services</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01ba6bb7b5.png" alt=""></p>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2019/04/24/5cc01ba6bb7b5.png" alt=""></figure>
 <p>等待安装完成之后，选择将此服务器提升为域控制器。</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01c369ab04.png" alt=""></p>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2019/04/24/5cc01c369ab04.png" alt=""></figure>
 <p>选择添加域控制器至现有的域</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01cd087bab.png" alt=""></p>
+<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2019/04/24/5cc01cd087bab.png" alt=""></figure>
 <p>设置好你的DSRM密码</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01d251805b.png" alt=""></p>
+<figure data-type="image" tabindex="8"><img src="https://i.loli.net/2019/04/24/5cc01d251805b.png" alt=""></figure>
 <p>选择从旧的DC复制</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01da4f3a62.png" alt=""></p>
+<figure data-type="image" tabindex="9"><img src="https://i.loli.net/2019/04/24/5cc01da4f3a62.png" alt=""></figure>
 <p>等待检查安装并自动重启</p>
-<p><img src="https://i.loli.net/2019/04/24/5cc01debb2be5.png" alt=""></p>
+<figure data-type="image" tabindex="10"><img src="https://i.loli.net/2019/04/24/5cc01debb2be5.png" alt=""></figure>
 <h2 id="transfer-fsmo-roles">Transfer FSMO roles</h2>
 <p>未完待续</p>
 
@@ -309,7 +309,7 @@
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1567760096884" class='avatar avatar-72 photo' height='72' width='72'>
+              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1569470386763" class='avatar avatar-72 photo' height='72' width='72'>
               <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://iidx.xyz'>tediorelee</a> </span>
             </div>
             <div class="bio">

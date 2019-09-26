@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Windows Admin Center 入坑指南 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1567760096884">
+<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1569470386763">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://iidx.xyz/styles/main.css" type='text/css' media='all'>
 
@@ -224,7 +224,7 @@
 <p>目前版本为<a href="https://aka.ms/WACDownload">Windows Admin Center (version 1904)</a></p>
 <h2 id="自签名证书">自签名证书</h2>
 <p>由于Windows Admin Center在安装时需要绑定443端口，所以有两种安装方式</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11e5286772.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/04/25/5cc11e5286772.png" alt=""></figure>
 <p>要么使用安装工具生成一个自签名证书（60天过期）</p>
 <p>要么使用现有的证书绑定指纹</p>
 <p>由于Admin Center多用于企业内部，外网肯定是不需要用到的，但是这里生成的自签名证书有效期又太短</p>
@@ -277,7 +277,7 @@
 <pre><code>New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My\ -DnsName 'yoursite' -NotAfter (Get-Date).AddMonths(60)
 </code></pre>
 <p>打开<code>certlm.msc</code>可以看到，我们的自签名证书已经生成好了</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11ea64bc67.png" alt=""></p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2019/04/25/5cc11ea64bc67.png" alt=""></figure>
 <h3 id="导出">导出</h3>
 <p>以导出pfx格式为例</p>
 <pre><code>PS C:\&gt; $certPwd = ConvertTo-SecureString -String ‘yourcert_pwd’  -Force -AsPlainText
@@ -287,10 +287,10 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
 </code></pre>
 <p>⚠️注意指定具体的值</p>
 <p>导出成功如图</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc11f9750b19.png" alt=""></p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2019/04/25/5cc11f9750b19.png" alt=""></figure>
 <h2 id="安装admincenter">安装AdminCenter</h2>
 <p>直接双击安装包，在指定证书这里，填上端口443和证书的指纹</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc125d285688.png" alt=""></p>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2019/04/25/5cc125d285688.png" alt=""></figure>
 <p>完成剩下安装即可</p>
 <p>打开给出的访问地址https://infra-srv发现还不能访问</p>
 <p>因为我们的dns配置没有把域名指向正确的ip地址</p>
@@ -298,10 +298,10 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
 <p>选择打开，定位到C:\Windows\System32\drivers\etc</p>
 <p>修改hosts文件，末尾加上对应的ip和域名</p>
 <p>打开cmd，<code>ipconfig /flushdns</code>刷新一下dns，这时候再ping infra-srv就有解析结果了</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc126b1e696c.png" alt=""></p>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2019/04/25/5cc126b1e696c.png" alt=""></figure>
 <p>浏览器打开https://infra-srv</p>
 <p>只要是在内网环境的电脑，都可以访问Admin Center了！</p>
-<p><img src="https://i.loli.net/2019/04/25/5cc127014ab2f.png" alt=""></p>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2019/04/25/5cc127014ab2f.png" alt=""></figure>
 
             </article>
           </div>
@@ -364,7 +364,7 @@ PS C:\&gt; Export-PfxCertificate -Cert $cerPath -Force d:\yoursite.pfx -Password
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1567760096884" class='avatar avatar-72 photo' height='72' width='72'>
+              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1569470386763" class='avatar avatar-72 photo' height='72' width='72'>
               <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://iidx.xyz'>tediorelee</a> </span>
             </div>
             <div class="bio">

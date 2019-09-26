@@ -6,7 +6,7 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <title>🌈Update AzureDevops Server Certificates | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1567760096884">
+<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1569470386763">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://iidx.xyz/styles/main.css" type='text/css' media='all'>
 
@@ -223,24 +223,24 @@
 <p>如果你的证书已经是pfx格式了，那么可以直接复制到服务器待用</p>
 <p>如果你的证书是<code>.cer</code>格式那么还需要将格式转化为pfx</p>
 <p>可以在<a href="https://freessl.cn/ssltools">https://freessl.cn/ssltools</a>找到SSL证书格式转换</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210650.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210650.png" alt=""></figure>
 <h2 id="更换证书">更换证书</h2>
 <p>登录到你的服务器</p>
 <p><code>win+r</code>输入<code>certlm.msc</code>打开证书管理控制台</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210801.png" alt=""></p>
+<figure data-type="image" tabindex="2"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509210801.png" alt=""></figure>
 <p>删掉原先导入的服务器证书以免冲突，便于识别</p>
 <p>打开IIS控制台</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211012.png" alt=""></p>
+<figure data-type="image" tabindex="3"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211012.png" alt=""></figure>
 <p>依次点开左侧网站，找到我们要更换证书的Azure Devops Server</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211133.png" alt=""></p>
+<figure data-type="image" tabindex="4"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211133.png" alt=""></figure>
 <p>右侧找到<strong>编辑网站</strong>-绑定</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211229.png" alt=""></p>
+<figure data-type="image" tabindex="5"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211229.png" alt=""></figure>
 <p>编辑443及HTTPS端口的设置</p>
 <p>选择我们正确的证书和主机地址即可</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211353.png" alt=""></p>
+<figure data-type="image" tabindex="6"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211353.png" alt=""></figure>
 <p>更换完成之后，打开我们的主机名</p>
 <p>可以看到SSL证书已经更换成功</p>
-<p><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211551.png" alt=""></p>
+<figure data-type="image" tabindex="7"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211551.png" alt=""></figure>
 
             </article>
           </div>
@@ -303,7 +303,7 @@
           </div>
           <div class="author-meta">
             <div class="author">
-              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1567760096884" class='avatar avatar-72 photo' height='72' width='72'>
+              <img alt='' src="https://iidx.xyz/images/avatar.png?v=1569470386763" class='avatar avatar-72 photo' height='72' width='72'>
               <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://iidx.xyz'>tediorelee</a> </span>
             </div>
             <div class="bio">

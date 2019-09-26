@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>友链 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
+<title>🌈个人梯子搭建的心得与体会 | 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
 <link rel="shortcut icon" href="https://iidx.xyz/favicon.ico?v=1569470386763">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://iidx.xyz/styles/main.css" type='text/css' media='all'>
@@ -193,37 +193,98 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://i.loli.net/2019/04/23/5cbec6728637e.png">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926115930.png">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2019-04-23 ·</span> <span> / </span>
+          <span class="date">· 2019-09-26 ·</span> <span> / </span>
           <span class="author">
             <a href="https://iidx.xyz" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://tediorelee.cn">tediorelee</a> <a href="http://www.miitbeian.gov.cn">蜀ICP备18031601号</a></a>
           </span>
           
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://iidx.xyz/tag/2ec75jeIG">Other</a>
+                </span>
+          
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>友链</h1>
+          <h1 class='entry-title'>🌈个人梯子搭建的心得与体会</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <ul>
-<li>
-<h2 id="️ljy29">🦄️<a href="http://liujinyang29.cn/">ljy29</a></h2>
-</li>
-<li>
-<h2 id="️theia">🦄️<a href="http://tediore.lofter.com/">Theia</a></h2>
-</li>
-<li>
-<h2 id="️hakula">🦄️<a href="https://hakula.xyz/">HAKULA</a></h2>
-</li>
-<li>
-<h2 id="️bestlm">🦄️<a href="https://bestlm.xyz">Bestlm</a></h2>
-</li>
-</ul>
+              <blockquote>
+<p>迫于临近国庆，Wall越来越高，特此总结一下个人梯子搭建的心得与体会</p>
+</blockquote>
+<!-- more -->
+<h2 id="初级篇">初级篇</h2>
+<blockquote>
+<p>服务器单端口安装Shadowsocks</p>
+<p>多个用户使用同一个ip和端口，容易堵塞并且访问流量大了容易被ban</p>
+<p>更换端口时十分不方便需要ssh至服务器并且手动一步步更改端口</p>
+</blockquote>
+<p>准备一台境外服务器，ssh登录之后首先开启BBR加速</p>
+<pre><code>wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh
+</code></pre>
+<p>注意使用root用户，开启之后需要重启一下服务器</p>
+<p>之后安装Shadowsocks-Go，一键脚本如下</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ss-go.sh &amp;&amp; chmod +x ss-go.sh &amp;&amp; bash ss-go.sh
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926110610.png" alt=""></figure>
+<p>选择<code>安装Shadowsocks</code>并设置你的密码、端口、加密方式即可</p>
+<p>最后复制配置完成之后的ss链接即可，粘贴到客户端</p>
+<figure data-type="image" tabindex="2"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926110800.png" alt=""></figure>
+<h2 id="中级篇">中级篇</h2>
+<blockquote>
+<p>使用<a href="https://blog.sprov.xyz">@sprov</a>开发的<code>v2-ui</code>面板管理Shadowsocks</p>
+<p>可以方便的删除和新增节点，多用户使用的时候可以每个人分配一个端口</p>
+<p>可视化操作，兼容v2ray协议等</p>
+</blockquote>
+<p>一键脚本安装</p>
+<pre><code>bash &lt;(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
+</code></pre>
+<p>安装完成之后使用http://ip:65432访问（记得打开端口）</p>
+<p>其他操作命令如下：</p>
+<pre><code>v2-ui                  # 显示管理菜单 (功能更多)
+v2-ui start            # 启动 v2-ui 面板
+v2-ui stop             # 停止 v2-ui 面板
+v2-ui restart          # 重启 v2-ui 面板
+v2-ui status           # 查看 v2-ui 状态
+v2-ui enable           # 设置 v2-ui 开机自启
+v2-ui disable          # 取消 v2-ui 开机自启
+v2-ui log              # 查看 v2-ui 日志
+v2-ui update           # 更新 v2-ui 面板
+v2-ui install          # 安装 v2-ui 面板
+v2-ui uninstall        # 卸载 v2-ui 面板
+</code></pre>
+<p>如图：</p>
+<figure data-type="image" tabindex="3"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926111434.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926111502.png" alt=""></figure>
+<p><strong>参考链接</strong>：https://blog.sprov.xyz/2019/08/03/v2-ui/</p>
+<h2 id="高级篇">高级篇</h2>
+<blockquote>
+<p>配置国内服务器<code>中转/中继</code>shadowsocks流量</p>
+<p>原理：<code>Client &lt;--&gt; ProxyRelay VPS &lt;--&gt; Your Shadowsocks VPS</code></p>
+<p>使你的境外服务器走国内服务器流量转发，不易被GFW检测到，并且优化了延迟</p>
+<p>缺点是消耗了双倍带宽和流量，需要两台服务器性能都很好才有明显效果，并且不支持UDP流量转发</p>
+</blockquote>
+<p>核心软件：<code>Haproxy</code></p>
+<p>使用一键脚本配置：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/haproxy.sh &amp;&amp; chmod +x haproxy.sh &amp;&amp; bash haproxy.sh
+</code></pre>
+<p>安装过程中输入你境外shadowsocks服务器的端口和ip地址，请一定保证这里输入的是正确的信息！</p>
+<p>完成之后，<code>bash haproxy.sh view</code>可以检查转发的配置</p>
+<figure data-type="image" tabindex="5"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926114001.png" alt=""></figure>
+<p>中转服务器配置完成之后</p>
+<p>打开ss客户端，更改节点信息中的ip地址为中转服务器ip，端口密码保持不变即可</p>
+<p>测试一下Youtube 8K视频，比之前的速度要好了很多了</p>
+<figure data-type="image" tabindex="6"><img src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926114806.png" alt=""></figure>
+<p>参考链接：https://doubibackup.com/bizht36j-2.html</p>
+<h2 id="其他">其他</h2>
+<p>之前有研究过SS-panel和SS-manager，前者迫于不开机场只自己和几个朋友使用便觉得没有必要，后者实在是装不上，莫名有问题遂放弃，等后续有时间再来慢慢研究。</p>
+<h4 id="the-end">THE END....</h4>
 
             </article>
           </div>
@@ -329,6 +390,13 @@
             </div>
           </div>
         </div>
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://iidx.xyz/post/ss-rules">下一篇->🌈个人代理软件规则整理</a>
+              </div>
+            </nav>
           
       </div>
       <section id="comments" class="comments">
