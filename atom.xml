@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://iidx.xyz</id>
     <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-    <updated>2019-09-29T13:59:58.034Z</updated>
+    <updated>2019-09-29T14:01:48.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://iidx.xyz"/>
     <link rel="self" href="https://iidx.xyz/atom.xml"/>
@@ -67,21 +67,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>A platform for building proxies to bypass network restrictions.</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🌈Microsoft Teams 简要使用指南]]></title>
-        <id>https://iidx.xyz/post/microsoft-teams</id>
-        <link href="https://iidx.xyz/post/microsoft-teams">
-        </link>
-        <updated>2019-06-27T07:18:13.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>Meet the hub for teamwork in Office 365.</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>Meet the hub for teamwork in Office 365.</p>
 </blockquote>
 ]]></content>
     </entry>
@@ -157,6 +142,21 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>Hello, Windows Admin Center!</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[🌈Migrate Azure VM to On-Premises]]></title>
+        <id>https://iidx.xyz/post/migrate-azure-vm-to-on-premises</id>
+        <link href="https://iidx.xyz/post/migrate-azure-vm-to-on-premises">
+        </link>
+        <updated>2019-04-24T09:40:56.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>A  Step-by-step tutorial of Migrate Azure DC VM to On-Premises VM</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>A  Step-by-step tutorial of Migrate Azure DC VM to On-Premises VM</p>
 </blockquote>
 ]]></content>
     </entry>
