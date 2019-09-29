@@ -3628,14 +3628,11 @@ h6 {
   width: 160px;
 }
 .header .site_title_container .description {
-  margin: 30;
-  margin-left: -200px;
   font-size: 14px;
   color: #424242;
-  float: left;
+  float: right;
 }
 .header .site_title_container .description .sub_title {
-  margin: 10 0;
   font-weight: normal !important;
   float: none !important;
   font-family: 'PingHei', 'PingFang SC', Helvetica Neue, 'Work Sans', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun !important;
@@ -4201,17 +4198,4 @@ em {
   margin: 0 30px 20px 0;
   background: #f7f7f7;
   border-bottom: 0;
-}
-.avatar {
-  width: 30%;
-  float: right;
-  margin-left: 100px;
-}
-.author {
-  background: url(https://iidx.xyz/images/avatar.png?v=1569642164733);
-  width: 100px;
-  height: 100px;
-  background-size: 100% 100%;
-  border-radius: 100%;
-  float: right;
 }
