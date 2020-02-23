@@ -1,8 +1,92 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type"content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"name="viewport"/><meta content="yes"name="apple-mobile-web-app-capable"/><meta content="black"name="apple-mobile-web-app-status-bar-style"/><meta name="referrer" content="never"><meta content="telephone=no"name="format-detection"/><meta name="renderer"content="webkit"><meta name="keywords"content=""><meta name="description"content=""><title>🌈Azure DevOps Server 2019 RC2 Installation|𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title><link rel="shortcut icon"href="https://iidx.xyz/favicon.ico?v=1569941673259"><link rel="stylesheet"href="https://iidx.xyz/styles/main.css"type='text/css'media='all'><link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"rel="stylesheet"><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script><link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css"><link rel="stylesheet"href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/default.min.css"><script>hljs.initHighlightingOnLoad();</script></head><body><div class="main animated"><div class="header animated fadeInDown"><div class="site_title_container"><div class="site_title"><a href="https://iidx.xyz">𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</a></div><div class="description"><a href="https://iidx.xyz"><p class="sub_title">“ʏᴏᴜ'ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”</p></a><div class="my_socials"><a href="http://weibo.com/u/3200965454"target="_blank"><i class="fa fa-weibo"></i></a><a href="https://www.instagram.com/tediore_lee/"target="_blank"><i class="fa fa-instagram"></i></a></div></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post_page"><div class="post animated fadeInDown"><div class="post_title post_detail_title"><h2><a>🌈Azure DevOps Server 2019 RC2 Installation</a></h2><span class="date">2019-04-15</span></div><div class="post_content markdown"><p class="md_block"><span class="md_line md_line_start md_line_end"><blockquote>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>🌈Azure DevOps Server 2019 RC2 Installation - 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
+<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://iidx.xyz/media/css/tailwind.css">
+<link rel="stylesheet" href="https://iidx.xyz/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="🌈Azure DevOps Server 2019 RC2 Installation - 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸 - Atom Feed" href="https://iidx.xyz/atom.xml">
+
+    
+
+  <meta name="description" content="
+How to Install Azure DevOps Server
+
+
+
+环境准备
+
+Azure VM with Windows Server 2019 Datacenter
+DevOps Server Installation pac..." />
+  <meta property="og:title" content="🌈Azure DevOps Server 2019 RC2 Installation - 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸">
+  <meta property="og:description" content="
+How to Install Azure DevOps Server
+
+
+
+环境准备
+
+Azure VM with Windows Server 2019 Datacenter
+DevOps Server Installation pac..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://iidx.xyz/post/azure-devops-server-2019-rc2-installation/" />
+  <meta property="og:image" content="https://i.loli.net/2019/04/15/5cb438805f179.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="🌈Azure DevOps Server 2019 RC2 Installation - 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸">
+  <meta name="twitter:description" content="
+How to Install Azure DevOps Server
+
+
+
+环境准备
+
+Azure VM with Windows Server 2019 Datacenter
+DevOps Server Installation pac...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://iidx.xyz/post/azure-devops-server-2019-rc2-installation/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://iidx.xyz" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          🌈Azure DevOps Server 2019 RC2 Installation
+        </h1>
+        
+          <img src="https://i.loli.net/2019/04/15/5cb438805f179.png" alt="🌈Azure DevOps Server 2019 RC2 Installation" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-04-15 · 3 min read</div>
+          
+            <a href="https://iidx.xyz/tag/x6J1TFbCJ/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Azure
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
 <p>How to Install Azure DevOps Server</p>
 </blockquote>
 <!--more-->
-<figure data-type="image" tabindex="1"><img src="https://blog2019.pek3b.qingstor.com/devops/TIM%E5%9B%BE%E7%89%8720190228104711.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://blog2019.pek3b.qingstor.com/devops/TIM%E5%9B%BE%E7%89%8720190228104711.png" alt="" loading="lazy"></figure>
 <h2 id="环境准备"><strong>环境准备</strong></h2>
 <ul>
 <li>Azure VM with Windows Server 2019 Datacenter</li>
@@ -12,68 +96,89 @@
 </ul>
 <h2 id="安装sql-server">安装SQL Server</h2>
 <p>DevOps Server根据不同的应用场景，提供不同的部署方案，本次部署因为规模小而且主要作为测试用，所以采用SQL+DevOps单机安装的方案。具体需求参考<a href="https://www.cnblogs.com/danzhang/p/10080190.html">文章</a></p>
-<figure data-type="image" tabindex="2"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-09-28.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-09-28.png" alt="" loading="lazy"></figure>
 <p>SQL安装简单，基本可以省略，<a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">下载地址</a></p>
 <p><strong>ps：记得开放SQL的通信端口</strong></p>
 <h2 id="安装devops-server-2019-rc2">安装DevOps Server 2019 RC2</h2>
 <p>直接双击安装包，等待下载完成即可(磁盘空间≥4GB)</p>
-<figure data-type="image" tabindex="3"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-15-02.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-15-02.png" alt="" loading="lazy"></figure>
 <p>下载安装完成之后，即可开始配置</p>
-<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2019/04/23/5cbec164adfa3.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://i.loli.net/2019/04/23/5cbec164adfa3.png" alt="" loading="lazy"></figure>
 <p>选择<strong>启动向导</strong></p>
-<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2019/04/23/5cbec172bd577.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://i.loli.net/2019/04/23/5cbec172bd577.png" alt="" loading="lazy"></figure>
 <p>点击<strong>这是新的Azure DevOps Server部署</strong></p>
-<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2019/04/23/5cbec180b33e7.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://i.loli.net/2019/04/23/5cbec180b33e7.png" alt="" loading="lazy"></figure>
 <p>选择高级部署，语言默认，中文就好</p>
 <p>数据库设置这里，SQL Server实例写上你的<code>服务器名\数据库实例名</code></p>
 <p>eg:<code>devops-server\tfs</code></p>
-<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2019/04/23/5cbec1926dd82.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://i.loli.net/2019/04/23/5cbec1926dd82.png" alt="" loading="lazy"></figure>
 <p>账户这里我使用的默认服务账户即可</p>
-<figure data-type="image" tabindex="8"><img src="https://i.loli.net/2019/04/23/5cbec1a4088e5.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://i.loli.net/2019/04/23/5cbec1a4088e5.png" alt="" loading="lazy"></figure>
 <p>应用层选项这里，选为默认组，启用默认22端口勾选即可</p>
-<figure data-type="image" tabindex="9"><img src="https://i.loli.net/2019/04/23/5cbec1b2218e5.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://i.loli.net/2019/04/23/5cbec1b2218e5.png" alt="" loading="lazy"></figure>
 <p>搜索服务这里，默认选择即可，服务用户账户写你的管理员账号和密码即可</p>
-<figure data-type="image" tabindex="10"><img src="https://i.loli.net/2019/04/23/5cbec1c4179ff.png" alt=""></figure>
+<figure data-type="image" tabindex="10"><img src="https://i.loli.net/2019/04/23/5cbec1c4179ff.png" alt="" loading="lazy"></figure>
 <p>因为是单机部署，所以报表功能可以省去</p>
-<figure data-type="image" tabindex="11"><img src="https://i.loli.net/2019/04/23/5cbec1d5ebe73.png" alt=""></figure>
+<figure data-type="image" tabindex="11"><img src="https://i.loli.net/2019/04/23/5cbec1d5ebe73.png" alt="" loading="lazy"></figure>
 <p>创建一个你的团队项目集合,这里可默认，后期可以修改</p>
-<figure data-type="image" tabindex="12"><img src="https://i.loli.net/2019/04/23/5cbec1e5f3dc4.png" alt=""></figure>
+<figure data-type="image" tabindex="12"><img src="https://i.loli.net/2019/04/23/5cbec1e5f3dc4.png" alt="" loading="lazy"></figure>
 <p>检查无误后即可开始安装</p>
-<figure data-type="image" tabindex="13"><img src="https://i.loli.net/2019/04/23/5cbec1f55bc6d.png" alt=""></figure>
+<figure data-type="image" tabindex="13"><img src="https://i.loli.net/2019/04/23/5cbec1f55bc6d.png" alt="" loading="lazy"></figure>
 <p>这里会检查到java没有安装，因为搜索服务需要用到JRE，勾选安装即可</p>
-<figure data-type="image" tabindex="14"><img src="https://i.loli.net/2019/04/23/5cbec20b87294.png" alt=""></figure>
+<figure data-type="image" tabindex="14"><img src="https://i.loli.net/2019/04/23/5cbec20b87294.png" alt="" loading="lazy"></figure>
 <p>开始配置，等待10分钟左右</p>
-<figure data-type="image" tabindex="15"><img src="https://i.loli.net/2019/04/23/5cbec21a88f16.png" alt=""></figure>
+<figure data-type="image" tabindex="15"><img src="https://i.loli.net/2019/04/23/5cbec21a88f16.png" alt="" loading="lazy"></figure>
 <p>完成安装之后，即可使用浏览器访问<code>http://devops-server</code>访问</p>
 <h2 id="配置external-access-ssl">配置External Access &amp; SSL</h2>
 <p>在上一步中，我们可以使用<code>http://devops-server</code>访问了</p>
 <p>但是在前言中提到了，我们需要给学生使用，只能内网访问是不可能的，我们需要给它配置外网访问权限。</p>
 <p>在所有程序中定位到Azure DevOps Server管理控制台</p>
 <p>点击左侧应用层</p>
-<figure data-type="image" tabindex="16"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-29-52.png" alt=""></figure>
+<figure data-type="image" tabindex="16"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-29-52.png" alt="" loading="lazy"></figure>
 <p>找到右侧的<code>更改公共URL</code></p>
 <p>用你最后想用的公网域名替换掉原来的<code>http://devops-server</code></p>
-<figure data-type="image" tabindex="17"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-30-05.png" alt=""></figure>
+<figure data-type="image" tabindex="17"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-30-05.png" alt="" loading="lazy"></figure>
 <p>再定位到IIS管理器，点开我们的网站，找到右侧的<code>绑定</code></p>
-<figure data-type="image" tabindex="18"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-33.png" alt=""></figure>
+<figure data-type="image" tabindex="18"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-33.png" alt="" loading="lazy"></figure>
 <p>点击新建，协议选择<code>https</code>,端口号默认443，主机名写上你刚才的域名，指定给该域名的证书即可</p>
-<figure data-type="image" tabindex="19"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-54.png" alt=""></figure>
+<figure data-type="image" tabindex="19"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-34-54.png" alt="" loading="lazy"></figure>
 <p>最后打开你的域名解析，新建一个A记录，比如我这里子域名为devops，指向地址为服务器的ip</p>
-<figure data-type="image" tabindex="20"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-38-54.png" alt=""></figure>
+<figure data-type="image" tabindex="20"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-38-54.png" alt="" loading="lazy"></figure>
 <p>浏览器打开网址<code>https://devops.yourdomain.com</code>，已经可以访问</p>
-<figure data-type="image" tabindex="21"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-40-43.png" alt=""></figure>
+<figure data-type="image" tabindex="21"><img src="https://blog2019.pek3b.qingstor.com/devops/Snipaste_2019-02-28_11-40-43.png" alt="" loading="lazy"></figure>
 <h2 id="参考文档">参考文档</h2>
 <blockquote>
 <p><strong>https://azure.microsoft.com/zh-cn/services/devops/server/</strong></p>
 <p><strong>https://www.cnblogs.com/danzhang/p/10080190.html</strong></p>
 <p><strong>https://www.cnblogs.com/ksguai/p/5869558.html</strong></p>
 </blockquote>
-</span></p></div><div class="post_footer"><div class="meta"><div class="info"><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/x6J1TFbCJ"class="tag">Azure</a></span></div></div></div></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+        
+          <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script type="application/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
 
-<script>
+<script type="application/javascript">
 
   var gitalk = new Gitalk({
     clientID: '0102793645acc8ba1446',
@@ -88,4 +193,197 @@
   gitalk.render('gitalk-container')
 
 </script>
-</div></div></div><script type="text/javascript">hljs.initHighlightingOnLoad();</script><style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style><a id="back_to_top"href="#"class="back_to_top"><span>△</span></a><script>$(document).ready((function(_this){return function(){var bt;bt=$('#back_to_top');if($(document).width()>480){$(window).scroll(function(){var st;st=$(window).scrollTop();if(st>30){return bt.css('display','block')}else{return bt.css('display','none')}});return bt.click(function(){$('body,html').animate({scrollTop:0},800);return false})}}})(this));</script></div><div class="footer"><a href="https://iidx.xyz"class="menu">主页</a><a href="/archives"class="menu">归档</a><a href="/post/friendlink"class="menu">邻居</a><a href="https://one.iidx.xyz"class="menu"target="_blank">网盘(暂时关闭)</a><a href="http://bt.iidx.xyz"class="menu"target="_blank">qBittorrent</a><div class="powered_by"><a href="https://kveln.cn">Modify by kveln,</a><a href="https://kveln.cn">Theme zero,</a><a href="https://gridea.dev/"target="_blank">Powered by Gridea&#65281;</a></div><div class="footer_slogan"><img src="https://iidx.xyz/media/images/font.svg"alt="重拾写作的乐趣"/></div></div><style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style><a id="back_to_top"href="#"class="back_to_top"><span>△</span></a><script>$(document).ready((function(_this){return function(){var bt;bt=$('#back_to_top');if($(document).width()>480){$(window).scroll(function(){var st;st=$(window).scrollTop();if(st>30){return bt.css('display','block')}else{return bt.css('display','none')}});return bt.click(function(){$('body,html').animate({scrollTop:0},800);return false})}}})(this));</script></body></html>
+
+        
+
+        
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://iidx.xyz">TEDIORELEE</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><strong>环境准备</strong></a></li>
+<li><a href="#%E5%AE%89%E8%A3%85sql-server">安装SQL Server</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85devops-server-2019-rc2">安装DevOps Server 2019 RC2</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AEexternal-access-ssl">配置External Access &amp; SSL</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3">参考文档</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://iidx.xyz/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+</body>
+
+</html>

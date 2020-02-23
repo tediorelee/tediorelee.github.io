@@ -1,39 +1,312 @@
-<html lang="zh-CN">
-  <head>
-    <meta http-equiv="content-type"content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"name="viewport"/><meta content="yes"name="apple-mobile-web-app-capable"/><meta content="black"name="apple-mobile-web-app-status-bar-style"/><meta name="referrer" content="never"><meta content="telephone=no"name="format-detection"/><meta name="renderer"content="webkit"><meta name="keywords"content=""><meta name="description"content=""><title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title><link rel="shortcut icon"href="https://iidx.xyz/favicon.ico?v=1569941673259"><link rel="stylesheet"href="https://iidx.xyz/styles/main.css"type='text/css'media='all'><link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"rel="stylesheet"><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script><link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-  </head>
-  <body>
-    <div class="main animated">
-        <div class="header animated fadeInDown"><div class="site_title_container"><div class="site_title"><a href="https://iidx.xyz">𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</a></div><div class="description"><a href="https://iidx.xyz"><p class="sub_title">“ʏᴏᴜ'ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”</p></a><div class="my_socials"><a href="http://weibo.com/u/3200965454"target="_blank"><i class="fa fa-weibo"></i></a><a href="https://www.instagram.com/tediore_lee/"target="_blank"><i class="fa fa-instagram"></i></a></div></div></div></div>
-        <div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/gfw">🌈个人梯子搭建的心得与体会</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
+<link rel="shortcut icon" href="https://iidx.xyz/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://iidx.xyz/media/css/tailwind.css">
+<link rel="stylesheet" href="https://iidx.xyz/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸 - Atom Feed" href="https://iidx.xyz/atom.xml">
+
+    
+
+  <meta name="description" content="“ʏᴏᴜ'ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://iidx.xyz" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        主页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/post/friendlink" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        邻居
+      </a>
+    
+      <a href="https://one.iidx.xyz" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        网盘(暂时关闭)
+      </a>
+    
+    <a href="https://iidx.xyz/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto ">
+      
+        <header class="flex py-16 md:py-32 mt-12 flex-col md:flex-row px-4 md:px-0 animated fadeIn">
+  <div class="flex-1 order-2 md:order-1 md:pr-16">
+    <div class="text-4xl font-bold text-center md:text-left">
+      𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸
+    </div>
+    <div class="text-xl text-gray-500 mt-4 text-center md:text-left">
+      “ʏᴏᴜ'ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”
+    </div>
+    
+    
+  </div>
+  <div class="md:mx-8 flex-shrink-0 self-start rounded-full border-4 border-dotted border-transparent hover:border-yellow-50 p-2 w-32 h-32 order-1 md:order-2 mx-auto s3-dotted">
+    <img class="rounded-full object-cover" src="https://iidx.xyz/images/avatar.png?v=1582463644501" alt="𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸" width="100%" height="100%">
+  </div>
+</header>
+      
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/gfw/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈个人梯子搭建的心得与体会
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-09-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>迫于临近国庆，Wall越来越高，特此总结一下个人梯子搭建的心得与体会</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-09-26</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/A9tMWgyxt"class="post-tag">GFW</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/ss-rules">🌈个人代理软件规则整理</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/gfw/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190926115930.png" alt="🌈个人梯子搭建的心得与体会">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/ss-rules/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈个人代理软件规则整理
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-09-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>If you want to keep a secret, you must also hide it from yourself.</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-09-06</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/A9tMWgyxt"class="post-tag">GFW</a><a href="https://iidx.xyz/tag/NluVhaZaE"class="post-tag">V2ray</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/unblockNeteaseMusic">🌈解锁你的网易云灰色歌曲</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/ss-rules/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190906165351.png" alt="🌈个人代理软件规则整理">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/unblockNeteaseMusic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈解锁你的网易云灰色歌曲
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-08-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>Revive unavailable songs for Netease Cloud Music</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-08-11</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/2ec75jeIG"class="post-tag">Other</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/magisk-v2ray">🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/unblockNeteaseMusic/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190811190754.png" alt="🌈解锁你的网易云灰色歌曲">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/magisk-v2ray/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-08-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>A platform for building proxies to bypass network restrictions.</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-08-11</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/NluVhaZaE"class="post-tag">V2ray</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/7u9aJm8FG">🌈Docker学习笔记</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/magisk-v2ray/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190811184628.png" alt="🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/7u9aJm8FG/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈Docker学习笔记
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>Dokcer是个好东西</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-05-30</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/FRQBgPRT2"class="post-tag">Docker</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/how-to-install-windows-10">🌈How to Install Windows 10 (Fully Installation Guide)</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/7u9aJm8FG/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190530170336.png" alt="🌈Docker学习笔记">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/how-to-install-windows-10/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈How to Install Windows 10 (Fully Installation Guide)
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>为什么现在的人都不会重装系统呢（就是你lxk</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-05-26</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/vsYNOwC5t"class="post-tag">Tech</a><a href="https://iidx.xyz/tag/2ec75jeIG"class="post-tag">Other</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/update-azuredevops-server-certificates">🌈Update AzureDevops Server Certificates</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/how-to-install-windows-10/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190526130743.png" alt="🌈How to Install Windows 10 (Fully Installation Guide)">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/update-azuredevops-server-certificates/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈Update AzureDevops Server Certificates
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-09</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>简单记记</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-05-09</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/x6J1TFbCJ"class="post-tag">Azure</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/customize-your-office365">🌈Customize Your office365</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/update-azuredevops-server-certificates/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190509211856.png" alt="🌈Update AzureDevops Server Certificates">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/customize-your-office365/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈Customize Your office365
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>Decide your own installation</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-04-26</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/f7tGobuX0"class="post-tag">Office365</a></span></div></div></div></div></div><div class="content"><div class="post animated fadeInDown"><div class="post_title"><h2><a href="https://iidx.xyz/post/windows-admin-center">🌈Windows Admin Center 入坑指南</a></h2></div><div class="list"><div class="post_content"><p><blockquote>
+
+      </div>
+      <a href="https://iidx.xyz/post/customize-your-office365/" class="btn">
+        阅读更多
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://tediorelee-1257666331.cos.ap-chengdu.myqcloud.com/Gridea/20190517011148.png" alt="🌈Customize Your office365">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://iidx.xyz/post/windows-admin-center/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          🌈Windows Admin Center 入坑指南
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-25</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
 <p>Hello, Windows Admin Center!</p>
 </blockquote>
-</p></div></div><div class="post_footer"><div class="meta"><div class="info"><span class="field"><i class="fa fa-sun-o"></i><span class="date">2019-04-25</span></span><span class="field tags"><i class="fa fa-flask"></i><a href="https://iidx.xyz/tag/aXetfket7"class="post-tag">Windows</a></span></div></div></div></div></div></div><div class="paginator pager pagination"><div class="paginator_container pagination_container"><a href="https://iidx.xyz/page/2/"class="btn next older-posts older_posts">阅读更多文章</a><div style="clear:both;height:0;"></div></div></div>
+
+      </div>
+      <a href="https://iidx.xyz/post/windows-admin-center/" class="btn">
+        阅读更多
+      </a>
     </div>
-    <div class="footer"><a href="https://iidx.xyz"class="menu">主页</a><a href="/archives"class="menu">归档</a><a href="/post/friendlink"class="menu">邻居</a><a href="https://one.iidx.xyz"class="menu"target="_blank">网盘(暂时关闭)</a><a href="http://bt.iidx.xyz"class="menu"target="_blank">qBittorrent</a><div class="powered_by"><a href="https://kveln.cn">Modify by kveln,</a><a href="https://kveln.cn">Theme zero,</a><a href="https://gridea.dev/"target="_blank">Powered by Gridea&#65281;</a></div><div class="footer_slogan"><img src="https://iidx.xyz/media/images/font.svg"alt="重拾写作的乐趣"/></div></div><style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style><a id="back_to_top"href="#"class="back_to_top"><span>△</span></a><script>$(document).ready((function(_this){return function(){var bt;bt=$('#back_to_top');if($(document).width()>480){$(window).scroll(function(){var st;st=$(window).scrollTop();if(st>30){return bt.css('display','block')}else{return bt.css('display','none')}});return bt.click(function(){$('body,html').animate({scrollTop:0},800);return false})}}})(this));</script>
-  </body>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://i.loli.net/2019/04/25/5cc127621056f.png" alt="🌈Windows Admin Center 入坑指南">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+    
+      <a href="https://iidx.xyz/page/2" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> Published by <a href="https://iidx.xyz">TEDIORELEE</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://iidx.xyz/media/scripts/main.js"></script>
+</body>
+
 </html>
