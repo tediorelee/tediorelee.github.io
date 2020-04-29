@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://iidx.xyz</id>
     <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-    <updated>2020-02-23T13:16:47.586Z</updated>
+    <updated>2020-04-29T03:58:58.717Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://iidx.xyz"/>
     <link rel="self" href="https://iidx.xyz/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://iidx.xyz/images/avatar.png</logo>
     <icon>https://iidx.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</rights>
+    <entry>
+        <title type="html"><![CDATA[⭐🌙“清是一半满 月是一半明”]]></title>
+        <id>https://iidx.xyz/post/5RXTnq-XD/</id>
+        <link href="https://iidx.xyz/post/5RXTnq-XD/">
+        </link>
+        <updated>2020-04-29T03:54:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>“我会是你最后一个客人，送走我时不必伤心&quot;</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>“我会是你最后一个客人，送走我时不必伤心&quot;</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[🌈个人梯子搭建的心得与体会]]></title>
         <id>https://iidx.xyz/post/gfw/</id>
@@ -142,21 +153,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>Hello, Windows Admin Center!</p>
-</blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🌈Migrate Azure VM to On-Premises]]></title>
-        <id>https://iidx.xyz/post/migrate-azure-vm-to-on-premises/</id>
-        <link href="https://iidx.xyz/post/migrate-azure-vm-to-on-premises/">
-        </link>
-        <updated>2019-04-24T09:40:56.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>A  Step-by-step tutorial of Migrate Azure DC VM to On-Premises VM</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>A  Step-by-step tutorial of Migrate Azure DC VM to On-Premises VM</p>
 </blockquote>
 ]]></content>
     </entry>
