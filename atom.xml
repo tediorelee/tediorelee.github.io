@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://iidx.xyz</id>
+    <id>https://leejieun.fan</id>
     <title>𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</title>
-    <updated>2020-04-29T04:07:49.799Z</updated>
+    <updated>2021-03-27T10:04:45.784Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://iidx.xyz"/>
-    <link rel="self" href="https://iidx.xyz/atom.xml"/>
+    <link rel="alternate" href="https://leejieun.fan"/>
+    <link rel="self" href="https://leejieun.fan/atom.xml"/>
     <subtitle>“ʏᴏᴜ&apos;ʀᴇ ᴊᴜꜱᴛ ᴀ ꜱᴀᴅ ꜱᴏɴɢ ᴡɪᴛʜ ɴᴏᴛʜɪɴɢ ᴛᴏ ꜱᴀʏ”</subtitle>
-    <logo>https://iidx.xyz/images/avatar.png</logo>
-    <icon>https://iidx.xyz/favicon.ico</icon>
-    <rights>All rights reserved 2020, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</rights>
+    <logo>https://leejieun.fan/images/avatar.png</logo>
+    <icon>https://leejieun.fan/favicon.ico</icon>
+    <rights>All rights reserved 2021, 𝒯𝐸𝒟𝐼𝒪𝑅𝐸𝐿𝐸𝐸</rights>
     <entry>
         <title type="html"><![CDATA[⭐🌙“清是一半满 月是一半明”]]></title>
-        <id>https://iidx.xyz/post/5RXTnq-XD/</id>
-        <link href="https://iidx.xyz/post/5RXTnq-XD/">
+        <id>https://leejieun.fan/post/5RXTnq-XD/</id>
+        <link href="https://leejieun.fan/post/5RXTnq-XD/">
         </link>
         <updated>2020-04-29T03:54:53.000Z</updated>
         <summary type="html"><![CDATA[<p>“我会是你最后一个客人，送走我时不必伤心&quot;</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈个人梯子搭建的心得与体会]]></title>
-        <id>https://iidx.xyz/post/gfw/</id>
-        <link href="https://iidx.xyz/post/gfw/">
+        <id>https://leejieun.fan/post/gfw/</id>
+        <link href="https://leejieun.fan/post/gfw/">
         </link>
         <updated>2019-09-26T03:55:51.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -38,8 +38,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈个人代理软件规则整理]]></title>
-        <id>https://iidx.xyz/post/ss-rules/</id>
-        <link href="https://iidx.xyz/post/ss-rules/">
+        <id>https://leejieun.fan/post/ss-rules/</id>
+        <link href="https://leejieun.fan/post/ss-rules/">
         </link>
         <updated>2019-09-06T08:34:04.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -53,8 +53,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈解锁你的网易云灰色歌曲]]></title>
-        <id>https://iidx.xyz/post/unblockNeteaseMusic/</id>
-        <link href="https://iidx.xyz/post/unblockNeteaseMusic/">
+        <id>https://leejieun.fan/post/unblockNeteaseMusic/</id>
+        <link href="https://leejieun.fan/post/unblockNeteaseMusic/">
         </link>
         <updated>2019-08-11T11:06:36.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -68,8 +68,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈MAGISK MODULES V2RAY使安卓手机“无缝”翻墙]]></title>
-        <id>https://iidx.xyz/post/magisk-v2ray/</id>
-        <link href="https://iidx.xyz/post/magisk-v2ray/">
+        <id>https://leejieun.fan/post/magisk-v2ray/</id>
+        <link href="https://leejieun.fan/post/magisk-v2ray/">
         </link>
         <updated>2019-08-11T10:39:02.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -83,8 +83,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Docker学习笔记]]></title>
-        <id>https://iidx.xyz/post/7u9aJm8FG/</id>
-        <link href="https://iidx.xyz/post/7u9aJm8FG/">
+        <id>https://leejieun.fan/post/7u9aJm8FG/</id>
+        <link href="https://leejieun.fan/post/7u9aJm8FG/">
         </link>
         <updated>2019-05-30T08:34:27.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -98,8 +98,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈How to Install Windows 10 (Fully Installation Guide)]]></title>
-        <id>https://iidx.xyz/post/how-to-install-windows-10/</id>
-        <link href="https://iidx.xyz/post/how-to-install-windows-10/">
+        <id>https://leejieun.fan/post/how-to-install-windows-10/</id>
+        <link href="https://leejieun.fan/post/how-to-install-windows-10/">
         </link>
         <updated>2019-05-26T05:06:25.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -113,8 +113,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Update AzureDevops Server Certificates]]></title>
-        <id>https://iidx.xyz/post/update-azuredevops-server-certificates/</id>
-        <link href="https://iidx.xyz/post/update-azuredevops-server-certificates/">
+        <id>https://leejieun.fan/post/update-azuredevops-server-certificates/</id>
+        <link href="https://leejieun.fan/post/update-azuredevops-server-certificates/">
         </link>
         <updated>2019-05-09T13:17:22.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -128,8 +128,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Customize Your office365]]></title>
-        <id>https://iidx.xyz/post/customize-your-office365/</id>
-        <link href="https://iidx.xyz/post/customize-your-office365/">
+        <id>https://leejieun.fan/post/customize-your-office365/</id>
+        <link href="https://leejieun.fan/post/customize-your-office365/">
         </link>
         <updated>2019-04-26T03:03:06.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -143,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[🌈Windows Admin Center 入坑指南]]></title>
-        <id>https://iidx.xyz/post/windows-admin-center/</id>
-        <link href="https://iidx.xyz/post/windows-admin-center/">
+        <id>https://leejieun.fan/post/windows-admin-center/</id>
+        <link href="https://leejieun.fan/post/windows-admin-center/">
         </link>
         <updated>2019-04-25T03:18:53.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
